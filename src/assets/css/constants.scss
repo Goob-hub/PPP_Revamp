@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Prata');
+
 :root{
-     --clrMain: #E1E1E1;
+     --clrTxt: #E1E1E1;
      --clrBackdrop: #111;
+     --clrTransparentDrk: rgba(0, 0, 0, .8);
+     --ff1: 'Open Sans', sans-serif;
+     --ff2: 'Montserrat', sans-serif;
+}
+
+.glitch{
+     color: blue;
 }
