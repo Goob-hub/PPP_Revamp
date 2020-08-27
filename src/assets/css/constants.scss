@@ -9,6 +9,45 @@
      --ff2: 'Montserrat', sans-serif;
 }
 
-.glitch{
-     color: blue;
+.glitchTxt{
+     position: relative;
+     z-index: 2;
+     &::before, &::after{
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+     }
+     &::before{
+          color: #ff00c1;
+          animation: glitch 3s linear infinite;
+     }
+     &::after{
+          color: #3498db;
+          animation: glitch 2s linear infinite;
+     }
+}
+
+@keyframes glitch {
+     0%{
+          left: -2px;
+          top: -2px;
+     }
+     25%{
+          left: 2px;
+          top: 0px;
+     }
+     50%{
+          left: -1px;
+          top: 2px;
+     }
+     75%{
+          left: 1px;
+          top: -1px;
+     }
+     100%{
+          left: 0px;
+          top: -2px;
+     }
 }

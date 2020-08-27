@@ -1,7 +1,7 @@
 <template>
   <div class="card">
      <main class="card-info">
-          <h1>The Backrooms Game</h1>
+          <h1 class="glitchTxt" data-text="The Backrooms Game">The Backrooms Game</h1>
           <p>Stinky moist carpet, deafening florescent hum, and six hundred million square miles of randomly segmented empty mono yellow rooms to be trapped in. "God save you if you hear something wandering around nearby, because it sure as hell has heard you”</p>
           <footer>
                <a class="btn">Learn more</a>
@@ -21,10 +21,12 @@ export default {
 .card{
      font-family: var(--ff2);
      width: 100%;
-     height: 100vh;
+     height: 70vh;
      padding: 1em;
      position: relative;
      background: center/cover no-repeat url('../assets/images/backroomsglitch.gif');
+     display: flex;
+     flex-direction: column;
 
      &-info{
           display: flex;
@@ -38,8 +40,12 @@ export default {
           height: 100%;
           width: 100%;
 
-          h1, p, footer{
-               margin-top: 1em;
+          h1{
+               margin-top: .7em;
+          }
+          
+          p, footer{
+               margin-top: 2em;
           }
 
           p{
@@ -49,15 +55,17 @@ export default {
           footer{
                height: max-content;
                width: 100%;
-               margin: 1em;
+               display: flex;
                a{
                     background: var(--clrTransparentDrk);
                     border: 2px solid var(--clrTxt);
                     border-radius: 1em;
                     font-size: .8em;
                     padding: 1em;
-                    bottom: -10px;
-                    left: 30%;
+                    &:nth-child(2){
+                         margin-left: 1em;
+                    }
+                    
                }
           }
 
