@@ -15,6 +15,8 @@
      &::before, &::after{
           content: attr(data-text);
           position: absolute;
+          height: 100%;
+          width: 100%;
           top: 0;
           left: 0;
           z-index: -1;
@@ -26,6 +28,43 @@
      &::after{
           color: #3498db;
           animation: glitch 2s linear infinite;
+     }
+}
+
+.glitchBtn{
+     &:hover{
+          background: black;
+          span{
+               position: relative;
+               z-index: 2;
+               &::before, &::after{
+                    content: attr(data-text);
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+               }
+               &::before{
+                    color: #ff00c1;
+                    animation: glitch 3s linear infinite;
+               }
+               &::after{
+                    color: #3498db;
+                    animation: glitch 2s linear infinite;
+               }
+          }
+     }
+}
+
+.btn{
+     background: none;
+     transition: .5s linear;
+     border: none;
+     cursor: pointer;
+     &:focus{
+       outline: none;
      }
 }
 

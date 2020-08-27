@@ -27,16 +27,6 @@ export default {
   letter-spacing: 1.5px;
 }
 
-.btn{
-  background: none;
-  border: none;
-  width: max-content;
-  height: max-content;
-  &:focus{
-    outline: none;
-  }
-}
-
 .home{
   padding-top: 15vh;
   background: #2e2e2e;

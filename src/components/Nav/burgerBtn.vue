@@ -1,5 +1,5 @@
 <template>
-     <button class="nav-btn btn" @click="navClick()">
+     <button class="btn nav-btn" @click="navClick()">
           <span></span>
      </button>
 </template>
@@ -27,11 +27,11 @@ export default {
 </script>
 
 <style lang="scss">
-button{
+.nav-btn{
      z-index: 3;
-     position: relative;
-     height: 2em;
+     height: 3em;
      width: 2em;
+     position: relative;
      cursor: pointer;
      display: flex;
      justify-content: flex-start;
