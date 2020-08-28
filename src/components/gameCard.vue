@@ -1,15 +1,19 @@
 <template>
 <div class="container">
-     <div class="card" :class="info.background" :key="info.title" v-for="info in cardInfo">
-          <main class="card-info">
-               <h1 :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
-               <p>{{info.desc}}</p>
-               <footer>
-                    <a class="btn" :class="info.VFX.button"><span data-text="Learn more">Learn more</span></a>
-                    <a class="btn" :class="info.VFX.button"><span data-text="Steam page">Steam page</span></a>
-               </footer>
-          </main>
-     </div>
+     <carousel :per-page="1" :autoplay="true" :autoplayTimeout="6000">
+          <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
+               <div class="card">
+                    <main class="card-info">
+                         <h1 :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
+                         <p>{{info.desc}}</p>
+                         <footer>
+                              <a class="btn" :class="info.VFX.button"><span data-text="Learn more">Learn more</span></a>
+                              <a class="btn" :class="info.VFX.button"><span data-text="Steam page">Steam page</span></a>
+                         </footer>
+                    </main>
+               </div>
+          </slide>
+     </carousel>
 </div>
 </template>
 
