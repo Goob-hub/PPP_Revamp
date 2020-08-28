@@ -4,7 +4,7 @@
 :root{
      --clrTxt: #E1E1E1;
      --clrBackdrop: #111;
-     --clrTransparentDrk: rgba(0, 0, 0, .8);
+     --clrTransparent: rgba(0, 0, 0, .8);
      --ff1: 'Open Sans', sans-serif;
      --ff2: 'Montserrat', sans-serif;
 }
@@ -33,7 +33,6 @@
 
 .glitchBtn{
      &:hover{
-          background: black;
           span{
                position: relative;
                z-index: 2;

@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-     <div class="card" :key="info.title" v-for="info in cardInfo">
+     <div class="card" :class="info.background" :key="info.title" v-for="info in cardInfo">
           <main class="card-info">
                <h1 :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
                <p>{{info.desc}}</p>
@@ -22,6 +22,7 @@ export default {
                     theBackrooms: {
                          title: 'The Backrooms Game',
                          desc: `Stinky moist carpet, deafening florescent hum, and six hundred million square miles of randomly segmented mono yellow rooms to be trapped in. "God save you if you hear something wandering around nearby, because it sure as hell has heard you.”`,
+                         background: 'backrooms',
                          VFX: {
                               text: 'glitchTxt',
                               button: 'glitchBtn'
@@ -30,6 +31,7 @@ export default {
                     GGMT: {
                          title: 'The Great Geometric Multiverse Tour',
                          desc: `An endless expanse of evil shapes and explosions, shoot your way through multiple dimensions filled with evil shapes of all kinds out to kill you with big guns, explosions, and many upgrades.`,
+                         background: 'GGMT',
                          VFX: {
                               button: 'shape',
                          }
@@ -48,6 +50,15 @@ export default {
      height: 70vh;
      width: 100%;
      overflow: hidden;
+
+     .backrooms{
+          background: center/cover no-repeat url('../assets/images/backroomsglitch.gif');
+     }
+
+     .GGMT{
+          background: blue;
+     }
+     
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
@@ -55,7 +66,6 @@ export default {
           height: 70vh;
           padding: 1em;
           position: relative;
-          background: center/cover no-repeat url('../assets/images/backroomsglitch.gif');
           display: flex;
           flex-direction: row;
           overflow: hidden;
@@ -68,7 +78,7 @@ export default {
                padding: 1em;
                top: 0;
                left: 0;
-               background: var(--clrTransparentDrk);
+               background: var(--clrTransparent);
                height: 100%;
                width: 100%;
      
@@ -88,14 +98,15 @@ export default {
                     height: max-content;
                     width: 100%;
                     display: flex;
+                    justify-content: space-between;
+                    
                     .btn{
                          border: 2px solid var(--clrTxt);
-                         font-size: .8em;
-                         padding: 1em;
-                         &:nth-child(2){
-                              margin-left: 1em;
-                         }
-                         
+                         background: var(--clrTransparent);
+                         width: max-content;
+                         font-weight: bold;
+                         font-size: 1em;
+                         padding: .65em;
                     }
                }
      
