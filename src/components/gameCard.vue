@@ -58,7 +58,7 @@ export default {
      .GGMT{
           background: blue;
      }
-     
+
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
@@ -102,11 +102,14 @@ export default {
                     
                     .btn{
                          border: 2px solid var(--clrTxt);
-                         background: var(--clrTransparent);
+                         
                          width: max-content;
                          font-weight: bold;
                          font-size: 1em;
                          padding: .65em;
+                         &:hover{
+                              background: black;
+                         }
                     }
                }
      

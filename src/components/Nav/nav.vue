@@ -58,6 +58,7 @@ nav{
           padding: 1em;
           font-family: var(--ff2);
           
+          
 
           button{
                padding: 1em;
