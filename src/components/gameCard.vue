@@ -1,6 +1,6 @@
 <template>
-<div class="container">
-     <carousel :per-page="1" :autoplay="true" :autoplayTimeout="6000">
+<div class="carousel-container">
+     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mousedrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3000">
           <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
                <div class="card">
                     <main class="card-info">
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-     name: 'gameCard',
+     name: 'featuredGames',
      data(){
           return{
                cardInfo: {
@@ -34,7 +34,7 @@ export default {
                     },
                     GGMT: {
                          title: 'The Great Geometric Multiverse Tour',
-                         desc: `An endless expanse of evil shapes and explosions, shoot your way through multiple dimensions filled with evil shapes of all kinds out to kill you with big guns, explosions, and many upgrades.`,
+                         desc: `An endless universe of evil shapes and explosions, shoot your way through multiple dimensions filled with evil shapes of all kinds out to kill you with big guns, explosions, and many upgrades.`,
                          background: 'GGMT',
                          VFX: {
                               button: 'shape',
@@ -50,29 +50,31 @@ export default {
 </script>
 
 <style lang="scss">
-.container{
-     height: 70vh;
+.carousel-container{
+     height: max-content;
      width: 100%;
+     
      overflow: hidden;
-
+     transform: scale(.8);
      .backrooms{
           background: center/cover no-repeat url('../assets/images/backroomsglitch.gif');
      }
 
      .GGMT{
-          background: blue;
+          background: center/cover no-repeat url('../assets/images/GGMT.gif');
      }
 
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
           width: 100%;
-          height: 70vh;
+          height: 75vh;
           padding: 1em;
           position: relative;
           display: flex;
           flex-direction: row;
           overflow: hidden;
+          
      
           &-info{
                display: flex;
@@ -83,15 +85,17 @@ export default {
                top: 0;
                left: 0;
                background: var(--clrTransparent);
-               height: 100%;
-               width: 100%;
+               height: inherit;
+               width: inherit;
      
                h1{
-                    margin-top: .7em;
+                    font-family: var(--ff-1);
+                    font-size: 2em;
                }
                
                p, footer{
-                    margin-top: 2em;
+                    font-family: var(--ff2);
+                    margin-top: 3em;
                }
      
                p{
@@ -112,7 +116,8 @@ export default {
                          font-size: 1em;
                          padding: .65em;
                          &:hover{
-                              background: black;
+                              
+                              background: var(--clr3);
                          }
                     }
                }
@@ -120,6 +125,4 @@ export default {
           }
      }
 }
-
-
 </style>

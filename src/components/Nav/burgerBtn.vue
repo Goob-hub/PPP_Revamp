@@ -1,7 +1,9 @@
 <template>
-     <button class="btn nav-btn" @click="navClick()">
-          <span></span>
-     </button>
+     <div class="btn-container">
+          <button class="btn nav-btn" @click="navClick()">
+               <span></span>
+          </button>
+     </div>
 </template>
 
 <script>
@@ -12,10 +14,13 @@ export default {
                setTimeout(() => {
                     let nav = document.querySelector("nav");
                     let navBtn = document.querySelector(".nav-btn");
+                    let home = document.querySelector(".home");
+
+                    
                
                     (nav.classList.contains('open')) ? 
-                    (nav.style.height = "15vh", nav.classList.remove("open")) 
-                    : (nav.style.height = "100vh", nav.classList.add("open"));
+                    (nav.style.width = "0vw", nav.classList.remove("open"), home.classList.remove("active")) 
+                    : (nav.style.width = "100vw", nav.classList.add("open"), home.classList.add("active"));
      
                     (navBtn.classList.contains('openNav')) ? 
                     (navBtn.classList.remove("openNav")) 
@@ -27,8 +32,16 @@ export default {
 </script>
 
 <style lang="scss">
+.btn-container{
+     width: max-content;
+     height: max-content;
+     position: fixed;
+     top: 1.5em;
+     right: 1em;
+     z-index: 6;
+}
+
 .nav-btn{
-     z-index: 3;
      height: 3em;
      width: 2em;
      position: relative;
