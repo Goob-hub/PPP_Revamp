@@ -61,7 +61,7 @@ export default {
 <style lang="scss">
 .carousel-container{
      height: max-content;
-     width: 20em;
+     width: 100vw;
      height: 100vh;
      align-self: center;
      overflow: hidden;

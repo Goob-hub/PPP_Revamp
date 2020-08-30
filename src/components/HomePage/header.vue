@@ -23,7 +23,7 @@ export default {
           viewGames(){
                setTimeout(() => {
                     let home = document.querySelector('.home');
-                    home.style.transform = 'translateX(-125%)';
+                    home.style.transform = 'translateX(-125vw)';
                     home.style.overflow = 'visible'    
                });
           }
@@ -41,6 +41,7 @@ export default {
      align-items: center;
      justify-content: center;
      height: 100vh;
+     width: 100vw;
      background: var(--gradientBG), center/cover no-repeat url("../images/Backdrop.png");
      
      .Text{

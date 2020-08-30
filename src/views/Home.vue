@@ -51,7 +51,7 @@ export default {
     transition: .5s linear;
     top: 0;
     position: absolute;
-    transform: translateX(125%);
+    transform: translateX(125vw);
   }
 
   // .featuredTitles{
