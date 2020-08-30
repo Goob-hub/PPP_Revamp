@@ -30,12 +30,7 @@ nav{
      left: 0;
      width: 0vw;
      z-index: 5;
-
-
-   
-
      
-
      img{
           height: 3em;
           width: 5em;

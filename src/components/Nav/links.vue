@@ -21,6 +21,7 @@ main{
      flex-direction: column;
      align-items: center;
      justify-content: center;
+     flex-wrap: wrap;
      height: 100vh;
      padding: 1em;
      font-family: var(--ff2);

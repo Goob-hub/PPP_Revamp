@@ -2,13 +2,7 @@
   <div class="home">
     <navBtn />
     <navBar />
-    <header class="home-header">
-      <div class="Text">
-        <h1>Pie On A Plate Productions</h1>
-        <sub>Deliciously Good Games</sub>
-      </div>
-      <featuredGames />
-    </header>
+    <Head />
     <section class="home-about">
       <h1>Learn About Us</h1>
       
@@ -18,14 +12,14 @@
 </template>
 
 <script>
-import featuredGames from '@/components/gameCard.vue' 
+import Head from '@/components/HomePage/header.vue' 
 import navBar from '@/components/Nav/nav.vue'
 import navBtn from '@/components/Nav/burgerBtn.vue';
 
 export default {
   name: 'Home',
   components: {
-    featuredGames,
+    Head,
     navBtn,
     navBar
   }
@@ -47,34 +41,5 @@ export default {
   background: var(--clr1);
   height: max-content;
   max-width: 100vw;
-
- 
-
-  .home-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: max-content;
-    background: var(--gradientBG), center/cover fixed no-repeat url('../assets/images/Backdrop.png');
-    
-    .Text{
-      text-align: center;
-      height: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-
-      h1{
-        font-family: var(--ff1);
-      }
-
-      sub{
-        font-style: italic;
-        font-size: 1em;
-        margin-top: 3em;
-      }
-      margin: 30% 0 0 0;
-    }
-  }
 }
 </style>

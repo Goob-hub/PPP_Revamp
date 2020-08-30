@@ -1,6 +1,6 @@
 <template>
 <div class="carousel-container">
-     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mousedrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3000">
+     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mousedrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500">
           <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
                <div class="card">
                     <main class="card-info">
@@ -52,23 +52,23 @@ export default {
 <style lang="scss">
 .carousel-container{
      height: max-content;
-     width: 100%;
-     
+     width: 20em;
+     align-self: center;
      overflow: hidden;
      transform: scale(.8);
      .backrooms{
-          background: center/cover no-repeat url('../assets/images/backroomsglitch.gif');
+          background: center/cover no-repeat url('/assets/images/backroomsglitch.gif')
      }
 
      .GGMT{
-          background: center/cover no-repeat url('../assets/images/GGMT.gif');
+          background: center/cover no-repeat url('/assets/images/GGMT.gif');
      }
 
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
-          width: 100%;
-          height: 75vh;
+          width: inherit;
+          height: 25em;
           padding: 1em;
           position: relative;
           display: flex;
@@ -77,6 +77,7 @@ export default {
           
      
           &-info{
+               text-align: center;
                display: flex;
                align-items: center;
                flex-direction: column;
@@ -117,7 +118,10 @@ export default {
                          padding: .65em;
                          &:hover{
                               
-                              background: var(--clr3);
+                              background: white;
+                              span{
+                                   color: black;
+                              }
                          }
                     }
                }
