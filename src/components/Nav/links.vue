@@ -1,10 +1,9 @@
 <template>
      <main>
             <router-link to="#" class="btn"><p>Home<p/></router-link>
-            <router-link to="#" class="btn"><p>About<p/></router-link>
             <router-link to="#" class="btn"><p>Contact<p/></router-link>
             <router-link to="#" class="btn"><p>Jobs<p/></router-link>
-            <router-link to="#" class="btn"><p>Games<p/></router-link>
+            <router-link to="#" class="btn"><p>About<p/></router-link>
             <router-link to="#" class="btn"><p>Devblog<p/></router-link>
      </main>
 </template>

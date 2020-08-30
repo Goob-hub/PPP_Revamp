@@ -9,6 +9,7 @@
                          <footer>
                               <a class="btn" :class="info.VFX.button"><span data-text="Learn more">Learn more</span></a>
                               <a class="btn" :class="info.VFX.button"><span data-text="Steam page">Steam page</span></a>
+                              <a class="btn" :class="info.VFX.button" @click="back()"><span data-text="Back">Back</span></a>
                          </footer>
                     </main>
                </div>
@@ -44,7 +45,15 @@ export default {
           }
      },
      methods: {
-          
+          back(){
+               setTimeout(() => {
+                    let home = document.querySelector('.home');
+                    home.style.transform = 'translateX(0)'
+                    setTimeout(() => {
+                         home.style.overflow = 'hidden';
+                    }, 500);    
+               });
+          }
      }
 }
 </script>
@@ -53,22 +62,23 @@ export default {
 .carousel-container{
      height: max-content;
      width: 20em;
+     height: 100vh;
      align-self: center;
      overflow: hidden;
-     transform: scale(.8);
+    
      .backrooms{
-          background: center/cover no-repeat url('/assets/images/backroomsglitch.gif')
+          background: center/cover no-repeat url('../images/backroomsglitch.gif')
      }
 
      .GGMT{
-          background: center/cover no-repeat url('/assets/images/GGMT.gif');
+          background: center/cover no-repeat url('../images/GGMT.gif');
      }
 
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
           width: inherit;
-          height: 25em;
+          height: 100vh;
           padding: 1em;
           position: relative;
           display: flex;
@@ -79,6 +89,7 @@ export default {
           &-info{
                text-align: center;
                display: flex;
+               justify-content: flex-end;
                align-items: center;
                flex-direction: column;
                position: absolute;
@@ -96,22 +107,24 @@ export default {
                
                p, footer{
                     font-family: var(--ff2);
-                    margin-top: 3em;
+                    margin-top: 2em;
                }
      
                p{
-                    font-size: .8em;
+                    font-size: .9em;
                }
      
                footer{
                     height: max-content;
                     width: 100%;
                     display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     justify-content: space-between;
                     
                     .btn{
                          border: 2px solid var(--clrTxt);
-                         
+                         margin: .5em;
                          width: max-content;
                          font-weight: bold;
                          font-size: 1em;
@@ -120,6 +133,7 @@ export default {
                               
                               background: white;
                               span{
+                                   transition: .5s linear;
                                    color: black;
                               }
                          }

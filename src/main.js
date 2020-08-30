@@ -13,3 +13,5 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
+document.querySelector('html').style.background = "var(--clr1)";
