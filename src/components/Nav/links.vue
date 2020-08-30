@@ -63,7 +63,7 @@ ul{
                width: max-content;
 
                &::before{
-                    content: '';
+                    content: attr(data-text);
                     position: absolute;
                     top: 50%;
                     left: 50%;
