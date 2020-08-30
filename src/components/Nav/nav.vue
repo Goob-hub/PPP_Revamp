@@ -21,9 +21,11 @@ export default {
 nav{
      display: flex;
      flex-direction: column;
+     justify-content: center;
+     align-items: center;
      height: 100vh;
      overflow: hidden;
-     background: var(--clr1);
+     background: var(--clr3);
      transition: .5s linear;
      position: fixed;
      top: 0;
