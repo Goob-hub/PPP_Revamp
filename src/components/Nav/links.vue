@@ -1,18 +1,18 @@
 <template>
      <ul>
-          <li>
-          <router-link to="#" class="btn" data-text="Home"><span>Home</span></router-link>
+          <li @click="closeNav()">
+          <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
           </li>
-          <li>
+          <li @click="closeNav()">
           <router-link to="#" class="btn" data-text="Contact"><span>Contact</span></router-link>
           </li>
-          <li>
+          <li @click="closeNav()">
           <router-link to="#" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
           </li>
-          <li>
-          <router-link to="#" class="btn" data-text="About"><span>About</span></router-link>
+          <li @click="closeNav()">
+          <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
           </li>
-          <li>
+          <li @click="closeNav()">
           <router-link to="#" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
           </li>
      </ul>
@@ -21,6 +21,22 @@
 <script>
 export default {
      name: 'links',
+     data () {
+          return{
+               page: 'home'
+          }
+     },
+     methods: {
+          closeNav(){
+               let nav = document.querySelector('nav');
+               let navBtn = document.querySelector('.nav-btn');
+               (this.$isMobile()) ?
+               (setTimeout(() => {
+                    nav.classList.remove("open");
+                    navBtn.classList.remove("openNav");
+               }, 1200)) : (nav.classList.remove("open"), navBtn.classList.remove("openNav"))
+          }
+     }
 }
 </script>
 
@@ -45,7 +61,7 @@ ul{
 
      &:hover{
           span{
-               color: var(--clrTransparent);
+               color: var(--clr3);
 
           }
      }
@@ -70,16 +86,17 @@ ul{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 7em;
+                    font-size: 5.5em;
                     color: rgba(255, 255, 255, .1);
                     border-radius: 50%;
                     z-index: -1;
                     opacity: 0;
-                    letter-spacing: 500px;
+                    letter-spacing: 400px;
                     font-weight: bolder;
-                    transition: letter-spacing, opacity, .7s .3s;
+                    transition: letter-spacing, opacity, 1s .3s;
                     
                }
+
 
                &:hover{
                     &::before{

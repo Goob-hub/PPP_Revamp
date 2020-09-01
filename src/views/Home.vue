@@ -53,15 +53,5 @@ export default {
     position: absolute;
     transform: translateX(125vw);
   }
-
-  // .featuredTitles{
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   padding: 1em;
-   
-    
-  // }
 }
 </style>

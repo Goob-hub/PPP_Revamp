@@ -4,6 +4,10 @@ import router from './router'
 import '@/assets/css/constants.scss'
 import VueCarousel from 'vue-carousel'
 import '@/icons.js'
+import VueMobileDetection from 'vue-mobile-detection'
+
+
+Vue.use(VueMobileDetection)
 
 Vue.use(VueCarousel);
 

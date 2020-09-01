@@ -19,8 +19,9 @@ export default {
 
 <style lang="scss">
 #app{
+  max-width: 100vw;
   background: var(--clr1);
-  overflow: visible;
+  overflow: hidden;
 }
 
 

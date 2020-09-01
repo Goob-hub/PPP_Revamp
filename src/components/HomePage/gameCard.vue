@@ -11,6 +11,7 @@
                               <a class="btn" :class="info.VFX.button"><span data-text="Steam page">Steam page</span></a>
                               <a class="btn" :class="info.VFX.button" @click="back()"><span data-text="Back">Back</span></a>
                          </footer>
+                         <p>swipe to view next game</p>
                     </main>
                </div>
           </slide>

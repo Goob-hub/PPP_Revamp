@@ -14,13 +14,10 @@ export default {
                setTimeout(() => {
                     let nav = document.querySelector("nav");
                     let navBtn = document.querySelector(".nav-btn");
-                    let home = document.querySelector(".home");
-
-                    
                
                     (nav.classList.contains('open')) ? 
-                    (nav.style.width = "0vw", nav.classList.remove("open"), home.classList.remove("active")) 
-                    : (nav.style.width = "100vw", nav.classList.add("open"), home.classList.add("active"));
+                    (nav.classList.remove("open")) 
+                    : (nav.classList.add("open"));
      
                     (navBtn.classList.contains('openNav')) ? 
                     (navBtn.classList.remove("openNav")) 

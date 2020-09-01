@@ -25,7 +25,7 @@ nav{
      align-items: center;
      height: 100vh;
      overflow: hidden;
-     background: var(--clr3);
+     background: black;
      transition: .5s linear;
      position: fixed;
      top: 0;
@@ -36,6 +36,10 @@ nav{
      img{
           height: 3em;
           width: 5em;
+     }
+
+     &.open{
+          width: 100vw;
      }
 }
 </style>
