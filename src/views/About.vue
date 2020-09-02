@@ -1,24 +1,36 @@
 <template>
+<!-- Animate with vue directive -->
   <div class="about">
-    <div class="cover">
-      <h1>Goofy</h1>
-      <h1>Innovative</h1>
-      <h1>Creative</h1>
-      <h1>Passionate</h1>
-      <h1>Delicious</h1>
-    </div>
-    <article class="history">
+    <header class="about-header">
+        <h1>
+          We are
+        </h1>
+        <h1>
+          <span> Creative,</span>
+        </h1>
+        <h1>
+          <span> Goofy,</span>
+        </h1>
+        <h1>
+          <span> Passionate,</span>
+        </h1>
+        <h1>
+          and <span> Delicious,</span>
+        </h1>
+    </header>
+
+    <article class="about-history">
       <h1>Our History</h1>
       <p>Pie On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.  I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?  Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate.  I wasn't a savage, after all.  I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely.</p>
     </article>
 
-    <article class="today">
+    <article class="about-today">
       <h1>So here we are today...</h1>
       <p>I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p>
       <h1 class="quote">-David Campbell III Founder/CEO</h1>
     </article>
 
-    <section class="members">
+    <section class="about-members">
       <div v-for="member in members" :key="member.id" :class="`member-${member.ID}`">
         <h1>{{member.Name}}</h1>
         <ul>
@@ -91,23 +103,85 @@ export default {
           },
         }
       }
+    },
+    methods: {
+
     }
 }
 </script>
 
 <style lang="scss">
 .about{
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 100vw;
+  // background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
+  background: black;
+  padding: 1em;
 
-  .members{
+ 
+
+
+  &-header{
+    margin: 2.5em 0em 1.5em 0;
+    width: 100%;
+    h1{
+      width: max-content;
+      position: relative;
+      font-size: 2em;
+      &::before{
+        content: '';
+        position: absolute;
+        transform-origin: left;
+        height: 2px;
+        width: 0;
+        left: 0;
+        bottom: 0;
+        background: white;
+        animation: expand .5s linear;
+      }
+      
+      // &:nth-child(1){
+        
+      // }
+      &:nth-child(2){
+        span{
+          color: red;
+        }
+      }
+      &:nth-child(3){
+        span{
+          color: green;
+        }
+      }
+      &:nth-child(4){
+        span{
+          color: blue;
+        }
+      }
+      &:nth-child(5){
+        span{
+          color: yellow;
+
+        }
+      }
+    }
+  }
+
+  &-members{
     max-width: 100vw;
     h1, ul, li, p{
-      width: 100%;
+      max-width: 100%;
+    }
+
+    ul, li{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

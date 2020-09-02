@@ -35,6 +35,8 @@ export default {
   letter-spacing: 1.5px;
 }
 
+
+
 .home{
   position: absolute;
   top: 0;

@@ -1,5 +1,5 @@
 <template>
-     <ul>
+     <ul class="links">
           <li @click="closeNav()">
           <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
           </li>
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-*{
+.links{
      transition: .5s linear;
 }
 ul{

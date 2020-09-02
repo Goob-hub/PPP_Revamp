@@ -5,9 +5,11 @@ import '@/assets/css/constants.scss'
 import VueCarousel from 'vue-carousel'
 import '@/icons.js'
 import VueMobileDetection from 'vue-mobile-detection'
+import animateDirective from '@/directives/animate.js'
 
+Vue.directive('animate', animateDirective);
 
-Vue.use(VueMobileDetection)
+Vue.use(VueMobileDetection);
 
 Vue.use(VueCarousel);
 

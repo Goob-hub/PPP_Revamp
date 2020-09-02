@@ -25,7 +25,7 @@ nav{
      align-items: center;
      height: 100vh;
      overflow: hidden;
-     background: black;
+     background: var(--gradientBG), center/cover fixed no-repeat url('../images/navBg.png');
      transition: .5s linear;
      position: fixed;
      top: 0;

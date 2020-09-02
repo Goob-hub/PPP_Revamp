@@ -1,6 +1,6 @@
 <template>
 <div class="carousel-container">
-     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mousedrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500">
+     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500">
           <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
                <div class="card">
                     <main class="card-info">

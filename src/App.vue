@@ -22,6 +22,15 @@ export default {
   max-width: 100vw;
   background: var(--clr1);
   overflow: hidden;
+
+  h1{
+    font-family: var(--ff1);
+    text-transform: capitalize;
+  }
+  
+  p{
+    font-family: var(--ff2);
+  }
 }
 
 
