@@ -27,10 +27,12 @@ nav{
      overflow: hidden;
      background: var(--gradientBG), center/cover fixed no-repeat url('../images/navBg.png');
      transition: .5s linear;
+     
      position: fixed;
      top: 0;
      left: 0;
      width: 0vw;
+     opacity: 0;
      z-index: 5;
      
      img{
@@ -39,6 +41,7 @@ nav{
      }
 
      &.open{
+          opacity: 1;
           width: 100vw;
      }
 }

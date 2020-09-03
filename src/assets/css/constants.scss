@@ -7,7 +7,7 @@
      --clr2: #5C5956;
      --clr3: #4C4C54;
      --clrTransparent: rgba(0, 0, 0, .8);
-     --gradientBG: linear-gradient(45deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .8));
+     --gradientBG: linear-gradient(45deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .7));
      --ff1: 'Open Sans', sans-serif;
      --ff2: 'Montserrat', sans-serif;
 }
@@ -102,5 +102,16 @@
 
      to{
           width: 100%;
+     }
+}
+@keyframes move {
+     from{
+          font-weight: 300;
+          transform: translateY(100%);
+     }
+
+     to{
+          font-weight: 900;
+          transform: translateY(0%);
      }
 }

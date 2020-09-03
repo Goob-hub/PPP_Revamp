@@ -30,11 +30,7 @@ export default {
           closeNav(){
                let nav = document.querySelector('nav');
                let navBtn = document.querySelector('.nav-btn');
-               (this.$isMobile()) ?
-               (setTimeout(() => {
-                    nav.classList.remove("open");
-                    navBtn.classList.remove("openNav");
-               }, 1200)) : (nav.classList.remove("open"), navBtn.classList.remove("openNav"))
+               (nav.classList.remove("open"), navBtn.classList.remove("openNav"))
           }
      }
 }
@@ -61,7 +57,7 @@ ul{
 
      &:hover{
           span{
-               color: var(--clr3);
+               color: darken(white, 40%);
 
           }
      }
@@ -87,7 +83,7 @@ ul{
                     justify-content: center;
                     align-items: center;
                     font-size: 5.5em;
-                    color: rgba(255, 255, 255, .1);
+                    color: rgba(255, 255, 255, .2);
                     border-radius: 50%;
                     z-index: -1;
                     opacity: 0;

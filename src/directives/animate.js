@@ -7,24 +7,33 @@ export default {
 
           let fadeOut = binding.value.fadeOut ? binding.value.fadeOut : false;
 
+          let transform = binding.value.transform ? binding.value.transform : ['0px', '0px'];
+
           fadeOut ? el.style.opacity = 1 : el.style.opacity = 0;
           
-          let transitions = `opacity ${duration}ms linear ${delay}ms`;
+          let transitions = `opacity ${duration}ms linear ${delay}ms, transform ${duration}ms linear ${delay}ms`;
 
           el.style.transition = transitions;
+          el.style.transform = `translate(${transform.join(',')})`;
 
           getComputedStyle(el);
           
           setTimeout(() => {
                el.style.opacity = 1;
+               el.style.transform = `initial`;
           });
 
-          if(binding.arg === 'exit'){
-               setTimeout(() => {
-                    el.style += ' z-index: -1;'
-                    el.style.transition = `opacity ${duration}ms linear 0ms`
-                    el.style.opacity = '0'
-               }, duration + delay + 100);
+          switch (binding.arg) {
+               case 'exit':
+                    setTimeout(() => {
+                         el.style.transition = `opacity ${duration}ms linear 0ms`
+                         el.style.opacity = '0'
+                    }, duration + delay + 100);
+                    break;
+          
+               default:
+                    console.log('no arg');
+                    break;
           }
 
           

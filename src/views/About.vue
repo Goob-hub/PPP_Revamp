@@ -3,25 +3,25 @@
   <div class="about">
     <header class="about-header">
         <h1>
-          We are
+          <p>We are</p>
         </h1>
         <h1>
-          <span> Creative,</span>
+          <p> Creative,</p>
         </h1>
         <h1>
-          <span> Goofy,</span>
+          <p> Goofy,</p>
         </h1>
         <h1>
-          <span> Passionate,</span>
+          <p> Passionate,</p>
         </h1>
         <h1>
-          and <span> Delicious,</span>
+          <p> Delicious</p>
         </h1>
     </header>
 
     <article class="about-history">
-      <h1>Our History</h1>
-      <p>Pie On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.  I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?  Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate.  I wasn't a savage, after all.  I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely.</p>
+      <h1 v-animate="{delay: 1400, transform: ['0px', '100px']}">Our History</h1>
+      <p v-animate="{delay: 1400, transform: ['0px', '100px']}">Pie On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.  I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?  Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate.  I wasn't a savage, after all.  I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely.</p>
     </article>
 
     <article class="about-today">
@@ -105,14 +105,15 @@ export default {
       }
     },
     methods: {
-
+      
+      
     }
 }
 </script>
 
 <style lang="scss">
 .about{
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,17 +122,22 @@ export default {
   // background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
   background: black;
   padding: 1em;
-
- 
-
-
+  
   &-header{
-    margin: 2.5em 0em 1.5em 0;
+    margin: 0 0em 5vh 0;
     width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     h1{
       width: max-content;
       position: relative;
       font-size: 2em;
+      overflow: hidden;
+      margin-top: .25em;
       &::before{
         content: '';
         position: absolute;
@@ -141,33 +147,76 @@ export default {
         left: 0;
         bottom: 0;
         background: white;
-        animation: expand .5s linear;
+        animation: expand .8s cubic-bezier(0.42, 0, 0, 0.995);
+        animation-fill-mode: forwards;
       }
-      
-      // &:nth-child(1){
-        
-      // }
+
+      p{
+        font-weight: 300;
+        transform: translateY(-120px);
+        animation: move .5s ease-in-out;
+        animation-fill-mode: forwards;
+        text-shadow: 0px 0px 5px rgba(white, .6);
+      }
+
+      &:nth-child(1){
+        p{
+          animation-delay: .7s;
+        }
+      }
+
       &:nth-child(2){
-        span{
+        &::before{
+          animation-delay: .5s;
+        }
+        p{
+          animation-delay: 1.2s;
           color: red;
+          text-shadow: 0px 0px 5px rgba(red, .6);
         }
       }
       &:nth-child(3){
-        span{
+        &::before{
+          animation-delay: 1s;
+        }
+        p{
+          animation-delay: 1.7s;
           color: green;
+          text-shadow: 0px 0px 5px rgba(green, .6);
         }
       }
       &:nth-child(4){
-        span{
+        &::before{
+          animation-delay: 1.5s;
+        }
+        p{
+          animation-delay: 2.2s;
           color: blue;
+          text-shadow: 0px 0px 5px rgba(blue, .6);
         }
       }
       &:nth-child(5){
-        span{
+        &::before{
+          animation-delay: 2s;
+        }
+        p{
+          animation-delay: 2.7s;
           color: yellow;
-
+          text-shadow: 0px 0px 5px rgba(yellow, .6);
         }
       }
+    }
+  }
+
+  &-history, &-today{
+    padding: .5em;
+    h1{
+      font-size: 2em;
+      margin: .5em;
+    }
+    p{
+      line-height: 1.75em;
+
     }
   }
 
