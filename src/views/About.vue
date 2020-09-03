@@ -17,6 +17,10 @@
         <h1>
           <p> Delicious</p>
         </h1>
+        <div class="scroll" v-animate="{delay: 4000}">
+          <span></span>
+          <p>scroll</p>
+        </div>
     </header>
 
     <article class="about-history">
@@ -119,8 +123,8 @@ export default {
   justify-content: center;
   align-items: center;
   max-width: 100vw;
-  // background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
-  background: black;
+  background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
+  // background: black;
   padding: 1em;
   
   &-header{
@@ -156,7 +160,7 @@ export default {
         transform: translateY(-120px);
         animation: move .5s ease-in-out;
         animation-fill-mode: forwards;
-        text-shadow: 0px 0px 5px rgba(white, .6);
+        color: darken(white, 20%);
       }
 
       &:nth-child(1){
@@ -171,8 +175,8 @@ export default {
         }
         p{
           animation-delay: 1.2s;
-          color: red;
-          text-shadow: 0px 0px 5px rgba(red, .6);
+          // color: red;
+          // text-shadow: 0px 0px 5px rgba(red, .8);
         }
       }
       &:nth-child(3){
@@ -181,8 +185,8 @@ export default {
         }
         p{
           animation-delay: 1.7s;
-          color: green;
-          text-shadow: 0px 0px 5px rgba(green, .6);
+          // color: green;
+          // text-shadow: 0px 0px 5px rgba(green, .8);
         }
       }
       &:nth-child(4){
@@ -191,8 +195,8 @@ export default {
         }
         p{
           animation-delay: 2.2s;
-          color: blue;
-          text-shadow: 0px 0px 5px rgba(blue, .6);
+          // color: blue;
+          // text-shadow: 0px 0px 5px rgba(blue, .8);
         }
       }
       &:nth-child(5){
@@ -201,9 +205,38 @@ export default {
         }
         p{
           animation-delay: 2.7s;
-          color: yellow;
-          text-shadow: 0px 0px 5px rgba(yellow, .6);
+          // color: yellow;
+          // text-shadow: 0px 0px 5px rgba(yellow, .6);
         }
+      }
+    }
+
+    .scroll{
+      position: absolute;
+      margin-top: 1em;
+      bottom: 3em;
+      left: 50%;
+      transform: translateX(-55%);
+      p{
+        transform: translateY(-5em);
+        animation: dissapear 2s linear infinite;
+        animation-delay: .5s;
+        margin-top: 3em;
+      }
+      span{
+        position: absolute;
+        height: 3.1em;
+        width: .6px;
+        overflow: hidden;
+        &::before{
+          content: '';
+          position: absolute;
+          height: 3em;
+          width: .5px;
+          background: white;
+          animation: shrink 2s linear infinite;
+        }
+
       }
     }
   }

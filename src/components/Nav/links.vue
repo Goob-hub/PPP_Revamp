@@ -57,7 +57,7 @@ ul{
 
      &:hover{
           span{
-               color: darken(white, 40%);
+               color: rgba(255, 255, 255, .4);
 
           }
      }
@@ -95,6 +95,7 @@ ul{
 
 
                &:hover{
+                    
                     &::before{
                          content: attr(data-text);
                          opacity: 1;
@@ -102,13 +103,15 @@ ul{
                          height: 100%;
                          width: 100%;
                          transform: translate(-50%, -50%);
-                         letter-spacing: 3px;
+                         letter-spacing: 10px;
                     }
 
                     span{
                          
                          font-size: 2.5em;
-                         color: var(--clrTxt);
+                         padding: .15em;
+                         background: rgba(255, 255, 255, .8);
+                         color: black;
                     }
                }
                span{

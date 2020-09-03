@@ -25,8 +25,20 @@ nav{
      align-items: center;
      height: 100vh;
      overflow: hidden;
-     background: var(--gradientBG), center/cover fixed no-repeat url('../images/navBg.png');
+     // background: var(--gradientBG), center/cover fixed no-repeat url('../images/navBg.png');
+     background: black;
      transition: .5s linear;
+
+     &::before{
+          content: '';
+          position: absolute;
+          height: 100vh;
+          width: 50vw;
+          top: 0;
+          left: 0;
+          background: rgba(255, 255, 255, .1);
+     }
+
      
      position: fixed;
      top: 0;
