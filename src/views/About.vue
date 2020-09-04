@@ -34,23 +34,32 @@
       <h1 class="quote">-David Campbell III Founder/CEO</h1>
     </article>
 
+
     <section class="about-members">
-      <div v-for="member in members" :key="member.id" :class="`member-${member.ID}`">
-        <h1>{{member.Name}}</h1>
-        <ul>
-          <li>
-            <p>{{member.Position}}</p>
-          </li>
-          <li>
+      <div v-for="member in members" :key="member.id" class="card" :class="`member-${member.ID}`">
+        <div class="imgBx">
+          <div>
+            <img :src="member.img" alt="what">
+            <h1>{{member.Name}}</h1>
+            <p>-{{member.Position}}</p>
+          </div>
+        </div>
+        <div class="overlay">
+        </div>
+        <div class="content">
+          <article>
+            <h1>Date hired:</h1>
             <p>{{member.DateHired}}</p>
-          </li>
-          <li>
+          </article>
+          <article>
+            <h1>Favorite Game:</h1>
             <p>{{member.FavoriteGame}}</p>
-          </li>
-          <li>
+          </article>
+          <article>
+            <h1>Fun Fact:</h1>
             <p>{{member.FunFact}}</p>
-          </li>
-        </ul>
+          </article>
+        </div>
       </div>
     </section>
   </div>
@@ -65,45 +74,46 @@ export default {
             ID: 1,
             Name: 'David CampBell III',
             Position: 'Founder, CEO, Lead Developer, Lead Programmer',
-            DateHired: 'Started - 2017',
-            FavoriteGame: 'Favorite Game - Empyrion - Galactic Survival',
-            FunFact: 'Special Talent - “I can neigh like a horse surprisingly well, and once did so in a stable full of horses who then proceeded to freak the hell out”',
-            imgSrc: ''
+            DateHired: '2017',
+            FavoriteGame: 'Empyrion - Galactic Survival',
+            FunFact: '“I can neigh like a horse surprisingly well, and once did so in a stable full of horses who then proceeded to freak the hell out”',
+            img: require("../components/images/david.jpg")
           },
           2: {
             ID: 2,
             Name: 'Andy Montoya IV',
             Position: 'Lead Artist, Lead Animator',
-            DateHired: 'Started - 2019', 
-            FavoriteGame: 'Favorite Game - Tearaway',
-            FunFact: 'Fun Fact - “I was an extra in episode 19, season 2 of Chicago P.D”',
-            imgSrc: ''
+            DateHired: '2019', 
+            FavoriteGame: 'Tearaway',
+            FunFact: '“I was an extra in episode 19, season 2 of Chicago P.D”',
+            img: require('../components/images/andy.jpg')
           },
           3: {
             ID: 3,
             Name: 'amber Lee Warland',
             Position: 'Lead Soundtrack Composer, Lead Sound Developer',
-            DateHired: 'Started - 2019', 
-            FavoriteGame: 'Favorite Game - Roller Coaster Tycoon 2',
-            FunFact: 'Fun Fact - “I was once spat on by a Beluga whale”'
+            DateHired: '2019', 
+            FavoriteGame: 'Roller Coaster Tycoon 2',
+            FunFact: '“I was once spat on by a Beluga whale”',
+            img: require('../components/images/amber.jpg')
           },
           4: {
             ID: 4,
             Name: 'Ariadne Alcala Collazo',
             Position: 'Lead Translator',
-            DateHired: 'Started - 2019', 
-            FavoriteGame: 'Favorite Games - Sims4 and The Elder Scrolls Online',
-            FunFact: 'Fun Fact - “Once I got an unwanted kiss from a seal. Still traumatized.”',
-            imgSrc: ''
+            DateHired: '2019', 
+            FavoriteGame: 'Sims4 and The Elder Scrolls Online',
+            FunFact: '“Once I got an unwanted kiss from a seal. Still traumatized.”',
+            img: require('../components/images/Ariadne.jpg')
           },
           5: {
             ID: 5,
             Name: 'Fran Vergara',
             Position: 'Artist',
-            DateHired: 'Started - 2019', 
-            FavoriteGame: 'Favorite Game - Persona 4',
-            FunFact: 'Fun Fact - “With 13 years I created my own radio station at home (no license, of course), I even appeared in the press, but I got bored and I closed it. I was also the 17th pokemon trainer worldwide once.”',
-            imgSrc: ''
+            DateHired: '2019', 
+            FavoriteGame: 'Persona 4',
+            FunFact: '“With 13 years I created my own radio station at home (no license, of course), I even appeared in the press, but I got bored and I closed it. I was also the 17th pokemon trainer worldwide once.”',
+            img: require('../components/images/Fran.jpg')
           },
         }
       }
@@ -126,6 +136,7 @@ export default {
   background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
   // background: black;
   padding: 1em;
+
   
   &-header{
     margin: 0 0em 5vh 0;
@@ -249,21 +260,171 @@ export default {
     }
     p{
       line-height: 1.75em;
-
+      font-size: .85em;
     }
   }
 
   &-members{
-    max-width: 100vw;
-    h1, ul, li, p{
-      max-width: 100%;
-    }
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
-    ul, li{
+    .card{
+      position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      width: 300px;
+      height: 400px;
+      z-index: 2;
+      margin: 2.5em 1em 2.5em 1em;
+
+      &::before{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+          background: rgba(255,255,255, .1);
+      }
+
+      img{
+        position: relative;
+        width: 110px;
+        height: 135px;
+      }
+
+      &.member{
+        &-1{
+            background: linear-gradient(45deg, #3B363A, #988C8C);
+        }
+        &-2{
+            background: linear-gradient(45deg, #5A3926, #7B4F2F);
+        }
+        &-3{
+            background: linear-gradient(45deg, #2d6885, #7eaeb4);
+        }
+        &-4{
+            background: linear-gradient(45deg, #452311, #D1894C);
+        }
+        &-5{
+            background: linear-gradient(45deg, #7C7667, #737376);
+        }
+      }
+
+      .imgBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+
+        div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          h1{
+            max-width: 90%;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            margin: 1em 0 0 0;
+          }
+          p{
+              max-width: 80%;
+              margin-top: 1em;
+              font-size: .8em;
+              font-style: italic;
+          }
+        }
+      }
+
+      .overlay{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0, .4);
+        cursor: pointer;
+        background: inherit;
+        transition: .5s;
+        
+        &::before{
+          content: 'Read';
+          font-family: var(--ff1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #fff;
+          font-weight: 900;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: .5s linear;
+        }
+
+        &:hover{
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+
+          & ~ .content{
+            transition: .5s linear .3s;
+            opacity: 1;
+          }
+          &::before{
+            display: none;
+          }
+        }
+
+        
+      }
+
+      .content{
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        z-index: 2;
+        padding: 1em;
+        
+        article{
+          p{
+            margin-top: .5em;
+          }
+        }
+      
+      }
+    }
+
+    h1, img, p{
+      max-width: 100%;
     }
   }
 }

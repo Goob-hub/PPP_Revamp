@@ -137,7 +137,11 @@
      }
 }
 @keyframes dissapear {
-     0%, 100%{
+     0%{
+          opacity: 0;
+     }
+     
+     10%{
         
          opacity: 1;
      }
@@ -152,7 +156,7 @@
           opacity: 0;
      }
 
-     95%{
+     100%{
           opacity: 0;
      }
 }
