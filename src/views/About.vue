@@ -1,6 +1,7 @@
 <template>
 <!-- Animate with vue directive -->
   <div class="about">
+    {{addEvents()}}
     <header class="about-header">
         <h1>
           <p>We are</p>
@@ -17,26 +18,35 @@
         <h1>
           <p> Delicious</p>
         </h1>
-        <div class="scroll" v-animate="{delay: 4000}">
+        <div class="scroll" v-animate="{delay: 3500}" v-if="this.showScrollCue">
           <span></span>
           <p>scroll</p>
         </div>
     </header>
 
     <article class="about-history">
-      <h1 v-animate="{delay: 1400, transform: ['0px', '100px']}">Our History</h1>
-      <p v-animate="{delay: 1400, transform: ['0px', '100px']}">Pie On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.  I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?  Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate.  I wasn't a savage, after all.  I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely.</p>
+      <h1 v-scrollanimation>Our History</h1>
+      <br>
+      <p v-scrollanimation>
+        On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.
+        </p>  <br>
+      <p v-scrollanimation>I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?</p> <br>
+      <p v-scrollanimation>
+        Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate. I wasn't a savage, after all.
+      </p> <br>
+      <p v-scrollanimation>
+         I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely. 
+      </p>
     </article>
 
     <article class="about-today">
-      <h1>So here we are today...</h1>
-      <p>I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p>
-      <h1 class="quote">-David Campbell III Founder/CEO</h1>
+      <h1 v-scrollanimation>So here we are today...</h1>
+      <br>
+      <p v-scrollanimation>I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p> <br> <p class="quote" v-scrollanimation><strong style="font-size: 1.2em;">-David Campbell III Founder/CEO</strong></p>
     </article>
 
-
     <section class="about-members">
-      <div v-for="member in members" :key="member.id" class="card" :class="`member-${member.ID}`">
+      <div v-for="member in members" :key="member.id" class="card" :class="`member-${member.ID}`" v-scrollanimation>
         <div class="imgBx">
           <div>
             <img :src="member.img" alt="what">
@@ -69,6 +79,7 @@
 export default {
     data(){
       return{
+        showScrollCue: true,
         members: {
           1: {
             ID: 1,
@@ -119,8 +130,18 @@ export default {
       }
     },
     methods: {
-      
-      
+      addEvents(){
+        setTimeout(() => {
+          window.addEventListener('scroll', () => {
+            if(window.scrollY > 0){
+              this.showScrollCue = false;
+            }
+            else {
+              this.showScrollCue = true;
+            }
+          });
+        });
+      }
     }
 }
 </script>
@@ -134,7 +155,7 @@ export default {
   align-items: center;
   max-width: 100vw;
   background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
-  // background: black;
+  // background: #111;
   padding: 1em;
 
   
@@ -157,7 +178,7 @@ export default {
         content: '';
         position: absolute;
         transform-origin: left;
-        height: 2px;
+        height: 1px;
         width: 0;
         left: 0;
         bottom: 0;
@@ -252,6 +273,10 @@ export default {
     }
   }
 
+  &-history{
+    margin-top: 10vh;
+  }
+
   &-history, &-today{
     padding: .5em;
     h1{
@@ -261,6 +286,19 @@ export default {
     p{
       line-height: 1.75em;
       font-size: .85em;
+    }
+
+    h1,p{
+      &.before-enter{
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all .7s linear .3s;
+      }
+
+      &.enter{
+        transform: translateY(0px);
+        opacity: 1;
+      }
     }
   }
 
@@ -273,6 +311,16 @@ export default {
     align-items: center;
 
     .card{
+      &.before-enter{
+        opacity: 0;
+        transform: rotate(35deg);
+        transition: all .7s linear .3s;
+      }
+
+      &.enter{
+        opacity: 1;
+        transform: initial;
+      }
       position: relative;
       display: flex;
       justify-content: center;
@@ -366,7 +414,7 @@ export default {
         transition: .5s;
         
         &::before{
-          content: 'Read';
+          content: 'Info';
           font-family: var(--ff1);
           position: absolute;
           top: 0;
@@ -383,7 +431,7 @@ export default {
           transition: .5s linear;
         }
 
-        &:hover{
+        &:hover, :focus{
           bottom: 0;
           right: 0;
           width: 100%;

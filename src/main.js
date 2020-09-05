@@ -6,8 +6,10 @@ import VueCarousel from 'vue-carousel'
 import '@/icons.js'
 import VueMobileDetection from 'vue-mobile-detection'
 import animateDirective from '@/directives/animate.js'
+import scrollAnimateDirective from '@/directives/scrollanimate.js'
 
 Vue.directive('animate', animateDirective);
+Vue.directive('scrollanimation', scrollAnimateDirective);
 
 Vue.use(VueMobileDetection);
 
