@@ -72,11 +72,17 @@
         </div>
       </div>
     </section>
+
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 export default {
+  components: {
+    Footer
+  },
     data(){
       return{
         showScrollCue: true,
@@ -156,7 +162,7 @@ export default {
   max-width: 100vw;
   background: var(--gradientBG), center/cover fixed no-repeat url('../components/images/Backdrop.png');
   // background: #111;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
 
   
   &-header{
@@ -311,6 +317,16 @@ export default {
     align-items: center;
 
     .card{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 300px;
+      height: 400px;
+      z-index: 2;
+      margin: 2.5em 1em 2.5em 1em;
+
       &.before-enter{
         opacity: 0;
         transform: rotate(35deg);
@@ -321,15 +337,6 @@ export default {
         opacity: 1;
         transform: initial;
       }
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 300px;
-      height: 400px;
-      z-index: 2;
-      margin: 2.5em 1em 2.5em 1em;
 
       &::before{
           content: '';
@@ -396,6 +403,7 @@ export default {
               margin-top: 1em;
               font-size: .8em;
               font-style: italic;
+              font-weight: bold;
           }
         }
       }
