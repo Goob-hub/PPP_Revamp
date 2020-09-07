@@ -28,13 +28,13 @@ export default {
 .ppp-footer{
      background: #111;
      width: 100vw;
-     min-height: 25vh;
+     min-height: 30vh;
      padding: 1em;
      display: flex;
      justify-content: space-around;
      align-items: center;
      flex-direction: column;
-     p{
+     p, .icons{
           margin-top: 1em;
      }
 

@@ -4,7 +4,7 @@
           <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
           </li>
           <li @click="closeNav()">
-          <router-link to="#" class="btn" data-text="Contact"><span>Contact</span></router-link>
+          <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
           </li>
           <li @click="closeNav()">
           <router-link to="#" class="btn" data-text="Jobs"><span>Jobs</span></router-link>

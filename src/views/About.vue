@@ -1,4 +1,5 @@
 <template>
+
 <!-- Animate with vue directive -->
   <div class="about">
     {{addEvents()}}
