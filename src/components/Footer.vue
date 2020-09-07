@@ -1,20 +1,20 @@
 <template>
   <footer class="ppp-footer">
        <div class="icons">
-          <button class="btn fa-fb" v-scrollanimation>
+          <button class="btn fa-fb" v-scrollanimation="{delay: 0}">
                <fa-icon :icon="['fab', 'facebook-f']"  size="2x" class="fa"/>
           </button>
-          <button class="btn fa-r" v-scrollanimation>
+          <button class="btn fa-r" v-scrollanimation="{delay: 250}">
                <fa-icon :icon="['fab', 'reddit-alien']" size="2x" class="fa"/>
           </button>
-          <button class="btn fa-i" v-scrollanimation>
+          <button class="btn fa-i" v-scrollanimation="{delay: 500}">
                <fa-icon :icon="['fab', 'instagram']" size="2x" class="fa"/>
           </button>
-          <button class="btn fa-t" v-scrollanimation>
+          <button class="btn fa-t" v-scrollanimation="{delay: 750}">
                <fa-icon :icon="['fab', 'twitter']" size="2x" class="fa"/> 
           </button>
        </div>
-       <p>Copyright © 2017-2020 Pie On A Plate Productions LLC</p>
+       <p v-scrollanimation="{delay: 0}">Copyright © 2017-2020 Pie On A Plate Productions LLC</p>
   </footer>
 </template>
 

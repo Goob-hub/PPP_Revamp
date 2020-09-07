@@ -1,5 +1,4 @@
 <template>
-
 <!-- Animate with vue directive -->
   <div class="about">
     {{addEvents()}}
@@ -26,28 +25,28 @@
     </header>
 
     <article class="about-history">
-      <h1 v-scrollanimation>Our History</h1>
+      <h1 v-scrollanimation="{delay: 100}">Our History</h1>
       <br>
-      <p v-scrollanimation>
+      <p v-scrollanimation="{delay: 100}">
         On A Plate Productions was actually originally thought of when I was 10, over 9 years ago.
         </p>  <br>
-      <p v-scrollanimation>I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?</p> <br>
-      <p v-scrollanimation>
+      <p v-scrollanimation="{delay: 100}">I was scribbling in a notebook alongside all my other drawings, and drew a single piece of pumpkin pie on a small, gray plate.  Why did I draw this specifically?</p> <br>
+      <p v-scrollanimation="{delay: 100}">
         Well, because I've always loved pumpkin pie (no seriously, I once ate an entire one by myself in like 10 minutes and ruined Thanksgiving), and I wasn't just going to draw some delicious piece of food without a plate. I wasn't a savage, after all.
       </p> <br>
-      <p v-scrollanimation>
+      <p v-scrollanimation="{delay: 100}">
          I thought for a moment, and tilted it appropriately: "Pie On A Plate Productions".  The drawing was lost among the others, and I soon forgot about it entirely. 
       </p>
     </article>
 
     <article class="about-today">
-      <h1 v-scrollanimation>So here we are today...</h1>
+      <h1 v-scrollanimation="{delay: 100}">So here we are today...</h1>
       <br>
-      <p v-scrollanimation>I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p> <br> <p class="quote" v-scrollanimation><strong style="font-size: 1.2em;">-David Campbell III Founder/CEO</strong></p>
+      <p v-scrollanimation="{delay: 100}">I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p> <br> <p class="quote" v-scrollanimation="{delay: 100}"><strong style="font-size: 1.2em;">-David Campbell III Founder/CEO</strong></p>
     </article>
 
     <section class="about-members">
-      <div v-for="member in members" :key="member.id" class="card" :class="`member-${member.ID}`" v-scrollanimation>
+      <div v-for="member in members" :key="member.id" class="card" :class="`member-${member.ID}`" v-scrollanimation="{delay: 100}">
         <div class="imgBx">
           <div>
             <img :src="member.img" alt="what">
@@ -214,8 +213,6 @@ export default {
         }
         p{
           animation-delay: 1.2s;
-          // color: red;
-          // text-shadow: 0px 0px 5px rgba(red, .8);
         }
       }
       &:nth-child(3){
@@ -224,8 +221,6 @@ export default {
         }
         p{
           animation-delay: 1.7s;
-          // color: green;
-          // text-shadow: 0px 0px 5px rgba(green, .8);
         }
       }
       &:nth-child(4){
@@ -234,8 +229,6 @@ export default {
         }
         p{
           animation-delay: 2.2s;
-          // color: blue;
-          // text-shadow: 0px 0px 5px rgba(blue, .8);
         }
       }
       &:nth-child(5){
@@ -244,8 +237,6 @@ export default {
         }
         p{
           animation-delay: 2.7s;
-          // color: yellow;
-          // text-shadow: 0px 0px 5px rgba(yellow, .6);
         }
       }
     }

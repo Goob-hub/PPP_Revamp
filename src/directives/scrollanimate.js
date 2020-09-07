@@ -10,8 +10,11 @@ const animatedScrollObserver = new IntersectionObserver(
 })
 
 export default{
-     bind(el){
+     bind(el, binding){
+          let delay = binding.value.delay !== undefined ? binding.value.delay : 0;
           el.classList.add('before-enter');
-          animatedScrollObserver.observe(el)
+          setTimeout(() => {
+               animatedScrollObserver.observe(el)
+          }, delay);
      }
 }
