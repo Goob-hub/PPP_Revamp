@@ -8,23 +8,34 @@
             <div class="input-data">
                <input type="text" name="name" required>
                <label for="name" ><p>Name</p></label>
+               <div class="underline"></div>
             </div>
 
             <div class="input-data">
                <input type="email" name="email" required>
                <label for="email"><p>Email</p></label>
+               <div class="underline"></div>
             </div>
             
+          <h1>Reason for contact</h1>
           <div class="form-reason">
-               <h1>Reason for contact</h1>
-
-               <input type="radio" name="reason" value="General-Info" required><p>General Info</p>
-
-               <input type="radio" name="reason" value="Game-Support"><p>Game Support</p>
-
-               <input type="radio" name="reason" value="Press-Inquiry"><p>Press Inquiry</p>
-
-               <input type="radio" name="reason" value="Other"><p>Other</p>
+               <div class="radio-container">
+                    <input type="radio" name="reason" value="Game-Support">
+                    <p class="new-radio btn-design btn">Game Support</p>
+               </div>
+               <div class="radio-container">
+                    <input type="radio" name="reason" value="Press-Inquiry">
+                    <p class="new-radio btn-design btn">Press Inquiry</p>
+               </div>
+               <div class="radio-container">
+                    <input type="radio" name="reason" value="General-Info" required>
+                    <p class="new-radio btn-design btn">General Info</p>
+               </div>
+               <div class="radio-container">
+                    <input type="radio" name="reason" value="Other">
+                    <p class="new-radio btn-design btn">Other</p>
+               </div>
+               
           </div>
 
           <div class="input-data">
@@ -32,7 +43,7 @@
                <label for="Message"><p>Message</p></label>
           </div>
 
-          <input type="submit" @click="$emit('prevent', noSubmit($event))" class="btn btn-submit">
+          <input type="submit"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design">
        </form>
 
        <pppFooter />
@@ -58,7 +69,7 @@ export default {
 
 <style lang="scss">
 
-.Contact, .Contact-header, .Contact-form, .input-data{
+.Contact, .Contact-header, .Contact-form, .input-data, .form-reason{
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -93,6 +104,17 @@ export default {
           .input-data{
                margin: 1.5em ;
                position: relative;
+               .underline{
+                    transition: .5s linear;
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #44e018;
+               }
+
                input, textarea{
                     font-family: var(--ff2);
                     font-size: 1em;
@@ -102,11 +124,10 @@ export default {
                     border: none;
                     border-bottom: 2px solid white;
                     
-     
-     
                     &:focus{
                          outline: none;
                     }
+
                    
                }
 
@@ -117,20 +138,39 @@ export default {
                     bottom: 0;
                     padding: 0 0 .5em .5em;
                     pointer-events: none;
+                    p{
+                         transition: .5s linear;
+                    }
                }
 
                & input:focus ~ label, input:valid ~ label{
                     transform: translateY(-100%);
+                    p{
+                         color: #44e018;
+                    }
+                    
+               }
+
+               & input:focus ~ .underline, input:valid ~ .underline{
+                    width: 100%;
                     
                }
 
                textarea:focus ~ label, textarea:valid ~ label{
                     transform: translateY(-150%);
+                    p{
+                         color: #44e018;
+                    }
                }
+
                textarea {
+                    transition: .5s linear;
                     margin-top: 2em;
                     border: 1px solid white;
                     padding: 1em;
+                    &:focus{
+                         border-color: #44e018;
+                    }
                     &~label{
                          margin-top: 2em;
                          padding: 1em;
@@ -138,6 +178,43 @@ export default {
                          bottom: 100%;
                     }
                }
+
+          }
+
+          .form-reason{
+               margin-top: 1em;
+
+               .radio-container{
+                    position: relative;
+
+                    input{
+                         position: absolute;
+                         opacity: 0;
+                         height: 100%;
+                         width: 100%;
+                         top: 0;
+                         left: 0;
+                         z-index: 3;
+                         cursor: pointer;
+                         &:hover ~ .new-radio{
+                              background:white;
+                              color: black;
+                         }
+                    }
+     
+                    input:checked ~ .new-radio{
+                         background: #44e018;
+                         border-color: #44e018;
+                         color: black;
+                    }
+               }
+
+               
+          }
+
+          .btn-submit{
+               font-family: var(--ff2);
+               font-size: 1em;
           }
      }
 

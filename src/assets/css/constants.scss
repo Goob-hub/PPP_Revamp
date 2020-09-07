@@ -71,6 +71,25 @@
      }
 }
 
+.btn-design{
+     position: relative;
+     font-weight: bolder;
+     width: max-content;
+     margin: .5em;
+     padding: .5em;
+     border: 2px solid white;
+     background: transparent;
+
+     p{
+          font-weight: bolder;
+     }
+
+     &:hover{
+          background: white;
+          color: black;
+     }
+}
+
 
 
 @keyframes glitch {
