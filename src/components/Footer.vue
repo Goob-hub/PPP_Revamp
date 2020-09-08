@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 .ppp-footer{
      background: #111;
      width: 100vw;
@@ -36,6 +36,10 @@ export default {
      flex-direction: column;
      p, .icons{
           margin-top: 1em;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
      }
 
      .btn{

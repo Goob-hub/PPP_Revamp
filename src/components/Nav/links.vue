@@ -7,7 +7,7 @@
           <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
           </li>
           <li @click="closeNav()">
-          <router-link to="#" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
+          <router-link to="/Jobs" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
           </li>
           <li @click="closeNav()">
           <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
