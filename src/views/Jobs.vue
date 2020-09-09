@@ -9,20 +9,24 @@
           <h1>However,</h1>
           <p>if you are interested in being part of the team without any promise of substantial pay, and you fit one of the needed jobs listed below, then fill out our <router-link to="/Contact">Contact Form</router-link> and we will see if we can work something out!</p>
      </article>
-     <section class="positions">
-          <h1>We Are Currently In Need of...</h1>
-          <article v-for="Job in Jobs" :key="Job.ID" :class="`Job-${Job.ID}`">
-               <h1>Skilled 3D artist/animator</h1>
-               <p>
-                    <span>Experience with:</span> <br>
-               </p>
-               <ul>
-                    <li v-for="Skill in Job.skills" :key="Skill">{{Skill}}</li>
-                    
-               </ul>
-          </article>
-          
-     </section>
+     <section class="cards-container">
+          <h1>We are currently in need of...</h1>
+          <div v-for="Job in Jobs" :key="Job.id" class="card" :class="`card-${Job.ID}`" v-scrollanimation="{delay: 100}">
+               <div class="imgBx">
+                    <div>
+                    <img :src="Job.Img" alt="what">
+                    <h1>{{Job.Title}}</h1>
+                    </div>
+               </div>
+               <div class="overlay">
+               </div>
+               <div class="content" v-for="skill in Job.skills" :key="skill">
+                    <article>
+                    <p>{{skill}}</p>
+                    </article>
+               </div>
+          </div>
+    </section>
      <pppFooter />
      
   </main>
@@ -40,6 +44,7 @@ export default {
                     {
                          ID: 1,
                          Title: 'Skilled 3D Artist/Animator',
+                         Img: require('../components/images/3D.jpg'),
                          skills:[
                               'Modeling and rigging in Maya/3DS Max',
                               'Substance Painter',
@@ -51,6 +56,7 @@ export default {
                     {
                          ID: 2,
                          Title: 'Community Manager',
+                         Img: require('../components/images/CM.jpg'),
                          skills: [
                               'Social media posting/community interaction on all major platforms (Facebook, Twitter, Reddit, Discord, Youtube etc.)',
                               'Primoting/advertising products for online sale',
@@ -78,25 +84,36 @@ export default {
      background: var(--gradientBGD), center/cover fixed no-repeat url('../components/images/Backdrop3.png');
      padding: 1em 1em 0 1em;
 
-          p{
-               text-align: center;
-               line-height: 1.5em;
-               letter-spacing: 2px;
-          }
+     p{
+          text-align: center;
+          line-height: 1.5em;
+          letter-spacing: 2px;
+     }
 
-          h1{
-               margin: 1em 0 .5em 0;
-          }
+     h1{
+          margin: 1em 0 .5em 0;
+     }
 
-          h2{
-               font-family: var(--ff1);
-               margin:0 0 .5em 0;
-          }
-          p, h1, h2{
-               max-width: 90%;
-               text-align: center;
-          } 
+     h2{
+          font-family: var(--ff1);
+          margin:0 0 .5em 0;
+     }
+     p, h1, h2{
+          max-width: 90%;
+          text-align: center;
+     } 
 
+     .cards-container{
+
+          .card{
+               &-1{
+                    background: linear-gradient(45deg, #13171B, #7392a5);
+               }
+               &-2{
+                    background: linear-gradient(45deg,#4B4641, #C4AE8F);
+               }
+          }
+     }
 
      .ppp-footer{
           margin-top: 2em;
