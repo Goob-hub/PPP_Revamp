@@ -9,8 +9,8 @@
           <h1>However,</h1>
           <p>if you are interested in being part of the team without any promise of substantial pay, and you fit one of the needed jobs listed below, then fill out our <router-link to="/Contact">Contact Form</router-link> and we will see if we can work something out!</p>
      </article>
+     <h1>We are currently in need of...</h1>
      <section class="cards-container">
-          <h1>We are currently in need of...</h1>
           <div v-for="Job in Jobs" :key="Job.id" class="card" :class="`card-${Job.ID}`" v-scrollanimation="{delay: 100}">
                <div class="imgBx">
                     <div>
@@ -104,7 +104,8 @@ export default {
      } 
 
      .cards-container{
-
+          flex-direction: row;
+          flex-wrap: wrap;
           .card{
                &-1{
                     background: linear-gradient(45deg, #13171B, #7392a5);
