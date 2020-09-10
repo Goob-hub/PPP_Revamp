@@ -39,7 +39,7 @@
           </div>
 
           <div class="input-data">
-               <textarea required name="Message" id="Message" cols="30" rows="10"></textarea>
+               <textarea required name="Message" id="Message" cols="25" rows="9"></textarea>
                <label for="Message"><p>Message</p></label>
           </div>
 
@@ -101,6 +101,11 @@ export default {
      }
 
      .Contact-form{
+          padding: .5em;
+          h1{
+               max-width: 80%;
+               padding: .5em;
+          }
           .input-data{
                margin: 1.5em ;
                position: relative;

@@ -1,15 +1,15 @@
 <template>
   <main class="Jobs">
-     <header :scrollanimation="{delay: 0}">
-     <h1>Join us</h1>
-     <h2>(Volunteer Positions Only!)</h2>
-     <p>Pie On A Plate Productions is not currently looking to hire anyone due to the exclusive fact that we have pretty much no money right now, being a startup by a college kid and all.  Once games are released and we have a stream of revenue, then you bet your lucky stars we are going to be looking for the most talented artists, programmers, and designers we can find.</p>
+     <header>
+     <h1 v-scrollanimation="{delay: 100}">Join us</h1>
+     <h2 v-scrollanimation="{delay: 100}">(Volunteer Positions Only!)</h2>
+     <p v-scrollanimation="{delay: 100}">Pie On A Plate Productions is not currently looking to hire anyone due to the exclusive fact that we have pretty much no money right now, being a startup by a college kid and all.  Once games are released and we have a stream of revenue, then you bet your lucky stars we are going to be looking for the most talented artists, programmers, and designers we can find.</p>
      </header>
      <article>
-          <h1>However,</h1>
-          <p>if you are interested in being part of the team without any promise of substantial pay, and you fit one of the needed jobs listed below, then fill out our <router-link to="/Contact">Contact Form</router-link> and we will see if we can work something out!</p>
+          <h1 v-scrollanimation="{delay: 100}">However,</h1>
+          <p v-scrollanimation="{delay: 100}">if you are interested in being part of the team without any promise of substantial pay, and you fit one of the needed jobs listed below, then fill out our <router-link to="/Contact">Contact Form</router-link> and we will see if we can work something out!</p>
      </article>
-     <h1>We are currently in need of...</h1>
+     <h1 v-scrollanimation="{delay: 100}">We are currently in need of...</h1>
      <section class="cards-container">
           <div v-for="Job in Jobs" :key="Job.id" class="card" :class="`card-${Job.ID}`" v-scrollanimation="{delay: 100}">
                <div class="imgBx">
@@ -88,6 +88,7 @@ export default {
           text-align: center;
           line-height: 1.5em;
           letter-spacing: 2px;
+          margin-top: 1em;
      }
 
      h1{
@@ -102,6 +103,19 @@ export default {
           max-width: 90%;
           text-align: center;
      } 
+
+     h1,p, h2{
+      &.before-enter{
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all .7s linear .3s;
+      }
+
+      &.enter{
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
 
      .cards-container{
           flex-direction: row;
