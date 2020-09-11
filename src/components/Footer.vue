@@ -2,16 +2,24 @@
   <footer class="ppp-footer">
        <div class="icons">
           <button class="btn fa-fb" v-scrollanimation="{delay: 0}">
-               <fa-icon :icon="['fab', 'facebook-f']"  size="2x" class="fa"/>
+               <a target="_blank" href="https://www.facebook.com/PieOnAPlateProductions/">
+                    <fa-icon :icon="['fab', 'facebook-f']"  size="2x" class="fa"/>
+               </a> 
           </button>
           <button class="btn fa-r" v-scrollanimation="{delay: 250}">
-               <fa-icon :icon="['fab', 'reddit-alien']" size="2x" class="fa"/>
+               <a target="_blank" href="https://www.reddit.com/r/PieOnAPlateProduct/">
+                    <fa-icon :icon="['fab', 'reddit-alien']" size="2x" class="fa"/>
+               </a> 
           </button>
           <button class="btn fa-i" v-scrollanimation="{delay: 500}">
-               <fa-icon :icon="['fab', 'instagram']" size="2x" class="fa"/>
+               <a target="_blank" href="http://instagram.com/pieonaplateproductions">
+                    <fa-icon :icon="['fab', 'instagram']" size="2x" class="fa"/>
+               </a> 
           </button>
           <button class="btn fa-t" v-scrollanimation="{delay: 750}">
-               <fa-icon :icon="['fab', 'twitter']" size="2x" class="fa"/> 
+               <a target="_blank" href="https://twitter.com/PieOnAPlate">
+                    <fa-icon :icon="['fab', 'twitter']" size="2x" class="fa"/> 
+               </a> 
           </button>
        </div>
        <p v-scrollanimation="{delay: 0}">Copyright © 2017-2020 Pie On A Plate Productions LLC</p>
@@ -49,6 +57,11 @@ export default {
           padding: 1em;
           background: blue;
 
+          a{
+               height: 100%;
+               width: 100%;
+          }
+
      }
 
      .btn, p{
@@ -75,7 +88,7 @@ export default {
 
      .fa{
           path{
-               color: #111;
+               color: black;
           }
           &-r{
                

@@ -20,8 +20,9 @@
                </div>
                <div class="overlay">
                </div>
-               <div class="content" v-for="skill in Job.skills" :key="skill">
-                    <article>
+               <div class="content">
+                    <p class="head">Experience with:</p>
+                    <article v-for="skill in Job.skills" :key="skill">
                     <p>{{skill}}</p>
                     </article>
                </div>
@@ -126,6 +127,13 @@ export default {
                }
                &-2{
                     background: linear-gradient(45deg,#4B4641, #C4AE8F);
+               }
+
+               .content{
+                    .head{
+                         font-style: italic;
+                         font-weight: bold;
+                    }
                }
           }
      }

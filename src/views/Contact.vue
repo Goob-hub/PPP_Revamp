@@ -1,49 +1,49 @@
 <template>
   <div class="Contact">
        <header class="Contact-header">
-            <h1>Get in touch!</h1>
-            <p>Whether it's for General Information, Game Support, Press Inquiries, or something else, We'd love to hear from you!</p>
+            <h1 v-scrollanimation="{delay: 200}">Get in touch!</h1>
+            <p v-scrollanimation="{delay: 200}">Whether it's for General Information, Game Support, Press Inquiries, or something else, We'd love to hear from you!</p>
        </header>
        <form action="" autocomplete="off" class="Contact-form">
-            <div class="input-data">
+            <div class="input-data" v-scrollanimation="{delay: 200}">
                <input type="text" name="name" required>
                <label for="name" ><p>Name</p></label>
                <div class="underline"></div>
             </div>
 
-            <div class="input-data">
+            <div class="input-data" v-scrollanimation="{delay: 200}">
                <input type="email" name="email" required>
                <label for="email"><p>Email</p></label>
                <div class="underline"></div>
             </div>
             
-          <h1>Reason for contact</h1>
+          <h1 v-scrollanimation="{delay: 200}">Reason for contact</h1>
           <div class="form-reason">
-               <div class="radio-container">
+               <div class="radio-container" v-scrollanimation="{delay: 0}">
                     <input type="radio" name="reason" value="Game-Support">
                     <p class="new-radio btn-design btn">Game Support</p>
                </div>
-               <div class="radio-container">
+               <div class="radio-container" v-scrollanimation="{delay: 0}">
                     <input type="radio" name="reason" value="Press-Inquiry">
                     <p class="new-radio btn-design btn">Press Inquiry</p>
                </div>
-               <div class="radio-container">
+               <div class="radio-container" v-scrollanimation="{delay: 0}">
                     <input type="radio" name="reason" value="General-Info" required>
                     <p class="new-radio btn-design btn">General Info</p>
                </div>
-               <div class="radio-container">
+               <div class="radio-container" v-scrollanimation="{delay: 0}">
                     <input type="radio" name="reason" value="Other">
                     <p class="new-radio btn-design btn">Other</p>
                </div>
                
           </div>
 
-          <div class="input-data">
+          <div class="input-data" v-scrollanimation="{delay: 200}">
                <textarea required name="Message" id="Message" cols="25" rows="9"></textarea>
                <label for="Message"><p>Message</p></label>
           </div>
 
-          <input type="submit"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design">
+          <input type="submit" v-scrollanimation="{delay: 0}"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design">
        </form>
 
        <pppFooter />
@@ -83,6 +83,19 @@ export default {
      background: var(--gradientBGD), center/cover fixed no-repeat url("../components/images/Treeline.png");
      padding: 1em 1em 0 1em;
      text-transform: capitalize;
+
+     h1,p,div,input{
+      &.before-enter{
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all .7s linear .3s;
+      }
+
+      &.enter{
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
 
      .ppp-footer{
           margin-top: 2em;

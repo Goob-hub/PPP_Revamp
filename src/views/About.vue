@@ -73,15 +73,15 @@
       </div>
     </section>
 
-    <Footer />
+    <pppFooter />
   </div>
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
+import pppFooter from "@/components/Footer.vue";
 export default {
   components: {
-    Footer
+    pppFooter
   },
     data(){
       return{

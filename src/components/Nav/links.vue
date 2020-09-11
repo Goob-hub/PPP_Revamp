@@ -13,7 +13,7 @@
           <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
           </li>
           <li @click="closeNav()">
-          <router-link to="#" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
+          <router-link to="/DevBlog" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
           </li>
      </ul>
 </template>

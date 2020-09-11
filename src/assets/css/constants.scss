@@ -264,7 +264,7 @@
      h1, img, p{
        max-width: 100%;
      }
-   }
+}
 
 
 @keyframes glitch {
@@ -299,6 +299,7 @@
           width: 100%;
      }
 }
+
 @keyframes move {
      from{
           font-weight: 300;
@@ -331,6 +332,7 @@
           transform: translate(0em, -7em);
      }
 }
+
 @keyframes dissapear {
      0%{
           opacity: 0;
