@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @mousemove="move($event)">
     <navBtn />
     <navBar />
     <router-view/>
@@ -13,6 +13,30 @@ export default {
   components: {
     navBar,
     navBtn
+  },
+  methods:{
+    move(e){
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+      setTimeout(() => {
+        let elements = document.querySelectorAll('.paralax');
+        elements.forEach(el => {
+          let x = mouseX - this.coords(el).x;
+          let y = mouseY - this.coords(el).y;
+
+          el.style.transform = `translateX(${x/45}px) translateY(${y/45}px) translateZ(100px)`
+
+        })
+      });
+    },
+    coords(e){
+      let coords = e.getBoundingClientRect();
+
+      return {
+        y: coords.top / 2,
+        x: coords.left / 2
+      }
+    }
   }
 }
 </script>
