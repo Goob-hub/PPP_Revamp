@@ -10,15 +10,11 @@
       </div>
     </header>
 
-    <article class="ggmt-article">
+    <article class="ggmt-article paralax">
       <div v-scrollanimation="{delay: 0}">
         <h1><span>Out Now!</span></h1>
       </div>
       <p v-scrollanimation="{delay: 1500}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sequi, recusandae adipisci autem alias laborum, error placeat iure aliquid eaque quod labore. Quod tempora ex blanditiis quo quae quisquam deserunt.</p>
-      <!-- <section class="trailer">
-        <h1>Trailer</h1>
-        <video src=""></video>
-      </section> -->
     </article>
   </main>
 </template>
@@ -105,8 +101,13 @@ export default {
   }
 
   &-article{
-    padding: 1em;
+    padding: 2em;
+    position: relative;
+    overflow: visible;
+
+    
     div{
+      z-index: 2;
         position: relative;
         overflow: hidden;
         width: max-content;
@@ -149,6 +150,8 @@ export default {
 
     p{
       transition: 1s linear;
+      line-height: 1.5em;
+      letter-spacing: 2px;
       &.before-enter{
         opacity: 0;
       }
