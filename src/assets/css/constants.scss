@@ -266,6 +266,49 @@
      }
 }
 
+.particle{
+     position: relative;
+     .effect{
+          position: fixed;
+          pointer-events: none;
+          background: white;
+          animation: float-up 5s linear infinite;
+
+          &.triangle{
+               clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          }
+
+          &.circle{
+               border-radius: 50%;
+          }
+
+          &.star{
+               clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          }
+     }
+
+
+}
+
+@keyframes float-up{
+     0%{
+          opacity: 0;
+          transform: scale(0) translateY(0) rotate(0deg);
+     }
+
+     10%{
+          opacity: .75;
+     }
+
+     90%{
+          opacity: .75;
+     }
+
+     100%{
+          opacity: 0;
+          transform: scale(1) translateY(-500%) rotate(360deg);
+     }
+}
 
 @keyframes glitch {
      0%{

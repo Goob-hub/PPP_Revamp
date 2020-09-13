@@ -1,6 +1,7 @@
 <template>
   <main class="ggmt">
-    <full-page :options="{options: ''}">
+    {{this.setParticle()}}
+    <full-page :options="{options: ''}" class="particle">
       <div class="section">
         <header class="ggmt-header">
           <div class="title">
@@ -43,12 +44,45 @@
 <script>
 export default {
   methods: {
-    
+    createParticle(){
+      setTimeout(() => {
+        const page = document.querySelector('.particle');
+        const particle = document.createElement('span');
+        particle.className = `effect ${this.particles[Math.floor(Math.random() * this.particles.length)]}`;
+  
+        let size = Math.random() * 50;
+  
+        particle.style.height = `${20 + size}px`;
+        particle.style.width = `${20 + size}px`;
+
+        
+
+        particle.style.top = `${Math.random() * page.getBoundingClientRect().height}px`;
+        particle.style.left = `${Math.random() * page.getBoundingClientRect().width}px`;
+
+        particle.style.background = this.colors[Math.floor(Math.random() * this.colors.length)];
+
+        page.appendChild(particle);
+
+        setTimeout(() => {
+          particle.remove();
+        }, 5000);
+
+        setTimeout(() => {
+          this.createParticle();
+        }, 1000);
+      
+
+      });
+    },
+    setParticle(){
+      setInterval(this.createParticle(), 150);
+    }
     
   },
   data(){
     return {
-      Features : [
+      Features: [
         {
           title: 'Randomized Randomness',
           text: 'The upgrades/downgrades you receive are random.The weapons you receive are random. The enemies spawning are random. Even the levels you play are, you guessed it, completely random.',
@@ -69,8 +103,19 @@ export default {
           ]
         },
       ],
+      colors: [
+        '#2196f3',
+        '#e91e63',
+        '#ffeb3b',
+        '#74ff1d'
+      ],
+      particles: [
+        'triangle',
+        'star',
+        'circle'
+      ]
     }
-  }
+  },
 }
 </script>
 
@@ -88,6 +133,14 @@ export default {
   min-height: 100vh;
   text-align: center;
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/Backdrop5.png');
+
+  .section{
+    z-index: 3;
+  }
+
+  .effect{
+    z-index: -1;
+  }
   
   h1{
     text-shadow: 0px 0px 5px white;
