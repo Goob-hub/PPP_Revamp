@@ -269,7 +269,7 @@
 .particle{
      position: relative;
      .effect{
-          position: fixed;
+          position: absolute;
           pointer-events: none;
           background: white;
           animation: float-up 5s linear infinite;
@@ -288,6 +288,82 @@
      }
 
 
+}
+
+.Appear{
+     width: max-content;
+     position: relative;
+     font-size: 2em;
+     overflow: hidden;
+     margin-top: .25em;
+     &::before{
+          content: '';
+          position: absolute;
+          transform-origin: left;
+          height: 1px;
+          width: 0;
+          left: 0;
+          bottom: 0;
+          background: white;
+          
+     }
+
+     p{
+          font-weight: 300;
+          transform: translateY(-120px);
+          color: darken(white, 20%);
+     }
+
+
+     &.enter{
+          &:nth-child(1){
+               p{
+                    animation-delay: .7s;
+               }
+          }
+
+          &:nth-child(2){
+               &::before{
+                    animation-delay: .5s;
+               }
+               p{
+                    animation-delay: 1.2s;
+               }
+          }
+          &:nth-child(3){
+               &::before{
+                    animation-delay: 1s;
+               }
+               p{
+                    animation-delay: 1.7s;
+               }
+          }
+          &:nth-child(4){
+               &::before{
+                    animation-delay: 1.5s;
+               }
+               p{
+                    animation-delay: 2.2s;
+               }
+          }
+          &:nth-child(5){
+               &::before{
+                    animation-delay: 2s;
+               }
+               p{
+                    animation-delay: 2.7s;
+               }
+          }
+          &::before{
+               animation: expand .8s cubic-bezier(0.42, 0, 0, 0.995);
+               animation-fill-mode: forwards;
+          }
+
+          p{
+               animation: move .5s ease-in-out;
+               animation-fill-mode: forwards;
+          }
+     }
 }
 
 @keyframes float-up{

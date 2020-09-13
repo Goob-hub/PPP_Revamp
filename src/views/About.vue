@@ -3,19 +3,19 @@
   <div class="about">
     {{addEvents()}}
     <header class="about-header">
-        <h1>
+        <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p>We are</p>
         </h1>
-        <h1>
+        <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p> Creative,</p>
         </h1>
-        <h1>
+        <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p> Goofy,</p>
         </h1>
-        <h1>
+        <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p> Passionate,</p>
         </h1>
-        <h1>
+        <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p> Delicious</p>
         </h1>
         <div class="scroll" v-animate="{delay: 3500}" v-if="this.showScrollCue">
@@ -174,72 +174,7 @@ export default {
     justify-content: center;
     align-items: center;
     
-    h1{
-      width: max-content;
-      position: relative;
-      font-size: 2em;
-      overflow: hidden;
-      margin-top: .25em;
-      &::before{
-        content: '';
-        position: absolute;
-        transform-origin: left;
-        height: 1px;
-        width: 0;
-        left: 0;
-        bottom: 0;
-        background: white;
-        animation: expand .8s cubic-bezier(0.42, 0, 0, 0.995);
-        animation-fill-mode: forwards;
-      }
-
-      p{
-        font-weight: 300;
-        transform: translateY(-120px);
-        animation: move .5s ease-in-out;
-        animation-fill-mode: forwards;
-        color: darken(white, 20%);
-      }
-
-      &:nth-child(1){
-        p{
-          animation-delay: .7s;
-        }
-      }
-
-      &:nth-child(2){
-        &::before{
-          animation-delay: .5s;
-        }
-        p{
-          animation-delay: 1.2s;
-        }
-      }
-      &:nth-child(3){
-        &::before{
-          animation-delay: 1s;
-        }
-        p{
-          animation-delay: 1.7s;
-        }
-      }
-      &:nth-child(4){
-        &::before{
-          animation-delay: 1.5s;
-        }
-        p{
-          animation-delay: 2.2s;
-        }
-      }
-      &:nth-child(5){
-        &::before{
-          animation-delay: 2s;
-        }
-        p{
-          animation-delay: 2.7s;
-        }
-      }
-    }
+    
 
     .scroll{
       position: absolute;

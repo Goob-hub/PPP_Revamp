@@ -1,6 +1,6 @@
 <template>
   <main class="ggmt">
-    {{this.setParticle()}}
+    {{this.createParticle()}}
     <full-page :options="{options: ''}" class="particle">
       <div class="section">
         <header class="ggmt-header">
@@ -25,13 +25,13 @@
       </div>
 
       <div class="section">
-        <article class="paralax">
-          <h1>Features</h1>
+        <article class="ggmt-features paralax">
+          <h1 class="f-title Appear" v-scrollanimation="{delay: 0}"><p>Features</p></h1>
           <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
             <slide class="Vue-slide" v-for="feature in Features" :key="feature.title">
               <h1>{{feature.title}}</h1>
               <p>{{feature.text}}</p>
-              <span v-for="detail in feature.details" :key="detail.id"></span>
+              <span class="detail" v-for="detail in feature.details" :key="detail.id" :class="`detail-${detail.id}`"><h1>{{detail.content}}</h1></span>
             </slide>
           </carousel>
         </article>
@@ -48,7 +48,7 @@ export default {
       setTimeout(() => {
         const page = document.querySelector('.particle');
         const particle = document.createElement('span');
-        particle.className = `effect ${this.particles[Math.floor(Math.random() * this.particles.length)]}`;
+        particle.className = `effect paralax ${this.particles[Math.floor(Math.random() * this.particles.length)]}`;
   
         let size = Math.random() * 50;
   
@@ -75,10 +75,6 @@ export default {
 
       });
     },
-    setParticle(){
-      setInterval(this.createParticle(), 150);
-    }
-    
   },
   data(){
     return {
@@ -94,11 +90,7 @@ export default {
             {
               id: 2,
               content: '?'
-            },
-            {
-              id: 3,
-              content: '?'
-            },
+            }
             
           ]
         },
@@ -120,7 +112,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .Vue-slide{
+.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .Vue-slide, .ggmt-features{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -256,6 +248,50 @@ export default {
 
       &.enter{
         opacity: 1;
+      }
+    }
+  }
+
+  &-features{
+    padding: 1em;
+    overflow: visible;
+    
+
+    .f-title{
+      margin: 1em 0 1em 0;
+      font-size: 3em;
+      &::before{
+        height: 2.5px;
+        box-shadow: 0px 0px 5px white;
+      }
+    }
+
+    .Vue-slide{
+      position: relative;
+      .detail{
+        position: absolute;
+        z-index: -1;
+        font-size: 2.5em;
+        opacity: 1;
+    
+        &-1{
+          top: -7%;
+          left: 0%;
+        }
+        &-2{
+          top: -7%;
+          right: 0%;
+        }
+      }
+
+      h1{
+        font-size: 1.8em;
+        margin-bottom: .5em;
+      }
+
+      p{
+        line-height: 1.3em;
+        letter-spacing: 2.5px;
       }
     }
   }
