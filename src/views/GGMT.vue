@@ -148,6 +148,7 @@ export default {
 
   .section{
     z-index: 3;
+    overflow: hidden;
   }
 
   .effect{
@@ -175,6 +176,7 @@ export default {
     height: 100vh;
     width: 100vw;
     padding: 1em;
+ 
     animation: fade-in 1s linear;
     animation-fill-mode: forwards;
     .title{
@@ -215,6 +217,7 @@ export default {
     padding: 2em;
     position: relative;
     overflow: visible;
+    max-width: 100vw;
     height: 100%;
     div{
       z-index: 2;
@@ -274,8 +277,9 @@ export default {
 
   &-features{
     padding: 1em;
-    overflow: visible;
+    overflow: hidden;
     height: 100vh;
+    max-width: 100vw;
 
     .f-title{
       margin: .5em 0 .5em 0;
@@ -305,11 +309,11 @@ export default {
       
           &-1{
             top: -2%;
-            left: 5%;
+            left: 0%;
           }
           &-2{
             top: -2%;
-            right: 5%;
+            right: 0%;
           }
         }
       }
