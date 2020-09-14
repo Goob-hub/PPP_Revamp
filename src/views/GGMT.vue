@@ -19,7 +19,7 @@
           <div v-scrollanimation="{delay: 0}">
             <h1><span>Out Now!</span></h1>
           </div>
-          <p v-scrollanimation="{delay: 1500}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sequi, recusandae adipisci autem alias laborum, error placeat iure aliquid eaque quod labore. Quod tempora ex blanditiis quo quae quisquam deserunt.</p>  
+          <p v-scrollanimation="{delay: 1500}">The Great Geometric Multiverse Tour is out now!! Watch the trailer to get a taste of the chaotic fast paced first person shape shooter and start having a blast right now!</p>  
           <a href="https://www.youtube.com/embed/bE5wfkPBnJU" class="btn btn-design"><p>View Trailer</p></a>
         </article>
       </div>
@@ -27,13 +27,18 @@
       <div class="section">
         <article class="ggmt-features paralax">
           <h1 class="f-title Appear" v-scrollanimation="{delay: 0}"><p>Features</p></h1>
-          <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
-            <slide class="Vue-slide" v-for="feature in Features" :key="feature.title">
-              <h1>{{feature.title}}</h1>
-              <p>{{feature.text}}</p>
-              <span class="detail" v-for="detail in feature.details" :key="detail.id" :class="`detail-${detail.id}`"><h1>{{detail.content}}</h1></span>
-            </slide>
-          </carousel>
+          <div class="carousel-container">
+            <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
+              <slide v-for="feature in Features" :key="feature.title">
+                <div class="slide-info">
+                  <h1>{{feature.title}}<span class="detail" v-for="detail in feature.details" :key="detail.id" :class="`detail-${detail.id}`"><h1>{{detail.content}}</h1></span></h1>
+                  
+                  <p>{{feature.text}}</p>
+                  <img :src="feature.image" alt="">
+                </div>
+              </slide>
+            </carousel>
+          </div>
         </article>
       </div>
 
@@ -91,8 +96,23 @@ export default {
               id: 2,
               content: '?'
             }
-            
-          ]
+          ],
+          image: require('../components/images/random.jpg')
+        },
+        {
+          title: 'So Many Upgrades...',
+          text: 'Become the ultimate super soldier shape killing machine with powerups/upgrades such as HOPELESS ROMANTIC, LIGHTER FLUID, BULLET HATS, and so much more!',
+          details: [
+            {
+              id: 1,
+              content: ''
+            },
+            {
+              id: 2,
+              content: ''
+            }
+          ],
+          image: require('../components/images/store.png')
         },
       ],
       colors: [
@@ -255,10 +275,10 @@ export default {
   &-features{
     padding: 1em;
     overflow: visible;
-    
+    height: 100vh;
 
     .f-title{
-      margin: 1em 0 1em 0;
+      margin: .5em 0 .5em 0;
       font-size: 3em;
       &::before{
         height: 2.5px;
@@ -266,32 +286,54 @@ export default {
       }
     }
 
-    .Vue-slide{
-      position: relative;
-      .detail{
-        position: absolute;
-        z-index: -1;
-        font-size: 2.5em;
-        opacity: 1;
     
-        &-1{
-          top: -7%;
-          left: 0%;
-        }
-        &-2{
-          top: -7%;
-          right: 0%;
-        }
-      }
 
+
+    .slide-info{
+      position: relative;
+      height: max-content;
+     
+      padding: 1em;
       h1{
         font-size: 1.8em;
         margin-bottom: .5em;
+        .detail{
+          position: absolute;
+          z-index: -1;
+          font-size: 1.7em;
+          opacity: 1;
+      
+          &-1{
+            top: -2%;
+            left: 5%;
+          }
+          &-2{
+            top: -2%;
+            right: 5%;
+          }
+        }
       }
 
       p{
         line-height: 1.3em;
         letter-spacing: 2.5px;
+      }
+
+      img{
+        margin: .75em;
+        height: 35%;
+        width: 60%;
+        position: relative;
+        box-shadow: 0px 0px 5px white;
+        &::before{
+          content: '';
+          position: absolute;
+          border: 3px solid white;
+          top: -5%;
+          left: -5%;
+          height: 136px;
+          width: 172px;
+        }
       }
     }
   }

@@ -16,18 +16,20 @@ export default {
   },
   methods:{
     move(e){
-      let mouseX = e.clientX;
-      let mouseY = e.clientY;
-      setTimeout(() => {
-        let elements = document.querySelectorAll('.paralax');
-        elements.forEach(el => {
-          let x = mouseX - this.coords(el).x;
-          let y = mouseY - this.coords(el).y;
-
-          el.style.transform = `translateX(${x/45}px) translateY(${y/45}px) translateZ(100px)`
-
-        })
-      });
+      if(!this.$isMobile()){
+        let mouseX = e.clientX;
+        let mouseY = e.clientY;
+        setTimeout(() => {
+          let elements = document.querySelectorAll('.paralax');
+          elements.forEach(el => {
+            let x = mouseX - this.coords(el).x;
+            let y = mouseY - this.coords(el).y;
+  
+            el.style.transform = `translateX(${x/45}px) translateY(${y/45}px) translateZ(100px)`
+  
+          })
+        });
+      }
     },
     coords(e){
       let coords = e.getBoundingClientRect();
