@@ -29,10 +29,10 @@
       <div class="section">
         <article class="ggmt-features paralax">
           <h1 class="f-title Appear" v-scrollanimation="{delay: 0}"><p>Features</p></h1>
-          <div class="carousel-container">
+          <div class="carousel-container"  >
             <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
               <slide v-for="feature in Features" :key="feature.title">
-                <div class="slide-info" :class="`slide-${feature.id}`">
+                <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
                   <h1>{{feature.title}}</h1>
                   <p>{{feature.text}}</p>
                 </div>
@@ -296,6 +296,7 @@ export default {
 
     .slide-info{
       position: relative;
+      transition: 1s ease-in-out;
       height: 95%;
       margin: .5em;
       padding: .5em;
@@ -303,6 +304,15 @@ export default {
       flex-wrap: unset;
       box-shadow: 0px 0px 5px white;
       
+      &.before-enter{
+        
+        height: 0%;
+
+      }
+
+      &.enter{
+        height: 95%;
+      }
 
       &.slide{
         &-1{
