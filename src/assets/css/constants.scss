@@ -274,20 +274,24 @@
           background: white;
           animation: float-up 5s linear infinite;
 
-          &.triangle{
-               clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-          }
-
-          &.circle{
-               border-radius: 50%;
-          }
-
-          &.star{
-               clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-          }
      }
+}
 
+.triangle{
+     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
 
+.circle{
+     border-radius: 50%;
+}
+
+.star{
+     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.arrow-up{
+     transform: rotate(-90deg);
+     clip-path: polygon(0 30%, 60% 30%, 60% 10%, 100% 50%, 60% 90%, 60% 70%, 0 70%);
 }
 
 .Appear{

@@ -9,7 +9,9 @@
             <h1 class="paralax">Great Geometric Multiverse Tour</h1>
           </div>
           <div class="buttons paralax">
-            <a href="#" class="btn btn-design"><p>Buy on steam</p></a>
+            <a href="#" class="btn btn-design"><p>View on steam</p></a>
+            <a href="#" class="btn btn-design"><p>View on gameJolt</p></a>
+            <a href="#" class="btn btn-design"><p>View on itch.io</p></a>
           </div>
         </header>
       </div>
@@ -30,24 +32,31 @@
           <div class="carousel-container">
             <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
               <slide v-for="feature in Features" :key="feature.title">
-                <div class="slide-info">
-                  <h1>{{feature.title}}<span class="detail" v-for="detail in feature.details" :key="detail.id" :class="`detail-${detail.id}`"><h1>{{detail.content}}</h1></span></h1>
-                  
+                <div class="slide-info" :class="`slide-${feature.id}`">
+                  <h1>{{feature.title}}</h1>
                   <p>{{feature.text}}</p>
-                  <img :src="feature.image" alt="">
                 </div>
               </slide>
             </carousel>
           </div>
         </article>
       </div>
+      
+      <div class="section" id="footer">
+        <pppFooter />
+      </div>
+
 
     </full-page>
   </main>
 </template>
 
 <script>
+import pppFooter from "@/components/Footer.vue";
 export default {
+  components: {
+    pppFooter,
+  },
   methods: {
     createParticle(){
       setTimeout(() => {
@@ -85,34 +94,29 @@ export default {
     return {
       Features: [
         {
+          id: 1,
           title: 'Randomized Randomness',
           text: 'The upgrades/downgrades you receive are random.The weapons you receive are random. The enemies spawning are random. Even the levels you play are, you guessed it, completely random.',
-          details: [
-            {
-              id: 1,
-              content: '?'
-            },
-            {
-              id: 2,
-              content: '?'
-            }
-          ],
-          image: require('../components/images/random.jpg')
         },
         {
+          id: 2,
           title: 'So Many Upgrades...',
           text: 'Become the ultimate super soldier shape killing machine with powerups/upgrades such as HOPELESS ROMANTIC, LIGHTER FLUID, BULLET HATS, and so much more!',
-          details: [
-            {
-              id: 1,
-              content: ''
-            },
-            {
-              id: 2,
-              content: ''
-            }
-          ],
-          image: require('../components/images/store.png')
+        },
+        {
+          id: 3,
+          title: 'Over 35 multiverses to explore and liberate',
+          text: 'With classics such as ONLY FIRE, MY GOD ITS EVERYWHERE, SPIKY SPIKES, WHY IS EVERYTHING SHAKING, and so much more!',
+        },
+        {
+          id: 4,
+          title: 'Over 40 Enemy Types',
+          text: 'Including but not limited to SCARY SWARM BOI, SKY DONUT, SCOOTIN TOOTIN ROCKET SHOOTIN PAL, and more!',
+        },
+        {
+          id: 5,
+          title: 'And if all that wasnt enough',
+          text: 'The GGMT is proud to state that it includes over 800 spikes, 300 crates, and 150 bottles!',
         },
       ],
       colors: [
@@ -132,7 +136,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .Vue-slide, .ggmt-features{
+.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .slide-info, .ggmt-features, .detail{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -277,7 +281,7 @@ export default {
 
   &-features{
     padding: 1em;
-    overflow: hidden;
+    overflow: visible;
     height: 100vh;
     max-width: 100vw;
 
@@ -290,57 +294,63 @@ export default {
       }
     }
 
-    
-
-
     .slide-info{
       position: relative;
-      height: max-content;
-     
-      padding: 1em;
-      h1{
-        font-size: 1.8em;
-        margin-bottom: .5em;
-        .detail{
-          position: absolute;
-          z-index: -1;
-          font-size: 1.7em;
-          opacity: 1;
+      height: 95%;
+      margin: .5em;
+      padding: .5em;
+      flex-direction: column;
+      flex-wrap: unset;
+      box-shadow: 0px 0px 5px white;
       
-          &-1{
-            top: -2%;
-            left: 0%;
-          }
-          &-2{
-            top: -2%;
-            right: 0%;
-          }
+
+      &.slide{
+        &-1{
+          background: var(--gradientBGD), center/cover no-repeat url('../components/images/random.jpg');
+        }
+        &-2{
+          background: var(--gradientBGD), center/cover no-repeat url('../components/images/store.png')          
+        }
+        &-3{
+          background: var(--gradientBGD), center/cover no-repeat url('../components/images/multiverse.png')
+        }
+        &-4{
+          background: var(--gradientBGD), center/cover no-repeat url('../components/images/enemy.png')
+        }
+        &-5{
+          background: var(--gradientBGD), center/cover no-repeat url('../components/images/crates.png')
         }
       }
+
+      h1{
+        position: relative;
+        font-size: 1.8em;
+        margin: 1em 0 1em 0;
+      }
+
+      
 
       p{
-        line-height: 1.3em;
+        font-weight: 700;
+        margin: .5em 0 .5em 0;
+        line-height: 1.5em;
         letter-spacing: 2.5px;
-      }
-
-      img{
-        margin: .75em;
-        height: 35%;
-        width: 60%;
-        position: relative;
-        box-shadow: 0px 0px 5px white;
-        &::before{
-          content: '';
-          position: absolute;
-          border: 3px solid white;
-          top: -5%;
-          left: -5%;
-          height: 136px;
-          width: 172px;
-        }
       }
     }
   }
+  
+
+  #footer, .fp-tableCell{
+    .ppp-footer{
+      height: 100vh;
+    }
+    height: 100vh;
+    display: flex;
+    flex-wrap: unset;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
 
 
 }
