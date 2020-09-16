@@ -176,34 +176,7 @@ export default {
     
     
 
-    .scroll{
-      position: absolute;
-      margin-top: 1em;
-      bottom: 3em;
-      left: 50%;
-      transform: translateX(-55%);
-      p{
-        transform: translateY(-5em);
-        animation: dissapear 2s linear infinite;
-        animation-delay: .5s;
-        margin-top: 3em;
-      }
-      span{
-        position: absolute;
-        height: 3.1em;
-        width: .6px;
-        overflow: hidden;
-        &::before{
-          content: '';
-          position: absolute;
-          height: 3em;
-          width: .5px;
-          background: white;
-          animation: shrink 2s linear infinite;
-        }
-
-      }
-    }
+    
   }
 
   &-history{

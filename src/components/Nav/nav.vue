@@ -1,8 +1,6 @@
 <template>
-  <nav>
+  <nav class="navBar">
      <links />
-       
-          
   </nav>
 </template>
 
@@ -31,12 +29,20 @@ nav{
 
      &::before{
           content: '';
+          transition: .5s linear;
           position: absolute;
+          transform: translateX(100%);
           height: 100vh;
           width: 50vw;
           top: 0;
           left: 0;
           background: rgba(255, 255, 255, .1);
+     }
+
+     &.games{
+          &::before{
+               transform: translateX(0%);
+          }
      }
 
      

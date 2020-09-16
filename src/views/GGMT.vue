@@ -84,7 +84,7 @@ export default {
 
         setTimeout(() => {
           this.createParticle();
-        }, 1000);
+        }, 600);
       
 
       });

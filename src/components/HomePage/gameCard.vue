@@ -28,7 +28,7 @@ export default {
                     theBackrooms: {
                          title: 'The Backrooms Game',
                          desc: `Stinky moist carpet, deafening florescent hum, and six hundred million square miles of randomly segmented mono yellow rooms to be trapped in. "God save you if you hear something wandering around nearby, because it sure as hell has heard you.”`,
-                         background: 'backrooms',
+                         background: 'Backrooms',
                          link: '/Backrooms',
                          VFX: {
                               text: 'glitchTxt',
@@ -69,7 +69,7 @@ export default {
      align-self: center;
      overflow: hidden;
     
-     .backrooms{
+     .Backrooms{
           background: center/cover no-repeat url('../images/backroomsglitch.gif')
      }
 

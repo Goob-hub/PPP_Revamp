@@ -1,21 +1,38 @@
 <template>
-     <ul class="links">
-          <li @click="closeNav()">
-          <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
-          </li>
-          <li @click="closeNav()">
-          <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
-          </li>
-          <li @click="closeNav()">
-          <router-link to="/Jobs" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
-          </li>
-          <li @click="closeNav()">
-          <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
-          </li>
-          <li @click="closeNav()">
-          <router-link to="/DevBlog" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
-          </li>
-     </ul>
+     <div class="links-container">
+          <ul class="links">
+               <li @click="closeNav()">
+               <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
+               </li>
+               <li @click="showGames()">
+               <router-link to="/DevBlog" class="btn" data-text="Games"><span>Games</span></router-link>
+               </li>
+               <li @click="closeNav()">
+               <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
+               </li>
+               <li @click="closeNav()">
+               <router-link to="/Jobs" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
+               </li>
+               <li @click="closeNav()">
+               <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
+               </li>
+               <li @click="closeNav()">
+               <router-link to="/DevBlog" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
+               </li>
+          </ul>
+          <ul class="games">
+               <li @click="closeNav()">
+               <router-link to="/GGMT" class="btn" data-text="GGMT"><span>GGMT</span></router-link>
+               </li>
+               <li @click="closeNav()">
+               <router-link to="/Backrooms" class="btn" data-text="The Backrooms"><span>The Backrooms</span></router-link>
+               </li>
+               <li @click="Back()">
+               <router-link to="/GGMT" class="btn" data-text="Back"><span>Back</span></router-link>
+               </li>
+          </ul>
+
+     </div>
 </template>
 
 <script>
@@ -31,6 +48,19 @@ export default {
                let nav = document.querySelector('nav');
                let navBtn = document.querySelector('.nav-btn');
                (nav.classList.remove("open"), navBtn.classList.remove("openNav"))
+          },
+          showGames(){
+               let container = document.querySelector('.links-container');
+               let navBar = document.querySelector('.navBar');
+               navBar.classList.add('games');
+               container.style.transform = 'translateX(-50%)';
+          },
+          Back(){
+               let container = document.querySelector('.links-container');
+               let navBar = document.querySelector('.navBar');
+               navBar.classList.remove('games');
+               container.style.transform = 'translateX(0)';
+
           }
      }
 }
@@ -40,6 +70,17 @@ export default {
 .links{
      transition: .5s linear;
 }
+
+.links-container{
+     transition: .5s linear;
+     display: flex;
+     flex-direction: row;
+     width: max-content;
+     align-self: flex-start;
+}
+
+
+
 ul{
      display: flex;
      flex-direction: column;
@@ -47,12 +88,13 @@ ul{
      justify-content: center;
      flex-wrap: wrap;
      height: 100%;
-     width: 100%;
+     width: 100vw;
      padding: 1em;
      font-family: var(--ff2);
      transition: .5s linear;
      list-style: none;
      position: relative;
+     overflow: hidden;
     
 
      &:hover{
