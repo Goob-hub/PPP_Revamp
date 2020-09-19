@@ -11,6 +11,10 @@ import 'fullpage.js/vendors/scrolloverflow' // Optional. When using scrollOverfl
 // import './fullpage.scrollHorizontally.min' // Optional. When using fullpage extensions
 import VueFullPage from 'vue-fullpage.js'
 
+import VueEllipseProgress from 'vue-ellipse-progress';
+
+Vue.use(VueEllipseProgress);
+
 Vue.use(VueFullPage);
 
 Vue.directive('animate', animateDirective);
