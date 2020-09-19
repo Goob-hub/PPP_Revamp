@@ -22,23 +22,14 @@
       <div class="section">
         <article class="backrooms-features-free">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>free edition features</p></h1>
-          <FeaturesCarousel :features="FeaturesFree"/>
+          <FeaturesCarousel :features="FeaturesFree" :progressBar="false"/>
         </article>
       </div>
 
       <div class="section">
         <article class="backrooms-roadmap-early">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>Early Access Road Map</p></h1>
-          
-          <div v-for="data in progress" :key="data.id" class="progress-card">
-            <vue-ellipse-progress :progress="80" :size="150" :color="'red'" :emptyColor="'#333'" :legend="true" :line="'round'" animation="rs 1000" dot="10% red">
-               <span slot="legend-value">%</span>
-                <p slot="legend-caption">Complete</p>
-            </vue-ellipse-progress> 
-            <p>pee</p>
-            <p>poo</p>
-
-          </div>
+          <FeaturesCarousel :features="progress" :progressBar="true"/>
           
         </article>
       </div>
@@ -91,8 +82,61 @@ export default {
           {
             id: 1,
             value: 75,
-
-          }
+            title: 'Level 1',
+            text: [
+              'Environment models',
+              'Custom level generation to make rooms larger and darker',
+              'Light Timers'
+            ]
+          },
+          {
+            id: 2,
+            value: 75,
+            title: 'Being Movement/AI',
+            text: [
+              'Beings ability to chase player',
+              'Being animations'
+            ]
+          },
+          {
+            id: 3,
+            value: 100,
+            title: 'Item Spawning/Usage',
+            text: [
+              'Design and model items',
+              'Spawning system for items',
+              'Inventory system'
+            ]
+          },
+          {
+            id: 4,
+            value: 100,
+            title: 'Discovery System',
+            text: [
+              'Design and create various discoveries',
+              'Collection system'
+            ]
+          },
+          {
+            id: 5,
+            value: 100,
+            title: 'Level 0 Improvments',
+            text: [
+              'More props and interactable objects',
+              'Bug fixes'
+            ]
+          },
+          {
+            id: 6,
+            value: 100,
+            title: 'Core Mechanics',
+            text: [
+              'Health/Health management',
+              'Expanded madness system',
+              'Watch improvments/additions',
+              'stamina system'
+            ]
+          },
         ]
       }
     },
@@ -114,7 +158,7 @@ export default {
 </script>
 
 <style lang="scss">
-.backrooms-page, .backrooms-header,.backrooms-about, .buttons, .title, .modal, .backrooms-features-free, .progress-card{
+.backrooms-page, .backrooms-header,.backrooms-about, .buttons, .title, .modal, .backrooms-features-free, .progress-card, .backrooms-roadmap-early{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,9 +169,16 @@ export default {
 .backrooms{
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/backroomsglitch.gif');
   scroll-behavior: smooth;
-  &-header{
+
+  &-features-free, &-header, &-roadmap-early{
     height: 100vh;
+    width: 100vw;
     padding: 1em;
+    justify-content: center;
+    position: relative;
+  }
+
+  &-header{
     justify-content: space-around;
     
     .title{
@@ -147,11 +198,6 @@ export default {
   }
 
   &-features-free{
-    height: 100vh;
-    width: 100vw;
-    padding: 1em;
-    justify-content: center;
-    position: relative;
 
     h1{
       width: 80%;
@@ -193,17 +239,21 @@ export default {
   }
 
   &-roadmap-early{
-
+    justify-content: flex-start;
+    h1{
+      max-width: 80%;
+      font-size: 1.8em;
+      margin: .25em 0 .5em 0;
+    }
     .progress-card{
-      .ep-legend--value{
-        font-family: var(--ff2);
+      .feature-title{
+        max-width: 90%;
+        margin: .5em 0 .5em 0;
+        font-size: 1.4em;
       }
-      .legend-caption{
-        font-size: 1em;
-      }
+      justify-content: space-around;
     }
   }
-
     
 }
 

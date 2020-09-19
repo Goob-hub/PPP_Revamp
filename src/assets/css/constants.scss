@@ -338,7 +338,7 @@
           content: '';
           position: absolute;
           transform-origin: left;
-          height: 1px;
+          height: 2px;
           width: 0;
           left: 0;
           bottom: 0;
@@ -348,6 +348,7 @@
 
      p{
           font-weight: 300;
+          margin-bottom: .5em;
           transform: translateY(-100%);
           color: darken(white, 20%);
      }

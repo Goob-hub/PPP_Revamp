@@ -1,8 +1,8 @@
 const animatedScrollObserver = new IntersectionObserver(
-     (entries, animatedScrollObserver)  => {
+     (entries, animatedScrollObserver, customClass)  => {
      entries.forEach(entry => {
           if(entry.isIntersecting) {
-               entry.target.classList.add('enter');
+               (customClass !== undefined) ? entry.target.classList.add(customClass) : entry.target.classList.add('enter');
                animatedScrollObserver.unobserve(entry.target);
           }
           
@@ -14,7 +14,7 @@ export default{
           let delay = binding.value.delay !== undefined ? binding.value.delay : 0;
           el.classList.add('before-enter');
           setTimeout(() => {
-               animatedScrollObserver.observe(el)
+               animatedScrollObserver.observe(el, binding.value.class)
           }, delay);
      }
 }
