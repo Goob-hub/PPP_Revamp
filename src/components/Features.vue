@@ -1,6 +1,6 @@
 <template>
      <div class="carousel-container" v-if="progressBar === false" >
-          <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
+          <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
                <slide v-for="feature in features" :key="feature.title">
                     <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
                          <h1>{{feature.title}}</h1>
@@ -10,7 +10,7 @@
           </carousel>
      </div>
      <div class="carousel-container" v-else >
-          <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="true" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
+          <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
                <slide v-for="data in features" :key="data.id"> 
                     <div v-scrollanimation="{delay: 500}" class="progress-card">
                          <h1 class="feature-title">{{data.title}}</h1>
@@ -56,12 +56,13 @@ export default {
      box-shadow: 0px 0px 5px white;
      
      &.before-enter{
-     
+          
           height: 0%;
 
      }
 
      &.enter{
+         
           height: 95%;
      }
 
@@ -90,9 +91,9 @@ export default {
      padding: .75em;
      background: linear-gradient(45deg,#000000, #152331);
      position: relative;
+     transition: 1s ease-in-out;
 
      &.before-enter{
-     
           height: 0%;
 
      }

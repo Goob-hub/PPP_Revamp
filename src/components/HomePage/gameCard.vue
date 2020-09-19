@@ -1,5 +1,5 @@
 <template>
-<div class="carousel-container">
+<div class="carousel-container-games">
      <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500">
           <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
                <div class="card">
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-container{
+.carousel-container-games{
      height: max-content;
      width: 100vw;
      height: 100vh;

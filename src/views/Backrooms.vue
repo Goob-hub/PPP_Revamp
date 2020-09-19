@@ -29,7 +29,14 @@
       <div class="section">
         <article class="backrooms-roadmap-early">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>Early Access Road Map</p></h1>
-          <FeaturesCarousel :features="progress" :progressBar="true"/>
+          <FeaturesCarousel :features="progressFree" :progressBar="true"/>
+          
+        </article>
+      </div>
+      <div class="section">
+        <article class="backrooms-roadmap-full">
+          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>Full Edition Road Map</p></h1>
+          <FeaturesCarousel :features="progressFull" :progressBar="true"/>
           
         </article>
       </div>
@@ -78,7 +85,7 @@ export default {
             text: 'Check your watch every 30 seconds to keep track of time and distance walked.'
           },
         ],
-        progress: [
+        progressFree: [
           {
             id: 1,
             value: 75,
@@ -137,6 +144,81 @@ export default {
               'stamina system'
             ]
           },
+        ],
+        progressFull: [
+          {
+            id: 1,
+            value: 0,
+            title: 'Level 2',
+            text: [
+              'Environment models/textures',
+              'Custom level generation for long halls',
+              'Steamy pipes to avoid'
+            ]
+          },
+          {
+            id: 2,
+            value: 0,
+            title: 'Level -1',
+            text: [
+              'Environment models/textures',
+              'HELL OF ALL HELLS HELL OF ALL HELLS'
+            ]
+          },
+          {
+            id: 3,
+            value: 5,
+            title: 'Extended settings',
+            text: [
+              'Sensitivity sliders',
+              'More detailed graphical settings',
+              'Controller support'
+            ]
+          },
+          {
+            id: 4,
+            value: 25,
+            title: 'Being Encounters',
+            text: [
+              'Various being encounters',
+              'More being manifestations'
+            ]
+          },
+          {
+            id: 5,
+            value: 25,
+            title: 'Multiple endings/deaths',
+            text: [
+              'More ways to perish',
+              'Diffrent endings on different levels'
+            ]
+          },
+          {
+            id: 6,
+            value: 25,
+            title: 'Even more items',
+            text: [
+              'More items/collectables'
+            ]
+          },
+          {
+            id: 7,
+            value: 0,
+            title: 'Potential ports',
+            text: [
+              'VR(Research complete. Confirmed :D!!)',
+              'Mobile(Research complete, No mobile :(!!)'
+            ]
+          },
+          {
+            id: 8,
+            value: 50,
+            title: 'Translations',
+            text: [
+              'Full German text',
+              'Full spanish text'
+            ]
+          },
         ]
       }
     },
@@ -158,7 +240,7 @@ export default {
 </script>
 
 <style lang="scss">
-.backrooms-page, .backrooms-header,.backrooms-about, .buttons, .title, .modal, .backrooms-features-free, .progress-card, .backrooms-roadmap-early{
+.backrooms-page, .backrooms-header,.backrooms-about, .buttons, .title, .modal, .backrooms-features-free, .progress-card, .backrooms-roadmap-early, .backrooms-roadmap-full{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,7 +252,7 @@ export default {
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/backroomsglitch.gif');
   scroll-behavior: smooth;
 
-  &-features-free, &-header, &-roadmap-early{
+  &-features-free, &-header, &-roadmap-early, &-roadmap-full{
     height: 100vh;
     width: 100vw;
     padding: 1em;
@@ -238,7 +320,7 @@ export default {
     
   }
 
-  &-roadmap-early{
+  &-roadmap-early, &-roadmap-full{
     justify-content: flex-start;
     h1{
       max-width: 80%;
@@ -252,6 +334,13 @@ export default {
         font-size: 1.4em;
       }
       justify-content: space-around;
+    }
+  }
+
+  .ppp-footer{
+    height: 100%;
+    p{
+      text-align: center;
     }
   }
     
