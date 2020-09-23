@@ -5,7 +5,7 @@
                <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
                </li>
                <li @click="showGames()">
-               <router-link to="/DevBlog" class="btn" data-text="Games"><span>Games</span></router-link>
+               <a href="#" class="btn" data-text="Games"><span>Games</span></a>
                </li>
                <li @click="closeNav()">
                <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
@@ -28,7 +28,7 @@
                <router-link to="/Backrooms" class="btn" data-text="The Backrooms"><span>The Backrooms</span></router-link>
                </li>
                <li @click="Back()">
-               <router-link to="/GGMT" class="btn" data-text="Back"><span>Back</span></router-link>
+               <a href="#" class="btn" data-text="Back"><span>Back</span></a>
                </li>
           </ul>
 
@@ -67,8 +67,11 @@ export default {
 </script>
 
 <style lang="scss">
-.links{
+.links, .Games{
+     text-align: center;
      transition: .5s linear;
+     flex-wrap: wrap;
+     max-height: 100vh;
 }
 
 .links-container{

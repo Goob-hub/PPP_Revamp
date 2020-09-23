@@ -4,19 +4,19 @@
     {{addEvents()}}
     <header class="about-header">
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
-          <p>We are</p>
+          <p class="title-p">We are</p>
         </h1>
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
-          <p> Creative,</p>
+          <p class="title-p"> Creative,</p>
         </h1>
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
-          <p> Goofy,</p>
+          <p class="title-p"> Goofy,</p>
         </h1>
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
-          <p> Passionate,</p>
+          <p class="title-p"> Passionate,</p>
         </h1>
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
-          <p> Delicious</p>
+          <p class="title-p"> Delicious</p>
         </h1>
         <div class="scroll" v-animate="{delay: 3500}" v-if="this.showScrollCue">
           <span></span>
@@ -73,15 +73,12 @@
       </div>
     </section>
 
-    <pppFooter />
   </div>
 </template>
 
 <script>
-import pppFooter from "@/components/Footer.vue";
 export default {
   components: {
-    pppFooter
   },
     data(){
       return{

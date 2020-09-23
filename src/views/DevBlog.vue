@@ -8,15 +8,12 @@
             game development, update, ggmt, the great geometric multiverse tour <br> <br> - May 10, 2018
           </p>
        </article>
-      <pppFooter />
   </main>
 </template>
 
 <script>
-import pppFooter from "@/components/Footer.vue";
 export default {
   components: {
-    pppFooter
   }
 }
 </script>

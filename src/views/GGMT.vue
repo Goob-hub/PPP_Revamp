@@ -18,7 +18,7 @@
 
       <div class="section">
         <article class="ggmt-features paralax">
-          <h1 class="f-title Appear" v-scrollanimation="{delay: 0}"><p>Features</p></h1>
+          <h1 class="f-title Appear" v-scrollanimation="{delay: 0}"><p class="title-p">Features</p></h1>
           <FeaturesCarousel :features="Features"/>
         </article>
       </div>
@@ -35,9 +35,7 @@
 
       
       
-      <div class="section" id="footer">
-        <pppFooter />
-      </div>
+      
 
 
     </full-page>
@@ -45,11 +43,10 @@
 </template>
 
 <script>
-import pppFooter from "@/components/Footer.vue";
 import FeaturesCarousel from "@/components/Features.vue";
 export default {
   components: {
-    pppFooter,
+
     FeaturesCarousel
   },
   methods: {

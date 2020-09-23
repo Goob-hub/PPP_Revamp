@@ -1,27 +1,26 @@
 <template>
   <div class="home">
     
-    <Head />  
-    <div class="games">
-      <featuredGames />
-    </div>
-
+    <pppHead />  
+    
+ 
     
 
   </div>
 </template>
 
 <script>
-import Head from '@/components/HomePage/header.vue' 
+import pppHead from '@/components/HomePage/header.vue' 
 
-import featuredGames from '@/components/HomePage/gameCard.vue'
+
 
 
 export default {
   name: 'Home',
   components: {
-    Head,
-    featuredGames,
+    pppHead,
+    
+
   }
 }
 </script>
@@ -38,22 +37,16 @@ export default {
 
 
 .home{
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   font-family: var(--ff2);
   transition: .5s linear;  
   background: var(--clr1);
-  height: max-content;
+  height: 100%;
   max-width: 100vw;
-  overflow: hidden;
-  
+  overflow: visible;
 
-  .games{
-    transition: .5s linear;
-    top: 0;
-    position: absolute;
-    transform: translateX(125vw);
-  }
+  
 }
 </style>

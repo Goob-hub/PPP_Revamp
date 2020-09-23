@@ -3,16 +3,19 @@
     <navBtn />
     <navBar />
     <router-view/>
+    <pppFooter/>
   </div>
 </template>
 
 <script>
 import navBar from '@/components/Nav/nav.vue'
 import navBtn from '@/components/Nav/burgerBtn.vue'
+import pppFooter from '@/components/Footer.vue'
 export default {
   components: {
     navBar,
-    navBtn
+    navBtn,
+    pppFooter
   },
   methods:{
     move(e){
@@ -53,7 +56,7 @@ export default {
     font-family: var(--ff1);
     text-transform: capitalize;
   }
-  
+
   p{
     font-family: var(--ff2);
   }

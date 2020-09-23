@@ -46,16 +46,13 @@
           <input type="submit" v-scrollanimation="{delay: 0}"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design">
        </form>
 
-       <pppFooter />
 
   </div>
 </template>
 
 <script>
-import pppFooter from '@/components/Footer.vue'
 export default {
      components:{
-          pppFooter
      },
      methods:{
           noSubmit(e){

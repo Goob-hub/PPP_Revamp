@@ -21,29 +21,26 @@
 
       <div class="section">
         <article class="backrooms-features-free">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>free edition features</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">free edition features</p></h1>
           <FeaturesCarousel :features="FeaturesFree" :progressBar="false"/>
         </article>
       </div>
 
       <div class="section">
         <article class="backrooms-roadmap-early">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>Early Access Road Map</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Early Access Road Map</p></h1>
           <FeaturesCarousel :features="progressFree" :progressBar="true"/>
           
         </article>
       </div>
       <div class="section">
         <article class="backrooms-roadmap-full">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p>Full Edition Road Map</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Full Edition Road Map</p></h1>
           <FeaturesCarousel :features="progressFull" :progressBar="true"/>
           
         </article>
       </div>
       
-      <div class="section" id="footer">
-        <pppFooter />
-      </div>
 
 
     </full-page>
@@ -52,11 +49,9 @@
 </template>
 
 <script>
-import pppFooter from "@/components/Footer.vue";
 import FeaturesCarousel from "@/components/Features.vue";
 export default {
   components:{
-    pppFooter,
     FeaturesCarousel
   },
   data(){

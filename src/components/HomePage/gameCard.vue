@@ -1,15 +1,15 @@
 <template>
 <div class="carousel-container-games">
      <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500">
-          <slide :class="info.background" :key="info.title" v-for="info in cardInfo">
-               <div class="card">
+          <slide  :key="info.title" v-for="info in cardInfo">
+               <div class="card" :class="info.background">
                     <main class="card-info">
-                         <h1 :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
+                         <h1 class="card-h1" :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
                          <p>{{info.desc}}</p>
                          <footer>
-                              <router-link :to="info.link" class="btn btn-design" :class="info.VFX.button"><span data-text="Learn more">Learn more</span></router-link>
-                              <a class="btn btn-design" :class="info.VFX.button"><span data-text="Steam page">Steam page</span></a>
-                              <a class="btn btn-design" :class="info.VFX.button" @click="back()"><span data-text="Back">Back</span></a>
+                              <router-link :to="info.link" class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Learn more">Learn more</span></router-link>
+                              <a class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Steam page">Steam page</span></a>
+                              <a class="btn btn-design" :class="info.VFX.button" @click="back()"><span class="p-size" data-text="Back">Back</span></a>
                          </footer>
                          <p>swipe to view next game</p>
                     </main>
@@ -63,11 +63,13 @@ export default {
 
 <style lang="scss">
 .carousel-container-games{
+     margin-top: 2em;
      height: max-content;
-     width: 100vw;
-     height: 100vh;
+     max-width: 100vw;
      align-self: center;
-     overflow: hidden;
+     overflow: visible;
+
+    
     
      .Backrooms{
           background: center/cover no-repeat url('../images/backroomsglitch.gif')
@@ -77,16 +79,21 @@ export default {
           background: center/cover no-repeat url('../images/GGMT.gif');
      }
 
+     .VueCarousel-slide{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
-          width: inherit;
-          height: 100vh;
-          padding: 1em;
-          position: relative;
-          display: flex;
-          flex-direction: row;
+          margin: .7em;
+          max-width: 800px;
+          height: max-content;
           overflow: hidden;
+          box-shadow: 0px 0px 5px white;
+          
           
      
           &-info{
@@ -95,27 +102,28 @@ export default {
                justify-content: flex-end;
                align-items: center;
                flex-direction: column;
-               position: absolute;
                padding: 1em;
                top: 0;
                left: 0;
-               background: var(--clrTransparent);
-               height: inherit;
+               background: var(--gradientBGD);
+               height: 100%;
                width: inherit;
      
                h1{
                     font-family: var(--ff-1);
-                    font-size: 2em;
+                    margin-bottom: 0;
                }
                
                p, footer{
                     font-family: var(--ff2);
                     margin-top: 2em;
+                    @media (min-width: 768px) {
+                         max-width: 80%;
+                         
+                    }
                }
      
-               p{
-                    font-size: .9em;
-               }
+             
      
                footer{
                     height: max-content;
@@ -127,6 +135,9 @@ export default {
                     
                     .btn{
                          text-decoration: none;
+                         p{
+                              margin: 0;
+                         }
                          &:hover{
                               span{
                                    color: black;

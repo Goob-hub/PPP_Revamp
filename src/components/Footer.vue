@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" >
 .ppp-footer{
+     text-align: center;
      background: #111;
      width: 100vw;
      min-height: 30vh;
