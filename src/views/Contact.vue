@@ -43,7 +43,7 @@
                <label for="Message"><p>Message</p></label>
           </div>
 
-          <input type="submit" v-scrollanimation="{delay: 0}"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design">
+          <button type="submit" v-scrollanimation="{delay: 0}"  @click="$emit('prevent', noSubmit($event))" class="btn btn-submit btn-design"><p>Submit</p></button>
        </form>
 
 
@@ -78,7 +78,7 @@ export default {
      min-height: 100vh;
      max-width: 100vw;
      background: var(--gradientBGD), center/cover fixed no-repeat url("../components/images/Treeline.png");
-     padding: 1em 1em 0 1em;
+     padding: 1em 1em 5em 1em;
      text-transform: capitalize;
 
      h1,p,div,input{
@@ -101,6 +101,7 @@ export default {
      .Contact-header{
           margin: 1em 0 1em 0;
           min-height: 30vh;
+          
           p{
                line-height: 1.5em;
                letter-spacing: 2px;
@@ -116,9 +117,15 @@ export default {
                max-width: 80%;
                padding: .5em;
           }
+         
           .input-data{
                margin: 1.5em ;
                position: relative;
+
+               input[type="email"]{
+                    margin-top: 2em;
+               }
+               
                .underline{
                     transition: .5s linear;
                     position: absolute;
@@ -183,6 +190,7 @@ export default {
                     margin-top: 2em;
                     border: 1px solid white;
                     padding: 1em;
+                    max-width: 100vw;
                     &:focus{
                          border-color: #44e018;
                     }
@@ -230,6 +238,8 @@ export default {
           .btn-submit{
                font-family: var(--ff2);
                font-size: 1em;
+               padding: 1em;
+               margin-top: 2em;
           }
      }
 

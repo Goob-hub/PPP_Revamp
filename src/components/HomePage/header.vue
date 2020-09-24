@@ -3,7 +3,12 @@
           <div class="Text">
                <h1 v-scrollanimation="{delay: 0}">Pie On A Plate Productions</h1>
                <h4 v-scrollanimation="{delay: 500}">We Bake Deliciously Good Games!</h4>
-          </div>
+               <div class="scroll" v-scrollanimation="{delay: 700}" >
+                    <span></span>
+                    <p>scroll</p>
+               </div>
+        </div>
+          
           <div class="games">
                <h2 v-scrollanimation="{delay:1000}">Here are some of our tastiest treats!</h2>
                <fa-icon :size="'3x'" :icon="['fa', 'long-arrow-alt-down']" v-scrollanimation="{delay: 1000}"/>
@@ -49,6 +54,13 @@ export default {
           margin: 0 clamp(1em, 10%, 5em) 0 clamp(1em, 10%, 5em);
      }
 
+     .scroll{
+          margin-top: 20%;
+          position: relative;
+          top: 0%;
+          left: 0%;
+     }
+
      .before-enter{
           transition: .5s linear;
           opacity: 0;
@@ -73,7 +85,7 @@ export default {
           align-items: center;
           flex-wrap: nowrap;
           flex-direction: column;
-          margin-top: 1em;
+          margin-top: 0;
           h1:not(.card-h1){
                margin-bottom: clamp(1em, 10%, 3em);
           }
@@ -82,11 +94,12 @@ export default {
      
      .Text{
           text-align: center;
-          height: max-content;
+          height: 100vh;
+          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-around;
+          justify-content: center;
 
           h1{
                margin-bottom: 1em;
@@ -95,7 +108,7 @@ export default {
 
           
           
-          margin: clamp(1em, 20vh, 10em) 0 clamp(1em, 20vh, 15em) 0;
+          margin: 0 0 0 0;
      }
 
      

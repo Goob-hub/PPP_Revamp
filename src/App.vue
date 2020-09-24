@@ -51,7 +51,10 @@ export default {
   max-width: 100vw;
   background: var(--clr1);
   overflow: hidden;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
   h1{
     font-family: var(--ff1);
     text-transform: capitalize;
@@ -60,6 +63,8 @@ export default {
   p{
     font-family: var(--ff2);
   }
+
+  
 }
 
 
