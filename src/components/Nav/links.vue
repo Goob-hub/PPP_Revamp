@@ -20,7 +20,7 @@
                <router-link to="/DevBlog" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
                </li>
           </ul>
-          <ul class="games">
+          <ul class="Games">
                <li @click="closeNav()">
                <router-link to="/GGMT" class="btn" data-text="GGMT"><span>GGMT</span></router-link>
                </li>
@@ -70,8 +70,12 @@ export default {
 .links, .Games{
      text-align: center;
      transition: .5s linear;
+     justify-content: center;
+     align-items: flex-start;
      flex-wrap: wrap;
      max-height: 100vh;
+     height: 100vh;
+     width: 100vw;
 }
 
 .links-container{
@@ -127,7 +131,7 @@ ul{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 5.5em;
+                    font-size: clamp(10em, calc(40vw - 40vh), 20em);
                     color: rgba(255, 255, 255, .2);
                     border-radius: 50%;
                     z-index: -1;
@@ -145,8 +149,9 @@ ul{
                          content: attr(data-text);
                          opacity: 1;
                          z-index: -1;
-                         height: 100%;
-                         width: 100%;
+                         height: 150%;
+                         width: 150%;
+                         
                          transform: translate(-50%, -50%);
                          letter-spacing: 10px;
                     }

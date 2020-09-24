@@ -1,6 +1,6 @@
 <template>
 <div class="carousel-container-games">
-     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500">
+     <carousel :per-page="1" :loop="true" :paginationEnabled="true" :paginationActiveColor="'white'" :paginationColor="'grey'" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"  :perPageCustom="[[1500, 2]]">
           <slide  :key="info.title" v-for="info in cardInfo">
                <div class="card" :class="info.background">
                     <main class="card-info">
@@ -65,7 +65,7 @@ export default {
 .carousel-container-games{
      margin-top: 2em;
      height: max-content;
-     max-width: 100vw;
+     max-width: clamp(300px, 100vw, 1200px);
      align-self: center;
      overflow: visible;
 

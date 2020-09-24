@@ -49,13 +49,24 @@ $bp4: 1280px;
           
      }
      .ppp-footer{
-          
+          padding: 2em;
           .icons{
                transform: scale(1.5);
           }
+          
           p{
-               margin-top: 2em;
-               font-size: 1.3em;
+               margin-top: 3em;
+          }
+     }
+}
+
+@media (min-width: $bp3){
+     .ppp-footer{
+          .icons{
+               .btn{
+                    width: 6em;
+                    padding: 1.5em 1em 1.5em 1em;
+               }
           }
      }
 }
@@ -72,6 +83,10 @@ $bp4: 1280px;
           .icons{
                flex-direction: column;
           }
+     }
+
+     .links, .Games{
+          justify-content: flex-start;
      }
 
      .home{

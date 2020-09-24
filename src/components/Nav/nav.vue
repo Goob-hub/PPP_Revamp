@@ -23,8 +23,7 @@ nav{
      align-items: center;
      height: 100vh;
      overflow: hidden;
-     // background: var(--gradientBG), center/cover fixed no-repeat url('../images/navBg.png');
-     background: black;
+     background: #000000;
      transition: .5s linear;
 
      &::before{
@@ -36,7 +35,7 @@ nav{
           width: 50vw;
           top: 0;
           left: 0;
-          background: rgba(255, 255, 255, .1);
+          background: rgba(255, 255, 255, 0.11);
      }
 
      &.games{

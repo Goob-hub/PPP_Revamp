@@ -36,6 +36,26 @@ p, span, h1, h2, h3{
      
 }
 
+.links, .Games{
+     .btn{
+          &:hover{
+               span{
+                    font-size: clamp(45px, calc(9.3vw - 9.3vh), 7em);
+               }
+          }
+          span{
+
+               font-size: clamp(40px, calc(8.7vw - 8.7vh), 6.5em);
+          }
+     }
+}
+
+.ppp-footer{
+     p, .p-size{
+          font-size: clamp(25px, calc(5vw - 5vh), 1.8em);
+     }
+}
+
 .glitchTxt{
      position: relative;
      z-index: 2;

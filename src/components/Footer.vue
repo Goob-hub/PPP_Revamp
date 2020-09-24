@@ -1,6 +1,7 @@
 <template>
-  <footer class="ppp-footer">
+  <footer class="ppp-footer" v-scrollanimation="{delay: 0}">
        <div class="icons">
+            {{reSizeFaIcons()}}
           <button class="btn fa-fb" v-scrollanimation="{delay: 0}">
                <a target="_blank" href="https://www.facebook.com/PieOnAPlateProductions/">
                     <fa-icon :icon="['fab', 'facebook-f']"  size="2x" class="fa"/>
@@ -28,7 +29,30 @@
 
 <script>
 export default {
-     name: 'Footer'
+     name: 'Footer',
+     methods:{
+          reSizeFaIcons(){
+               setTimeout(() => {
+                    let icons = document.querySelectorAll('.fa');
+
+                    if (window.innerWidth >= 1024){
+                         icons.forEach(icon => {
+                              icon.classList.add('fa-3x');
+                         })
+                    } else {
+                         
+                         icons.forEach(icon => {
+                              icon.classList.remove('fa-3x');
+                         })
+                    }
+                    window.addEventListener('resize', () => {
+                         this.reSizeFaIcons();
+                    })
+               });
+
+          }
+
+     }
 }
 </script>
 
@@ -43,6 +67,17 @@ export default {
      justify-content: space-around;
      align-items: center;
      flex-direction: column;
+     transition: .5s linear;
+
+     &.before-enter{
+          opacity: 0;
+          transform: translateX(-100px);
+     }
+     &.enter{
+          opacity: 1;
+          transform: translateX(0);
+     }
+
      p, .icons{
           margin-top: 1em;
           display: flex;
