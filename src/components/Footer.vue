@@ -35,7 +35,7 @@ export default {
                setTimeout(() => {
                     let icons = document.querySelectorAll('.fa');
 
-                    if (window.innerWidth >= 1024){
+                    if (window.innerWidth >= 1024 && window.innerWidth <= 1280){
                          icons.forEach(icon => {
                               icon.classList.add('fa-3x');
                          })

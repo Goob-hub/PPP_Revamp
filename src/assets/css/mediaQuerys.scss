@@ -60,7 +60,7 @@ $bp4: 1280px;
      }
 }
 
-@media (min-width: $bp3){
+@media (min-width: $bp3) and (max-width: $bp4){
      .ppp-footer{
           .icons{
                .btn{

@@ -45,8 +45,17 @@ p, span, h1, h2, h3{
           }
           span{
 
-               font-size: clamp(40px, calc(8.7vw - 8.7vh), 6.5em);
+               font-size: clamp(26px, calc(26px + 1.5vw + 1.5vh), 6.5em);
           }
+     }
+}
+
+@media(max-width: 330px){
+     .links, .Games{
+          .btn span{
+               font-size: clamp(30px, calc(26px + 1.5vw + 1.5vh), 20px);
+          }
+          align-items: center;
      }
 }
 

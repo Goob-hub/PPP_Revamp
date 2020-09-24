@@ -65,12 +65,13 @@ export default {
 .carousel-container-games{
      margin-top: 2em;
      height: max-content;
-     max-width: clamp(300px, 100vw, 1200px);
+     
      align-self: center;
      overflow: visible;
 
     
     
+
      .Backrooms{
           background: center/cover no-repeat url('../images/backroomsglitch.gif')
      }
@@ -89,7 +90,7 @@ export default {
           font-family: var(--ff2);
           transition: .5s linear;
           margin: .7em;
-          max-width: 800px;
+          max-width: clamp(320px, 100vw, 550px);
           height: max-content;
           overflow: hidden;
           box-shadow: 0px 0px 5px white;
