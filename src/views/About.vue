@@ -18,7 +18,7 @@
         <h1 class="Appear" v-scrollanimation="{delay: 0}">
           <p class="title-p"> Delicious</p>
         </h1>
-        <div class="scroll" v-animate="{delay: 3500}" v-if="this.showScrollCue">
+        <div class="scroll" v-scrollanimation="{delay: 3000}">
           <span></span>
           <p>scroll</p>
         </div>
@@ -168,7 +168,7 @@ export default {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     
     
@@ -183,15 +183,15 @@ export default {
   &-history, &-today{
     padding: .5em;
     h1{
-      font-size: 2em;
+     
       margin: .5em;
     }
     p{
       line-height: 1.75em;
-      font-size: .85em;
+      
     }
 
-    h1,p{
+    h1,p, .scroll{
       &.before-enter{
         transform: translateX(-100px);
         opacity: 0;

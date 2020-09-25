@@ -22,6 +22,10 @@ $bp4: 1280px;
           p, .p-size{
                font-size: clamp(18px, 5vw, 1.7em);
           }
+          
+          input{
+               font-size: clamp(16px, 4vw, 1.5em);
+          }
      }
 
      .Contact{

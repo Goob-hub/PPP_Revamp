@@ -125,7 +125,7 @@ export default {
                input[type="email"]{
                     margin-top: 2em;
                }
-               
+
                .underline{
                     transition: .5s linear;
                     position: absolute;
@@ -139,7 +139,7 @@ export default {
 
                input, textarea{
                     font-family: var(--ff2);
-                    font-size: 1em;
+                    
                     padding: 0 0 .5em .5em;
                     background: transparent;
                     position: relative;
