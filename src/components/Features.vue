@@ -1,7 +1,7 @@
 <template>
      <div class="carousel-container-features" v-if="progressBar === false" >
           {{showPagination()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="true" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
+          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
                <slide v-for="feature in features" :key="feature.title">
                     <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
                          <h1 >{{feature.title}}</h1>
@@ -12,20 +12,25 @@
      </div>
      <div class="carousel-container-features" v-else >
           {{showPagination()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="true" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"> 
+          {{setCircleSize()}}
+          {{getClass()}}
+          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
                <slide v-for="data in features" :key="data.id"> 
                     <div v-scrollanimation="{delay: 500}" class="progress-card">
                          <h1 class="feature-title">{{data.title}}</h1>
-                         <vue-ellipse-progress :progress="data.value" :size="100" 
-                         :color="(data.value === 100) ? 'lime' : (data.value >= 75) ? '#bbe64e' : (data.value >= 50) ? 'cyan': (data.value >= 25) ? '#fcc305': '#e00b0b'" 
-                         :emptyColor="'#333'" :legend="true" :line="'round'" animation="rs 1000" 
-                         :dot="(data.value === 100) ? '10% lime' : (data.value >= 75) ? '10% #bbe64e' : (data.value >= 50) ? '10% cyan': (data.value >= 25) ? '10% #fcc305': '10% #e00b0b'">
-                              <span slot="legend-value">%</span>
-                              <p slot="legend-caption">Complete</p>
-                         </vue-ellipse-progress> 
-                         <ul>
-                              <li v-for="text in data.text" :key="text"><p>-{{text}}</p></li>
-                         </ul>
+                         <div class="circle">
+                              <vue-ellipse-progress :progress="data.value"  
+                              :size="circleSize"
+                              :color="(data.value === 100) ? 'lime' : (data.value >= 75) ? '#bbe64e' : (data.value >= 50) ? 'cyan': (data.value >= 25) ? '#fcc305': '#e00b0b'" 
+                              :emptyColor="'#333'" :legend="true" :line="'round'" animation="rs 1000" 
+                              :dot="(data.value === 100) ? '10% lime' : (data.value >= 75) ? '10% #bbe64e' : (data.value >= 50) ? '10% cyan': (data.value >= 25) ? '10% #fcc305': '10% #e00b0b'">
+                                   <span slot="legend-value">%</span>
+                                   
+                              </vue-ellipse-progress> 
+                         </div>
+                         <div class="desc">
+                              <p v-for="text in data.text" :key="text">-{{text}}</p>
+                         </div>
                     </div>
                </slide>
           </carousel>
@@ -39,27 +44,50 @@ export default {
           features: Array,
           progressBar: Boolean
      },
+     data(){
+          return{
+               circleSize: 135,
+               paginationDisplay: true
+          }
+     },
      methods:{
           showPagination(){
                setTimeout(() => {
-                    let allPaginations = document.querySelectorAll('.VueCarousel-pagination');
-
-
                     if (window.innerHeight < 800){
-                         allPaginations.forEach(pagination => {
-                              pagination.style.display = 'none'
-                         })
+                         this.paginationDisplay = false;
                     } else {
-                         
-                         allPaginations.forEach(pagination => {
-                              pagination.style.display = 'block'
-                         })
+                         this.paginationDisplay = true;
                     }
                     window.addEventListener('resize', () => {
                          this.showPagination();
                     })
                });
-
+          },
+          setCircleSize(){
+               setTimeout(() => {
+                    if (window.innerWidth < 823){
+                         this.circleSize = 125;
+                    } else {
+                         this.circleSize = 150;
+                    }
+                    window.addEventListener('resize', () => {
+                         this.setCircleSize();
+                    })
+               });
+          },
+          getClass(){
+               setTimeout(() => {
+                    let circles = document.querySelectorAll('.circle');
+                    circles.forEach(circle => {
+                         setTimeout(() => {
+                              (circle.classList.contains('progressCircle')) ? circle.classList.remove('progressCircle') :
+                              circle.classList.add('progressCircle');
+                         }, 100);
+                    });
+                    window.addEventListener('resize', () =>{
+                         this.getClass();
+                    })
+               });
           }
      }
 }
@@ -67,7 +95,7 @@ export default {
 
 <style lang="scss">
 
-@media (max-width: 823px) and (max-height: 411px){
+@media (max-width: 824px) and (max-height: 412px){
      .carousel-container-features, .VueCarousel-slide{
           height: 100vh;
           width: 60vw;
@@ -96,15 +124,24 @@ export default {
           h1{
                font-size: 1.5em;
           }
+
+          .ep-legend--value{
+               font-family: var(--ff2);
+          }
+          .legend-caption{
+               font-size: .8em;
+          }
      }
      
 }
+
+
 
 .carousel-container-features{
      height: max-content;
      width: 100vw;
 
-     @media (max-width: 823px) and (max-height: 411px) {
+     @media (max-width: 824px) and (max-height: 412px) {
           height: 100vh;
           width: 60vw;
      }
@@ -113,7 +150,6 @@ export default {
 }
 
 .VueCarousel-slide{
-     
      display: flex;
      justify-content: center;
      align-items: center;
@@ -164,7 +200,7 @@ export default {
   
 }
 .progress-card{
-     
+     overflow: hidden;
      justify-content: space-around;
      box-shadow: 0px 0px 5px white;
      margin: .5em;
@@ -172,25 +208,15 @@ export default {
      background: linear-gradient(45deg,#000000, #152331);
      position: relative;
      transition: 1s ease-in-out;
-     width: clamp(300px, 90vw, 600px);
+     width: clamp(300px, 90vw, 500px);
 
-     @media (max-width: 823px) and (max-height: 411px) {
-          
-          
-          h1{
-               font-size: 2em;
-          }
-          h1, p{
-               transform: scale(.8);
-
-          }
-          transform: scale(.9);
-
-          ul, li{
-               height: max-content;
-               width: max-content;
-          }
-     }
+    .progressCircle{
+         height: max-content;
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+    }
 
      &.before-enter{
           height: 0%;
@@ -212,32 +238,17 @@ export default {
           height: 100%;
           width: 50%;
      }
-     ul{
-          display: flex;
-          flex-direction: column;
-          flex-wrap: nowrap;
-          width: 100%;
-          padding: 0;
-          list-style-type: none;
-          height: max-content;
-          li{
-               padding: 0;
-               margin: 0;
-               margin-top: .25em;
-               width: 80%;
-               p{
-                    padding: .5em;
-                    font-size: 1em;
-                    width: 100%;
-               }
+     .desc{
+        
+          p{
+               padding: .25em;
           }
      }
+          
 
      .ep-legend--value{
           font-family: var(--ff2);
      }
-     .legend-caption{
-          font-size: 1em;
-     }
+     
 }
 </style>

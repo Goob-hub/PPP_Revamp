@@ -9,7 +9,7 @@
                          <footer>
                               <router-link :to="info.link" class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Learn more">Learn more</span></router-link>
                               <a class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Steam page">Steam page</span></a>
-                              <a class="btn btn-design" :class="info.VFX.button" @click="back()"><span class="p-size" data-text="Back">Back</span></a>
+                              
                          </footer>
                          <p>swipe to view next game</p>
                     </main>
@@ -47,17 +47,7 @@ export default {
                }    
           }
      },
-     methods: {
-          back(){
-               setTimeout(() => {
-                    let home = document.querySelector('.home');
-                    home.style.transform = 'translateX(0)'
-                    setTimeout(() => {
-                         home.style.overflow = 'hidden';
-                    }, 500);    
-               });
-          }
-     }
+   
 }
 </script>
 

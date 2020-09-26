@@ -15,7 +15,7 @@ $bp4: 1280px;
      }
 }
 
-@media (max-width: 823px) and (max-height: 411px) {
+@media (max-width: 824px) and (max-height: 412px) {
      .backrooms{
           &-roadmap-early, &-features-free, &-roadmap-full{
                padding: .5em;
@@ -128,7 +128,21 @@ $bp4: 1280px;
           }
      }
 
-     .home-header, .Contact, .Dev, .about{
+     .backrooms{
+          &-features-free, &-header, &-roadmap-early, &-roadmap-full{
+               width: 80vw;
+               justify-content: center;
+          }
+     }
+
+     .ggmt{
+          &-features-free, &-header, &-roadmap-early, &-roadmap-full{
+               width: 80vw;
+               justify-content: center;
+          }
+     }
+
+     .home-header, .Contact, .Dev, .about, .backrooms, .carousel-container-features, .ggmt, .Jobs{
           width: 80vw;
      }
 

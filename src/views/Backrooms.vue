@@ -12,29 +12,26 @@
             <a href="#" class="btn btn-design"><p>View on steam</p></a>
             <a href="#" class="btn btn-design"><p>View on gamejolt</p></a>
           </div>
-          <div class="scroll paralax" v-animate="{delay: 3500}" v-if="this.showScrollCue">
-            <span></span>
-            <p>scroll</p>
-        </div>
+          
         </header>
       </div>
 
       <div class="section">
-        <article class="backrooms-features-free">
+        <article class="backrooms-features-free paralax">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">free edition features</p></h1>
           <FeaturesCarousel :features="FeaturesFree" :progressBar="false"/>
         </article>
       </div>
 
       <div class="section">
-        <article class="backrooms-roadmap-early">
+        <article class="backrooms-roadmap-early paralax">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Early Access Road Map</p></h1>
           <FeaturesCarousel :features="progressFree" :progressBar="true"/>
           
         </article>
       </div>
       <div class="section">
-        <article class="backrooms-roadmap-full">
+        <article class="backrooms-roadmap-full paralax">
           <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Full Edition Road Map</p></h1>
           <FeaturesCarousel :features="progressFull" :progressBar="true"/>
           
@@ -260,10 +257,10 @@ export default {
     
     .title{
       margin-top: 3em;
-      // p{
-      //   width: 80%;
-      //   margin: .5em;
-      // }
+      p{
+        width: 80%;
+        margin: .5em;
+      }
     }
     .scroll{
       margin: 2em 0 0 0;
@@ -276,16 +273,16 @@ export default {
 
   &-features-free{
 
-    // h1{
-    //   width: 80%;
-    //   margin: .5em 0 .5em 0;
+    h1{
+      width: clamp(260px, 80%, 500px);
+      margin: .5em 0 .5em 0;
       
-    //   height: max-content;
-    //   p{
-    //     margin-top: 0;
-    //     margin-bottom: .25em;
-    //   }
-    // }
+      height: max-content;
+      p{
+        margin-top: 0;
+        margin-bottom: .25em;
+      }
+    }
 
     
     .slide-info{
@@ -316,12 +313,12 @@ export default {
   }
 
   &-roadmap-early, &-roadmap-full{
-    justify-content: flex-start;
-    // h1{
-    //   max-width: 80%;
-    //   font-size: 1.8em;
-    //   margin: .25em 0 .5em 0;
-    // }
+    justify-content: center;
+    h1{
+      max-width: 80%;
+      font-size: 1.8em;
+      margin: .25em 0 .5em 0;
+    }
     .progress-card{
       .feature-title{
         max-width: 90%;
