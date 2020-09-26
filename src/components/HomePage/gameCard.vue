@@ -90,7 +90,8 @@ export default {
           font-family: var(--ff2);
           transition: .5s linear;
           margin: .7em;
-          max-width: clamp(320px, 100vw, 550px);
+     
+          max-width: 100vw;
           height: max-content;
           overflow: hidden;
           box-shadow: 0px 0px 5px white;

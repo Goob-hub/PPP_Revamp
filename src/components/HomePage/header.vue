@@ -45,7 +45,7 @@ export default {
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     height: 100%;
+     height: max-content;
      width: 100vw;
      background: var(--gradientBG), center/cover no-repeat url("../images/Backdrop.png");
      padding: 1em 0 3em 0;
@@ -94,7 +94,7 @@ export default {
      
      .Text{
           text-align: center;
-          height: 100vh;
+          min-height: 100vh;
           position: relative;
           display: flex;
           flex-direction: column;

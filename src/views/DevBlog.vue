@@ -29,6 +29,8 @@ export default {
 .Dev{
   min-height: 100vh;
   max-width: 100vw;
+  width: 100vw;
+  padding: 1.5em;
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/Backdrop2.jpg');
   text-align: center;
   &-header{

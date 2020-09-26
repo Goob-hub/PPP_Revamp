@@ -160,15 +160,16 @@ ul{
                          
                          font-size: 2.5em;
                          padding: .15em;
-                         background: rgba(255, 255, 255, .8);
-                         color: black;
+                         
+                         color: white;
+                         text-shadow: 0px 0px 5px white;
                     }
                }
                span{
                     
                     transition: .5s linear;
                     font-weight: bolder;
-                    font-size: 2em;
+                    
                }
           }    
      }

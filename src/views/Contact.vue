@@ -161,6 +161,7 @@ export default {
                     padding: 0 0 .5em .5em;
                     pointer-events: none;
                     p{
+                         
                          transition: .5s linear;
                     }
                }
@@ -190,13 +191,15 @@ export default {
                     margin-top: 2em;
                     border: 1px solid white;
                     padding: 1em;
+                    min-width: 50vw;
+                    min-height: 40vh;
                     max-width: 100vw;
                     &:focus{
                          border-color: #44e018;
                     }
                     &~label{
-                         margin-top: 2em;
-                         padding: 1em;
+                         margin-top: 1em;
+                         padding: .5em;
                          top: 0;
                          bottom: 100%;
                     }

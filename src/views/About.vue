@@ -45,33 +45,36 @@
       <p v-scrollanimation="{delay: 100}">I still love pie.  I still ruin holidays by eating it all before the main course is even finished cooking.  But now I make video games.  We make video games.  Hopefully, in some sense or another, these games we create are just as delicious as a good old fashion slice of pumpkin pie.  Because hey, we are all allowed to dream, right?</p> <br> <p class="quote" v-scrollanimation="{delay: 100}"><strong style="font-size: 1.2em;">-David Campbell III Founder/CEO</strong></p>
     </article>
 
-    <section class="cards-container">
-      <div v-for="member in members" :key="member.id" class="card" :class="`card-${member.ID}`" v-scrollanimation="{delay: 100}">
-        <div class="imgBx">
-          <div>
-            <img :src="member.img" alt="what">
-            <h1>{{member.Name}}</h1>
-            <p>-{{member.Position}}</p>
+    <div class="team">
+      <h1 class="team-title" v-scrollanimation="{delay: 100}">Our Team!!</h1>
+      <section class="cards-container">
+        <div v-for="member in members" :key="member.id" class="card" :class="`card-${member.ID}`" v-scrollanimation="{delay: 100}">
+          <div class="imgBx">
+            <div>
+              <img :src="member.img" alt="what">
+              <h1>{{member.Name}}</h1>
+              <p>-{{member.Position}}</p>
+            </div>
+          </div>
+          <div class="overlay">
+          </div>
+          <div class="content">
+            <article>
+              <h1>Date hired:</h1>
+              <p>{{member.DateHired}}</p>
+            </article>
+            <article>
+              <h1>Favorite Game:</h1>
+              <p>{{member.FavoriteGame}}</p>
+            </article>
+            <article>
+              <h1>Fun Fact:</h1>
+              <p>{{member.FunFact}}</p>
+            </article>
           </div>
         </div>
-        <div class="overlay">
-        </div>
-        <div class="content">
-          <article>
-            <h1>Date hired:</h1>
-            <p>{{member.DateHired}}</p>
-          </article>
-          <article>
-            <h1>Favorite Game:</h1>
-            <p>{{member.FavoriteGame}}</p>
-          </article>
-          <article>
-            <h1>Fun Fact:</h1>
-            <p>{{member.FunFact}}</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
   </div>
 </template>
@@ -161,7 +164,19 @@ export default {
   // background: #111;
   padding: 1em 1em 0 1em;
 
-  
+
+  .team{
+    margin-top: clamp(2rem, 20%, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .team-title{
+      margin-bottom: 1em;
+    }
+  }
+
   &-header{
     margin: 0 0em 5vh 0;
     width: 100%;
@@ -170,10 +185,6 @@ export default {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    
-    
-
-    
   }
 
   &-history{
@@ -191,7 +202,7 @@ export default {
       
     }
 
-    h1,p, .scroll{
+    h1,p, .scroll, .team-title{
       &.before-enter{
         transform: translateX(-100px);
         opacity: 0;

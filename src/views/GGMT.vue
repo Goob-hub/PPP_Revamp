@@ -4,9 +4,9 @@
     <full-page :options="{options: ''}" class="particle">
       <div class="section">
         <header class="ggmt-header">
-          <div class="title">
-            <h1 class="paralax"><span>The</span></h1> 
-            <h1 class="paralax">Great Geometric Multiverse Tour</h1>
+          <div class="title paralax">
+            <h1 ><span>The</span></h1> 
+            <h1 >Great Geometric Multiverse Tour</h1>
           </div>
           <div class="buttons paralax">
             <a href="#" class="btn btn-design"><p>View on steam</p></a>
@@ -128,7 +128,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .slide-info, .ggmt-features, .detail{
+.ggmt, .ggmt-header, .ggmt-article, .title, .buttons, .ggmt-section, .ggmt .slide-info, .backrooms .slide-info, .ggmt-features, .detail{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -136,6 +136,8 @@ export default {
   align-items: center;
   overflow: hidden;
 }
+
+
 
 .ggmt{
   min-height: 100vh;
@@ -172,14 +174,19 @@ export default {
     height: 100vh;
     width: 100vw;
     padding: 1em;
- 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     animation: fade-in 1s linear;
     animation-fill-mode: forwards;
     .title{
       h1{
         text-shadow: 0px 0px 5px white;
-        font-size: 3em;
+        
         letter-spacing: 3px;
+        margin-bottom: 1em;
         span{
           transition: .5s linear;
         }
@@ -187,7 +194,7 @@ export default {
           margin-bottom: .5em;
           width: max-content;
           position: relative;
-          font-size: 2em;
+          
           overflow: hidden;
           span{
             letter-spacing: 5px;
@@ -224,7 +231,7 @@ export default {
         transition: 1s linear;
         h1{
           padding-left: .25em;
-          font-size: 2.5em;
+          
           transition: 1s linear 1s;
         }
         &::before{
@@ -279,7 +286,7 @@ export default {
 
     .f-title{
       margin: .5em 0 .5em 0;
-      font-size: 3em;
+      
       &::before{
         height: 2.5px;
         box-shadow: 0px 0px 5px white;

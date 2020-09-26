@@ -17,70 +17,13 @@ Global Variables used throughout the website
      --ff2: 'Montserrat', sans-serif;
 }
 
-/*
+$root-font-size: 17px;
 
-Font Size Responsiveness
-
-*/
-
-p, span, h1, h2, h3{
-     max-width: 100vw;
-     transition: .5s linear;
+@function px2vw($value-px, $layout-px){
+     @return ($value-px/$layout-px)*100vw;
 }
-
-.home, .Contact, .about{
-     h1{
-          font-size: clamp(2.5em, calc((10vw - 10vh) + 1em), 5em);
-     }
-     
-     h2, .title-p{
-          font-size: clamp(35px, calc(8vw - 8vh), 3em);
-     }
-     
-     h4{
-          font-size: clamp(18px, calc(4vw - 4vh), 3.5em);
-     }
-     
-     p, .p-size{
-          font-size: clamp(18px, calc(5vw - 5vh), 1.8em);
-     }
-
-     input{
-          font-size: clamp(18px, calc(5vw - 5vh), 1.5em);
-
-     }
-
-     
-     
-}
-
-.ppp-footer{
-     p, .p-size{
-          font-size: clamp(16px, calc(.5em + 1vw + 1vh), 1.8em);
-     }
-}
-
-.links, .Games{
-     .btn{
-          &:hover{
-               span{
-                    font-size: clamp(45px, calc(9.3vw - 9.3vh), 7em);
-               }
-          }
-          span{
-
-               font-size: clamp(26px, calc(26px + 1.5vw + 1.5vh), 6.5em);
-          }
-     }
-}
-
-@media(max-width: 330px){
-     .links, .Games{
-          .btn span{
-               font-size: clamp(30px, calc(26px + 1.5vw + 1.5vh), 20px);
-          }
-          align-items: center;
-     }
+@function px2rem($value-px){
+     @return ($value-px/$root-font-size)*1rem;
 }
 
 /*
@@ -202,7 +145,7 @@ Global Classes used throughout the website
 }
 
 .cards-container{
-     width: 100vw;
+     width: 100%;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
@@ -224,9 +167,10 @@ Global Classes used throughout the website
        justify-content: center;
        align-items: center;
        flex-direction: column;
-       width: 300px;
-       height: 400px;
+       height: max-content;
+       width: 350px;
        z-index: 2;
+       padding-bottom: clamp(2em, 20%, 3em);
        margin: 2.5em 1em 2.5em 1em;
  
        &.before-enter{
@@ -277,7 +221,7 @@ Global Classes used throughout the website
        
  
        .imgBx{
-         position: absolute;
+         position: relative;
          top: 0;
          left: 0;
          right: 0;
@@ -288,6 +232,7 @@ Global Classes used throughout the website
          justify-content: flex-start;
          align-items: center;
          text-align: center;
+         height: max-content;
  
          div{
            display: flex;
@@ -361,9 +306,13 @@ Global Classes used throughout the website
        }
  
        .content{
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform: translateY(-50%);
          pointer-events: none;
-         height: 100%;
-         width: 100%;
+         max-height: 300px;
+         max-width: 400px;
          display: flex;
          justify-content: space-around;
          align-items: center;
@@ -371,10 +320,16 @@ Global Classes used throughout the website
          opacity: 0;
          z-index: 2;
          padding: 1em;
+
+         
          
          article{
+          h1{
+               font-size: max(24px);
+          }
            p{
              margin-top: .5em;
+             font-size: max(20px);
            }
          }
        
@@ -384,6 +339,11 @@ Global Classes used throughout the website
      h1, img, p{
        max-width: 100%;
      }
+}
+
+.ggmt .slide-info, .backrooms .slide-info{
+     flex-direction: column;
+     flex-wrap: nowrap;
 }
 
 .particle{
@@ -614,3 +574,55 @@ Global Classes used throughout the website
           transform: initial;
      }
 }
+
+/*
+
+Font Size Responsiveness
+
+*/
+
+html{
+     font-size: px2vw($root-font-size, 1200px);
+     @media screen and(min-width: 320px){
+          font-size: px2vw($root-font-size, 320px);
+     }
+     @media screen and(min-width: 568px){
+          font-size: px2vw($root-font-size, 568px);
+     }
+     @media screen and(min-width: 1400px){
+          $root-font-size: 20px;
+          font-size: px2vw($root-font-size, 1400px);
+     }
+}
+
+p{
+     font-size: px2rem(16px);
+}
+
+h1{
+     font-size: px2rem(36px);
+}
+
+.title-p{
+     font-size: px2rem(30px);
+}
+
+h2{
+     font-size: px2rem(20px);
+}
+
+.links a.btn span, .Games a.btn span{
+     @media screen and(min-width: 320px) and (max-width: 480px){
+          font-size: px2rem(30px);
+     }
+     font-size: px2rem(40px);
+}
+
+
+p, span, h1, h2, h3{
+     max-width: 100vw;
+     transition: .5s linear;
+}
+
+
+

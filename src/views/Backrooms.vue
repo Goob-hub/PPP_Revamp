@@ -61,18 +61,18 @@ export default {
           {
             id: 1,
             title: 'Infinite random level generation',
-            text: 'Over 600 million square miles of mono yellow madness!'
+            text: 'Over 600 million square miles of mono yellow madness to explore and get lost in!'
           },
           {
             id: 2,
             title: 'Immersive in depth madness system',
-            text: 'Trippy disorienting effects that will leave you shaking in your pants!'
+            text: 'Trippy, disorienting, and maddening effects that will rock your world and probably wanna make you throw up!'
             
           },
           {
             id: 3,
             title: 'An entity that roams the backrooms',
-            text: 'Whatever you do, DONT LOOK AT IT!'
+            text: 'Whatever you do, DONT LOOK AT IT! It watches in the shadows'
           },
           {
             id: 4,
@@ -260,10 +260,10 @@ export default {
     
     .title{
       margin-top: 3em;
-      p{
-        width: 80%;
-        margin: .5em;
-      }
+      // p{
+      //   width: 80%;
+      //   margin: .5em;
+      // }
     }
     .scroll{
       margin: 2em 0 0 0;
@@ -276,16 +276,16 @@ export default {
 
   &-features-free{
 
-    h1{
-      width: 80%;
-      margin: .5em 0 .5em 0;
-      font-size: 2em;
-      height: max-content;
-      p{
-        margin-top: 0;
-        margin-bottom: .25em;
-      }
-    }
+    // h1{
+    //   width: 80%;
+    //   margin: .5em 0 .5em 0;
+      
+    //   height: max-content;
+    //   p{
+    //     margin-top: 0;
+    //     margin-bottom: .25em;
+    //   }
+    // }
 
     
     .slide-info{
@@ -317,11 +317,11 @@ export default {
 
   &-roadmap-early, &-roadmap-full{
     justify-content: flex-start;
-    h1{
-      max-width: 80%;
-      font-size: 1.8em;
-      margin: .25em 0 .5em 0;
-    }
+    // h1{
+    //   max-width: 80%;
+    //   font-size: 1.8em;
+    //   margin: .25em 0 .5em 0;
+    // }
     .progress-card{
       .feature-title{
         max-width: 90%;
