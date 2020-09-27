@@ -159,7 +159,7 @@ export default {
      position: relative;
      transition: 1s ease-in-out;
      height: 95%;
-     max-height: 60vh;
+     max-height: 70vh;
      width: clamp(300px, 90vw, 600px);
      margin: .5em;
      padding: .5em;
@@ -210,7 +210,7 @@ export default {
      position: relative;
      transition: 1s ease-in-out;
      width: clamp(300px, 90vw, 600px);
-     max-height: 60vh;
+     max-height: 70vh;
 
     .progressCircle{
          height: max-content;
