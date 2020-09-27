@@ -159,26 +159,7 @@ $bp4: 1280px;
 }
 
 @media(min-width: $bp2){
-     .nav-btn{
-          top: 2em;
-          right: 2em;
-          width: max-content;
-          span{
-               height: .5em;
-               width: 4em;
-               &::before, &::after{
-                    width: 4em;
-                    height: .5em;
-               }
-               &::before{
-                    transform: translateY(1.5em);
-               }
-               &::after{
-                    transform: translateY(-1.5em);
-               }
-          }
-          
-     }
+     
      .Contact-header{
           max-width: 80%;
      }

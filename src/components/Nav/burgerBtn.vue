@@ -74,7 +74,7 @@ export default {
           
           border-radius: 5px;
           transition: .5s linear;
-          background: white;
+          background: transparent;
           
          
           &::before, &::after{
@@ -91,10 +91,10 @@ export default {
           }
 
           &::before{
-               transform: translateY(15px);
+               transform: translateY(6px);
           }
           &::after{
-               transform: translateY(-15px);
+               transform: translateY(-6px);
           }
 
 
