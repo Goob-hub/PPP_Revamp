@@ -21,7 +21,7 @@ I used the Vue framework to program this site from scratch as I am currently in 
 - Completley fluid typography that scales with viewport width
 - Scroll enter animations created with a custom vue directive
 - A paralax mousemove effect made with javascript
-- Reactive data that can be edited to change some content on the page (Could add a cms in the future if the dev team wants to use my website)
+- Reactive data that can be edited to change some content on the page (Basically just to sort of simulate if I were displaying information obtained from a backend server or something)
 
 # Link To The Original Site Of Pie On A Plate Productions
 
