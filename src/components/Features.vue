@@ -208,7 +208,7 @@ export default {
      background: linear-gradient(45deg,#000000, #152331);
      position: relative;
      transition: 1s ease-in-out;
-     width: clamp(300px, 90vw, 500px);
+     width: clamp(300px, 90vw, 600px);
 
     .progressCircle{
          height: max-content;

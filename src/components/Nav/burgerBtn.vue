@@ -33,14 +33,14 @@ export default {
      width: max-content;
      height: max-content;
      position: fixed;
-     top: 1.5em;
+     top: 1em;
      right: 1em;
      z-index: 6;
 }
 
 .nav-btn{
-     height: 3em;
-     width: 2em;
+     height: clamp(3em, 10vh, 6em);
+     width: clamp(3em, 7vw, 5em);
      position: relative;
      cursor: pointer;
      display: flex;
@@ -56,10 +56,10 @@ export default {
                box-shadow: none; 
                          
                &::before{
-                    transform: rotate(45deg) translate(25px, -25px);
+                    transform: rotate(45deg) translate(2em, -2em);
                }
                &::after{
-                    transform: rotate(-45deg) translate(25px, 25px);
+                    transform: rotate(-45deg) translate(2em, 2em);
                }
           }
 
@@ -67,9 +67,9 @@ export default {
 
      span{
           position: relative;
-          width: 2em;
+          width: 100%;
+          height: 10%;
           background: var(--clrTxt);
-          height: .2em;
           border-radius: 5px;
           transition: .5s linear;
          
@@ -79,17 +79,17 @@ export default {
                top: 0;
                left: 0;
                position: absolute;
-               width: 2em;
-               height: .2em;
+               width: 100%;
+               height: 100%;
                background: var(--clrTxt);
                border-radius: 5px;
           }
 
           &::before{
-               transform: translateY(.75em);
+               transform: translateY(300%);
           }
           &::after{
-               transform: translateY(-.75em);
+               transform: translateY(-300%);
           }
 
 

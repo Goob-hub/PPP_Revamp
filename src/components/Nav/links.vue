@@ -96,7 +96,7 @@ ul{
      flex-wrap: wrap;
      height: 100%;
      width: 100vw;
-     padding: 1em;
+    
      font-family: var(--ff2);
      transition: .5s linear;
      list-style: none;

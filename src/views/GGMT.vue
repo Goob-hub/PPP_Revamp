@@ -6,7 +6,7 @@
         <header class="ggmt-header">
           <div class="title paralax">
             <h1 ><span>The</span></h1> 
-            <h1 >Great Geometric Multiverse Tour</h1>
+            <h1 class="ggmt-title-h1">Great Geometric Multiverse Tour</h1>
           </div>
           <div class="buttons paralax">
             <a href="#" class="btn btn-design"><p>View on steam</p></a>
@@ -174,14 +174,13 @@ export default {
     height: 100vh;
     width: 100vw;
     padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+    
     animation: fade-in 1s linear;
     animation-fill-mode: forwards;
     .title{
+      
+      flex-direction: column;
+      flex-wrap: nowrap;
       h1{
         text-shadow: 0px 0px 5px white;
         

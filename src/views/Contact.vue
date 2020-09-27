@@ -5,16 +5,20 @@
             <p v-scrollanimation="{delay: 200}">Whether it's for General Information, Game Support, Press Inquiries, or something else, We'd love to hear from you!</p>
        </header>
        <form action="" autocomplete="off" class="Contact-form">
-            <div class="input-data" v-scrollanimation="{delay: 200}">
-               <input type="text" name="name" required>
-               <label for="name" ><p>Name</p></label>
-               <div class="underline"></div>
-            </div>
+            <div class="Contact-info">
 
-            <div class="input-data" v-scrollanimation="{delay: 200}">
-               <input type="email" name="email" required>
-               <label for="email"><p>Email</p></label>
-               <div class="underline"></div>
+               <div class="input-data" v-scrollanimation="{delay: 200}">
+                    <input type="text" name="name" required>
+                    <label for="name" ><p>Name</p></label>
+                    <div class="underline"></div>
+               </div>
+
+               <div class="input-data" v-scrollanimation="{delay: 200}">
+                    <input type="email" name="email" required>
+                    <label for="email"><p>Email</p></label>
+                    <div class="underline"></div>
+               </div>
+
             </div>
             
           <h1 v-scrollanimation="{delay: 200}">Reason for contact</h1>
@@ -38,7 +42,7 @@
                
           </div>
 
-          <div class="input-data" v-scrollanimation="{delay: 200}">
+          <div class="input-data textarea" v-scrollanimation="{delay: 200}">
                <textarea required name="Message" id="Message" cols="25" rows="9"></textarea>
                <label for="Message"><p>Message</p></label>
           </div>
@@ -98,6 +102,21 @@ export default {
           margin-top: 2em;
      }
 
+     &-info{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          input{
+               max-width: 10em;
+               margin: 0;
+          }
+     }
+
+     input[type="text"], input[type=email]{
+          max-width: 10em;
+     }
+
      .Contact-header{
           margin: 1em 0 1em 0;
           min-height: 30vh;
@@ -117,14 +136,15 @@ export default {
                max-width: 80%;
                padding: .5em;
           }
+
+          .input-data:not(.textarea){
+               max-width: 10em;
+          }
          
           .input-data{
                margin: 1.5em ;
                position: relative;
-
-               input[type="email"]{
-                    margin-top: 2em;
-               }
+               
 
                .underline{
                     transition: .5s linear;
@@ -198,8 +218,8 @@ export default {
                          border-color: #44e018;
                     }
                     &~label{
-                         margin-top: 1em;
-                         padding: .5em;
+                         margin-top: 2em;
+                         padding: 1em;
                          top: 0;
                          bottom: 100%;
                     }
@@ -208,6 +228,8 @@ export default {
           }
 
           .form-reason{
+               flex-wrap: wrap;
+               flex-direction: row;
                margin-top: 1em;
 
                .radio-container{
@@ -241,7 +263,7 @@ export default {
           .btn-submit{
                font-family: var(--ff2);
                font-size: 1em;
-               padding: 1em;
+               padding: .5em;
                margin-top: 2em;
           }
      }
