@@ -138,8 +138,14 @@ export default {
 
 
 .carousel-container-features{
-     max-height: 60vh;
+     max-height: 70vh;
      width: 100vw;
+     height: max-content;
+
+     .slide-info{
+          height: max-content;
+          max-height: 70vh;
+     }
 
      @media (max-width: 824px) and (max-height: 412px) {
           height: 100vh;

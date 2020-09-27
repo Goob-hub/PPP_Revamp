@@ -279,9 +279,14 @@ export default {
 
   &-features{
     padding: 1em;
-    overflow: visible;
+    overflow: hidden;
     height: 100vh;
+    max-height: 100vh;
     max-width: 100vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
 
     .f-title{
       margin: .5em 0 .5em 0;

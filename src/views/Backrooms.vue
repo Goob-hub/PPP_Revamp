@@ -272,7 +272,7 @@ export default {
   }
 
   &-features-free{
-
+    justify-content: flex-start;
     h1{
       width: clamp(260px, 80%, 500px);
       margin: .5em 0 .5em 0;
@@ -282,11 +282,16 @@ export default {
         margin-top: 0;
         margin-bottom: .25em;
       }
+
+      .carousel-container-features, .slide-info{
+        height: max-content;
+        max-height: 80vh;
+      }
     }
 
     
     .slide-info{
-      max-height: 60vh;
+      max-height: 80vh;
       h1{
         margin: .5em 0 .5em 0;
       }
@@ -314,7 +319,7 @@ export default {
   }
 
   &-roadmap-early, &-roadmap-full{
-    justify-content: center;
+    justify-content: flex-start;
     h1{
       max-width: 80%;
       font-size: 1.8em;
