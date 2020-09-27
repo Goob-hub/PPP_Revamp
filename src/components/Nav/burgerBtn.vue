@@ -40,8 +40,8 @@ export default {
 }
 
 .nav-btn{
-     height: clamp(3em, 10vh, 6em);
-     width: clamp(3em, 7vw, 5em);
+     height: clamp(32px, 10vh, 6em);
+     width: clamp(32px, 7vw, 5em);
      position: relative;
      cursor: pointer;
      display: flex;
@@ -70,7 +70,7 @@ export default {
      span{
           position: relative;
           width: 100%;
-          height: 10%;
+          height: clamp(3px, 10%, 5px);
           background: var(--clrTxt);
           border-radius: 5px;
           transition: .5s linear;
@@ -84,17 +84,17 @@ export default {
                left: 0;
                position: absolute;
                width: 100%;
-               height: 100%;
+               height: clamp(3px, 10%, 5px);
                background: white;
                border-radius: 5px;
                border: .5px solid white;
           }
 
           &::before{
-               transform: translateY(300%);
+               transform: translateY(15px);
           }
           &::after{
-               transform: translateY(-300%);
+               transform: translateY(-15px);
           }
 
 
