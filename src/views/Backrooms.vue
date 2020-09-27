@@ -286,6 +286,7 @@ export default {
 
     
     .slide-info{
+      max-height: 60vh;
       h1{
         margin: .5em 0 .5em 0;
       }

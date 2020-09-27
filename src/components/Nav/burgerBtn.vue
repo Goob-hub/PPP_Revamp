@@ -72,6 +72,7 @@ export default {
           background: var(--clrTxt);
           border-radius: 5px;
           transition: .5s linear;
+          background: white;
          
           &::before, &::after{
                transition: .5s linear;
@@ -81,7 +82,7 @@ export default {
                position: absolute;
                width: 100%;
                height: 100%;
-               background: var(--clrTxt);
+               background: white;
                border-radius: 5px;
           }
 

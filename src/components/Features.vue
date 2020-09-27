@@ -138,7 +138,7 @@ export default {
 
 
 .carousel-container-features{
-     height: max-content;
+     max-height: 60vh;
      width: 100vw;
 
      @media (max-width: 824px) and (max-height: 412px) {
@@ -159,6 +159,7 @@ export default {
      position: relative;
      transition: 1s ease-in-out;
      height: 95%;
+     max-height: 60vh;
      width: clamp(300px, 90vw, 600px);
      margin: .5em;
      padding: .5em;
@@ -209,6 +210,7 @@ export default {
      position: relative;
      transition: 1s ease-in-out;
      width: clamp(300px, 90vw, 600px);
+     max-height: 60vh;
 
     .progressCircle{
          height: max-content;
