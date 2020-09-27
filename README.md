@@ -6,7 +6,7 @@ This is a full website with multiple pages. Specifically This my version of a we
 
 I used the Vue framework to program this site from scratch as I am currently in the process of learning vue, And the vue framework would make programming this website much easier given what I wanted to do as well as make some of the values of the website be able to be edited by changing values.
 
-# Other Technologies Used
+# Technologies Used
 
 - Javascript
 - Html
