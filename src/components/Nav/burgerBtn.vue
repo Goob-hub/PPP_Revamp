@@ -36,6 +36,7 @@ export default {
      top: 1em;
      right: 1em;
      z-index: 6;
+     background: var(--gradientBG);
 }
 
 .nav-btn{
@@ -46,6 +47,7 @@ export default {
      display: flex;
      justify-content: flex-start;
      align-items: center;
+     background: white;
      
 
      &.openNav{
@@ -73,6 +75,7 @@ export default {
           border-radius: 5px;
           transition: .5s linear;
           background: white;
+          border: .5px solid white;
          
           &::before, &::after{
                transition: .5s linear;
@@ -84,6 +87,7 @@ export default {
                height: 100%;
                background: white;
                border-radius: 5px;
+               border: .5px solid white;
           }
 
           &::before{

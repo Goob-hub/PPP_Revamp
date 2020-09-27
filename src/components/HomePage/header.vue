@@ -75,6 +75,7 @@ export default {
      h2{
           font-style: italic;
           width: 80%;
+          max-width: 70vw;
           margin-bottom: 1em;
      }
 
