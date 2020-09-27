@@ -1,6 +1,6 @@
 # What Is This?
 
-This is my version of a website for a small startup game development company called Pie On A Plate Productions!! After visiting their websites a few times to check on the progress for one of their games called The Backrooms Game. I deicided to ask the leader of the dev team if I could do a little revamp of their website or if they needed it done. The leader of the dev team gave me the green light so I made this!
+This is a full website with multiple pages. Specifically This my version of a website for a small startup game development company called Pie On A Plate Productions!! After visiting their websites a few times to check on the progress for one of their games called The Backrooms Game. I deicided to ask the leader of the dev team if I could do a little revamp of their website or if they needed it done. The leader of the dev team gave me the green light so I made this!
 
 # How Did I Make This?
 
