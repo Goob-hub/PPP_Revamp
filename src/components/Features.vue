@@ -1,7 +1,7 @@
 <template>
      <div class="carousel-container-features" v-if="progressBar === false" >
           {{showPagination()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
+          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
                <slide v-for="feature in features" :key="feature.title">
                     <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
                          <h1 >{{feature.title}}</h1>
@@ -14,7 +14,7 @@
           {{showPagination()}}
           {{setCircleSize()}}
           {{getClass()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
+          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
                <slide v-for="data in features" :key="data.id"> 
                     <div v-scrollanimation="{delay: 500}" class="progress-card">
                          <h1 class="feature-title">{{data.title}}</h1>
