@@ -2,8 +2,8 @@
   <div id="app" @mousemove="move($event)">
     <navBtn />
     <navBar />
-    <transition name="zoom-in">
-      <router-view class="view"/>
+    <transition name="fade">
+      <router-view />
     </transition>
    
   </div>
@@ -49,7 +49,7 @@ export default {
 
 <style lang="scss">
 #app{
-  
+  background: #111;
   max-width: 100vw;
   height: max-content;
   overflow: hidden;
@@ -60,11 +60,6 @@ export default {
   h1{
     font-family: var(--ff1);
     text-transform: capitalize;
-  }
-
-  .view{
-    
-    transform-origin: center;
   }
 
   p{

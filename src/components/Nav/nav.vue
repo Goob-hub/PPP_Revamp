@@ -26,17 +26,11 @@ nav{
      background: #000000;
      transition: .5s linear;
 
-     &::before{
-          content: '';
-          transition: .5s linear;
-          position: absolute;
-          transform: translateX(100%);
-          height: 100vh;
-          width: 50vw;
-          top: 0;
-          left: 0;
-          background: rgba(255, 255, 255, 0.11);
+
+     &:not(.open){
+          pointer-events: none;
      }
+    
 
      &.games{
           &::before{
@@ -48,7 +42,7 @@ nav{
      position: fixed;
      top: 0;
      left: 0;
-     width: 0vw;
+     width: 100vw;
      opacity: 0;
      z-index: 5;
      
@@ -58,8 +52,9 @@ nav{
      }
 
      &.open{
+          pointer-events: painted;
           opacity: 1;
-          width: 100vw;
+         
      }
 }
 </style>

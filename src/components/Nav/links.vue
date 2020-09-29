@@ -2,33 +2,33 @@
      <div class="links-container">
           <ul class="links">
                <li @click="closeNav()">
-               <router-link to="/" class="btn selected" data-text="Home"><span>Home</span></router-link>
+               <router-link to="/" class="btn route"><span @mouseenter="setLength($event)" data-length="4" data-text="Home">Home</span></router-link>
                </li>
                <li @click="showGames()">
-               <a href="#" class="btn" data-text="Games"><span>Games</span></a>
+               <a href="#" class="btn route"><span @mouseenter="setLength($event)" data-length="4" data-text="Games">Games</span></a>
                </li>
                <li @click="closeNav()">
-               <router-link to="/Contact" class="btn" data-text="Contact"><span>Contact</span></router-link>
+               <router-link to="/Contact" class="btn route"><span @mouseenter="setLength($event)" data-length="7" data-text="Contact">Contact</span></router-link>
                </li>
                <li @click="closeNav()">
-               <router-link to="/Jobs" class="btn" data-text="Jobs"><span>Jobs</span></router-link>
+               <router-link to="/Jobs" class="btn route"><span @mouseenter="setLength($event)" data-length="4" data-text="Jobs">Jobs</span></router-link>
                </li>
                <li @click="closeNav()">
-               <router-link to="/About" class="btn" data-text="About"><span>About</span></router-link>
+               <router-link to="/About" class="btn route"><span @mouseenter="setLength($event)" data-length="5" data-text="About">About</span></router-link>
                </li>
                <li @click="closeNav()">
-               <router-link to="/DevBlog" class="btn" data-text="Devblog"><span>Devblog</span></router-link>
+               <router-link to="/DevBlog" class="btn route"><span @mouseenter="setLength($event)" data-length="7" data-text="Devblog">Devblog</span></router-link>
                </li>
           </ul>
           <ul class="Games">
                <li @click="closeNav()">
-               <router-link to="/GGMT" class="btn" data-text="GGMT"><span>GGMT</span></router-link>
+               <router-link to="/GGMT" class="btn route"><span @mouseenter="setLength($event)" data-length="4" data-text="GGMT">GGMT</span></router-link>
                </li>
                <li @click="closeNav()">
-               <router-link to="/Backrooms" class="btn" data-text="The Backrooms"><span>The Backrooms</span></router-link>
+               <router-link to="/Backrooms" class="btn route"><span @mouseenter="setLength($event)" data-length="9" data-text="Backrooms">Backrooms</span></router-link>
                </li>
-               <li @click="Back()">
-               <a href="#" class="btn" data-text="Back"><span>Back</span></a>
+               <li @click="Back()" >
+                <a href="#" class="btn route"><span @mouseenter="setLength($event)" data-length="4" data-text="Back">Back</span></a>
                </li>
           </ul>
 
@@ -60,22 +60,44 @@ export default {
                let navBar = document.querySelector('.navBar');
                navBar.classList.remove('games');
                container.style.transform = 'translateX(0)';
+          },
 
+          setLength(e){
+              
+                   let el = e.currentTarget;
+                   console.log(el);
+                   let length = el.dataset.length;
+                   document.documentElement.style.setProperty('--length', `${length}`);
+               
           }
+
+
      }
 }
 </script>
 
 <style lang="scss">
 .links, .Games{
+     
      text-align: center;
      transition: .5s linear;
      justify-content: center;
-     align-items: flex-start;
+     align-items: center;
      flex-wrap: wrap;
      max-height: 100vh;
-     height: 100vh;
+     height: 95vh;
      width: 100vw;
+     margin: 1em 0 1em 0 ;
+}
+
+
+.links, .Games{
+     align-self: center;
+     padding: 1em;
+     margin: 1em;
+     width: 90vw;
+     background: var(--clr2);
+     box-shadow: 0px 0px 5px var(--clr2);
 }
 
 .links-container{
@@ -83,9 +105,15 @@ export default {
      display: flex;
      flex-direction: row;
      width: max-content;
+     justify-content: center;
+     align-items: center;
      align-self: flex-start;
 }
 
+
+span{
+     transition: .5s linear;
+}
 
 
 ul{
@@ -96,81 +124,70 @@ ul{
      flex-wrap: wrap;
      height: 100%;
      width: 100vw;
-    
      font-family: var(--ff2);
      transition: .5s linear;
      list-style: none;
      position: relative;
      overflow: hidden;
     
+     
 
      &:hover{
-          span{
+          .btn{
                color: rgba(255, 255, 255, .4);
 
           }
+
+          
      }
 
      li{  
+          list-style: none;
           padding: .5em;
           height: max-content;
           width: max-content;
           margin-top: 2em;
 
-          .btn{
-               padding: .5em;
-               text-decoration: none;
-               height: max-content;
-               width: max-content;
+          &:not(:hover){
+              .btn{
+                    span::before{
+                         animation: type-reverse .5s steps(var(--length)) forwards;
+                    }
+               } 
+          }
 
-               &::before{
+          &:hover{
+               .btn{
+                    span::before{
+                         animation: type-forwards .5s steps(var(--length)) forwards;
+                    }
+               }
+          }
+
+          .btn{
+               
+               text-decoration: none;
+               font-weight: bolder;
+               span{
+                    position: relative;
+                    color: black;
+               }
+               
+               span::before{
                     content: attr(data-text);
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: clamp(10em, calc(40vw - 40vh), 20em);
-                    color: rgba(255, 255, 255, .2);
-                    border-radius: 50%;
-                    z-index: -1;
-                    opacity: 0;
-                    letter-spacing: 400px;
+                    top: 0;
+                    left: 0;
+                    color: green;
+                    overflow: hidden;
+                    scrollbar-width: none;
+                    height: 100%;
+                    width: 0%;
+                    color: white;
                     font-weight: bolder;
-                    transition: letter-spacing, opacity, 1s .3s;
-                    
                }
-
-
-               &:hover{
-                    
-                    &::before{
-                         content: attr(data-text);
-                         opacity: 1;
-                         z-index: -1;
-                         height: 150%;
-                         width: 150%;
-                         
-                         transform: translate(-50%, -50%);
-                         letter-spacing: 10px;
-                    }
-
-                    span{
-                         
-                         font-size: 2.5em;
-                         padding: .15em;
-                         
-                         color: white;
-                         text-shadow: 0px 0px 5px white;
-                    }
-               }
-               span{
-                    
-                    transition: .5s linear;
-                    font-weight: bolder;
-                    
-               }
+               
+               
           }    
      }
      
