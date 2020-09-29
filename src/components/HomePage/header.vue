@@ -3,15 +3,10 @@
           <div class="Text">
                <h1 v-scrollanimation="{delay: 0}">Pie On A Plate Productions</h1>
                <h4 v-scrollanimation="{delay: 500}">We Bake Deliciously Good Games!</h4>
-               <div class="scroll" v-scrollanimation="{delay: 700}" >
-                    <span></span>
-                    <p>scroll</p>
-               </div>
+               <button v-scrollanimation="{delay: 1000}" class="btn btn-design back-btn" @click="showGames()"><p>View Games <fa-icon class="icon" :icon="['fa', 'long-arrow-alt-right']" /></p></button>
         </div>
           
-          <div class="games">
-               <h2 v-scrollanimation="{delay:1000}">Here are some of our tastiest treats!</h2>
-               <fa-icon :size="'3x'" :icon="['fa', 'long-arrow-alt-down']" v-scrollanimation="{delay: 1000}"/>
+          <div class="games hide">
                <featuredGames v-scrollanimation="{delay:1500}" />
           </div>
           
@@ -26,11 +21,10 @@ export default {
           featuredGames
      },
      methods:{
-          viewGames(){
+          showGames(){
                setTimeout(() => {
-                    let home = document.querySelector('.home');
-                    home.style.transform = 'translateX(-125vw)';
-                    home.style.overflow = 'visible'    
+                    let gameModal = document.querySelector('.games');
+                    gameModal.classList.remove('hide'); 
                });
           }
      }
@@ -45,13 +39,19 @@ export default {
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     height: max-content;
+     height: 100vh;
+     max-height: 100vh;
      width: 100vw;
      background: var(--gradientBG), center/cover no-repeat url("../images/Backdrop.png");
-     padding: 1em 0 3em 0;
+     
+
+     .back-btn{
+          padding: .75em;
+          margin-top: clamp(3em, 30%, 5em);
+     }
 
      h4, h1{
-          margin: 0 clamp(1em, 10%, 5em) 0 clamp(1em, 10%, 5em);
+          margin: clamp(1em, 5vw, 3em);
      }
 
      .scroll{
@@ -67,6 +67,8 @@ export default {
           transform: translateX(-100px);
      }
 
+     
+
      .enter{
           opacity: 1;
           transform: translateX(0);
@@ -80,17 +82,19 @@ export default {
      }
 
      .games{
+          position: fixed;
+          height: 100vh;
           display: flex;
-          height: max-content;
+          top: 0;
+          left: 0;
+          z-index: 50;
           justify-content: center;
           align-items: center;
           flex-wrap: nowrap;
           flex-direction: column;
           margin-top: 0;
-          h1:not(.card-h1){
-               margin-bottom: clamp(1em, 10%, 3em);
-          }
-          transform: scale(.95);
+          transition: .5s linear;
+          
      }
      
      .Text{
@@ -107,6 +111,21 @@ export default {
                font-family: var(--ff1);
           }
 
+          
+          .btn-design{
+               .icon{
+                    path{
+                         transition: .5s linear;
+                    }
+               }
+               &:hover{
+                   .icon{
+                    path{
+                         color: black;
+                    }
+               } 
+               }
+          }
           
           
           margin: 0 0 0 0;

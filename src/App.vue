@@ -2,20 +2,21 @@
   <div id="app" @mousemove="move($event)">
     <navBtn />
     <navBar />
-    <router-view/>
-    <pppFooter/>
+    <transition name="zoom-in">
+      <router-view class="view"/>
+    </transition>
+   
   </div>
 </template>
 
 <script>
 import navBar from '@/components/Nav/nav.vue'
 import navBtn from '@/components/Nav/burgerBtn.vue'
-import pppFooter from '@/components/Footer.vue'
 export default {
   components: {
     navBar,
     navBtn,
-    pppFooter
+    
   },
   methods:{
     move(e){
@@ -48,21 +49,28 @@ export default {
 
 <style lang="scss">
 #app{
+  
   max-width: 100vw;
-  background: var(--clr1);
+  height: max-content;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   h1{
     font-family: var(--ff1);
     text-transform: capitalize;
   }
 
+  .view{
+    
+    transform-origin: center;
+  }
+
   p{
     font-family: var(--ff2);
   }
+
 
   
 }

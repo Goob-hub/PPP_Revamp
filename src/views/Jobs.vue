@@ -28,15 +28,16 @@
                </div>
           </div>
     </section>
-    
+    <pppFooter />
      
   </main>
 </template>
 
 <script>
+import pppFooter from '@/components/Footer.vue'
 export default {
      components:{
-          
+          pppFooter
      },
      data(){
           return{

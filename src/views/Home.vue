@@ -1,11 +1,7 @@
 <template>
   <div class="home">
-    
     <pppHead />  
-    
- 
-    
-
+    <pppFooter />
   </div>
 </template>
 
@@ -13,13 +9,13 @@
 import pppHead from '@/components/HomePage/header.vue' 
 
 
-
+import pppFooter from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     pppHead,
-    
+    pppFooter
 
   }
 }

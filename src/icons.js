@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome'
-import { faCircle, faLongArrowAltDown, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faCircle, faLongArrowAltRight, faStar } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faInstagram, faFacebookF, faRedditAlien } from '@fortawesome/fontawesome-free-brands'
 import { faSquareFull } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCircle, faTwitter, faInstagram, faRedditAlien, faFacebookF, faSquareFull, faStar, faLongArrowAltDown)
+library.add(faCircle, faTwitter, faInstagram, faRedditAlien, faFacebookF, faSquareFull, faStar, faLongArrowAltRight)
 
 Vue.component('fa-icon', FontAwesomeIcon);
 Vue.component('fa-layer', FontAwesomeLayers);

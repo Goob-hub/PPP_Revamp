@@ -1,8 +1,9 @@
 <template>
 <div class="carousel-container-games">
-     <carousel :per-page="1" :loop="true" :paginationEnabled="true" :paginationActiveColor="'white'" :paginationColor="'grey'" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"  :perPageCustom="[[1500, 2]]">
+     <carousel :per-page="1" :loop="true" :paginationEnabled="false" :paginationActiveColor="'white'" :paginationColor="'grey'" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="false" :autoplayTimeout="3500"  :perPageCustom="[[1500, 2]]">
           <slide  :key="info.title" v-for="info in cardInfo">
                <div class="card" :class="info.background">
+                    
                     <main class="card-info">
                          <h1 class="card-h1" :class="info.VFX.text" data-text="The Backrooms Game">{{info.title}}</h1>
                          <p>{{info.desc}}</p>
@@ -11,8 +12,10 @@
                               <a class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Steam page">Steam page</span></a>
                               
                          </footer>
+                         <a :class="info.VFX.button" class="btn btn-design back" @click="hideGames()"><span class="p-size" data-text="Back">Back</span></a>
                          <p>swipe to view next game</p>
                     </main>
+                    
                </div>
           </slide>
      </carousel>
@@ -22,6 +25,14 @@
 <script>
 export default {
      name: 'featuredGames',
+     methods: {
+          hideGames(){
+               setTimeout(() => {
+                    let gamesModal = document.querySelector('.games');
+                    gamesModal.classList.add('hide');    
+               });
+          }
+     },
      data(){
           return{
                cardInfo: {
@@ -52,15 +63,14 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-container-games{
-     margin-top: 2em;
-     height: max-content;
-     
-     align-self: center;
-     overflow: visible;
 
-    
-    
+
+.carousel-container-games{
+     height: 100vh;
+     max-height: 100vh;
+     max-width: 100vw;
+     align-self: center;
+     overflow: hidden;
 
      .Backrooms{
           background: center/cover no-repeat url('../images/backroomsglitch.gif')
@@ -70,19 +80,14 @@ export default {
           background: center/cover no-repeat url('../images/GGMT.gif');
      }
 
-     .VueCarousel-slide{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-     }
 
      .card{
           font-family: var(--ff2);
           transition: .5s linear;
-          margin: .7em;
-     
+          width: 100vw;
           max-width: 100vw;
-          height: max-content;
+          height: 100vh;
+          max-height: 100vh;
           overflow: hidden;
           box-shadow: 0px 0px 5px white;
           
@@ -91,19 +96,17 @@ export default {
           &-info{
                text-align: center;
                display: flex;
-               justify-content: flex-end;
+               justify-content: space-around;
                align-items: center;
                flex-direction: column;
                padding: 1em;
-               top: 0;
-               left: 0;
                background: var(--gradientBGD);
-               height: 100%;
                width: inherit;
+               height: inherit;
      
                h1{
                     font-family: var(--ff-1);
-                    margin-bottom: 0;
+                    margin: 0;
                }
                
                p, footer{
@@ -119,10 +122,11 @@ export default {
      
                footer{
                     height: max-content;
-                    width: 100%;
+                    width: max-content;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     align-items: center;
+                    flex-wrap: wrap;
                     justify-content: space-between;
                     
                     .btn{

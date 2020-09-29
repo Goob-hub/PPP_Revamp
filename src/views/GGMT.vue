@@ -1,7 +1,7 @@
 <template>
-  <main class="ggmt">
+  <main class="ggmt particle">
     {{this.createParticle()}}
-    <full-page :options="{options: ''}" class="particle">
+    
       <div class="section">
         <header class="ggmt-header">
           <div class="title paralax">
@@ -36,17 +36,18 @@
       
       
       
+      <pppFooter/>
 
-
-    </full-page>
+    
   </main>
 </template>
 
 <script>
 import FeaturesCarousel from "@/components/Features.vue";
+import pppFooter from '@/components/Footer.vue'
 export default {
   components: {
-
+    pppFooter,
     FeaturesCarousel
   },
   methods: {

@@ -1,7 +1,7 @@
 <template>
   <main class="backrooms">
     {{addEvents()}}
-    <full-page :options="{options: ''}" :navigation="true">
+    
       <div class="section">
         <header class="backrooms-header">
           <div class="paralax title">
@@ -39,17 +39,19 @@
       </div>
       
 
-
-    </full-page>
+      <pppFooter />
+    
     
   </main>
 </template>
 
 <script>
 import FeaturesCarousel from "@/components/Features.vue";
+import pppFooter from '@/components/Footer.vue'
 export default {
   components:{
-    FeaturesCarousel
+    FeaturesCarousel,
+    pppFooter
   },
   data(){
       return{
