@@ -33,15 +33,16 @@ export default {
      width: max-content;
      height: max-content;
      position: fixed;
-     top: 2%;
-     right: 7%;
+     top: 1vh;
+     right: 3vw;
      z-index: 6;
+     padding: 1em 1em 1em 1em;
      
 }
 
 .nav-btn{
-     height: clamp(32px, 10vh, 6em);
-     width: clamp(32px, 7vw, 3em);
+     height: clamp(28px, 8vh, 6em);
+     width: clamp(24px, 5vw, 3em);
      position: relative;
      cursor: pointer;
      display: flex;
@@ -64,12 +65,12 @@ export default {
                
                          
                &::before{
-                    background: black;
+                    background: rgba(255, 255, 255, .4);
                     transform: rotate(45deg) translate(2em, -2em);
                     border: none;
                }
                &::after{
-                    background: black;
+                    background: rgba(255, 255, 255, .4);
                     transform: rotate(-45deg) translate(2em, 2em);
                     border: none;
                }
@@ -94,6 +95,7 @@ export default {
                left: 0;
                position: absolute;
                width: 100%;
+               border-radius: 5px;
                height: clamp(3px, 10%, 5px);
                background: white;
           }

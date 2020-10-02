@@ -221,7 +221,7 @@ export default {
     position: relative;
     overflow: visible;
     max-width: 100vw;
-    height: 100%;
+    height: max-content;
     div{
       z-index: 2;
         position: relative;
@@ -281,8 +281,7 @@ export default {
   &-features{
     padding: 1em;
     overflow: hidden;
-    height: 100vh;
-    max-height: 100vh;
+    height: max-content;
     max-width: 100vw;
     flex-direction: column;
     justify-content: flex-start;

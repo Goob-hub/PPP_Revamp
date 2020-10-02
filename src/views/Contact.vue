@@ -84,7 +84,7 @@ export default {
      min-height: 100vh;
      max-width: 100vw;
      background: var(--gradientBGD), center/cover fixed no-repeat url("../components/images/Treeline.png");
-     padding: 1em 1em 5em 1em;
+     padding: 1em 1em 0 1em;
      text-transform: capitalize;
 
      h1,p,div,input{
@@ -220,7 +220,7 @@ export default {
                          border-color: #44e018;
                     }
                     &~label{
-                         margin-top: 2em;
+                         margin-top: 1.5em;
                          padding: 1em;
                          top: 0;
                          bottom: 100%;

@@ -185,7 +185,7 @@ export default {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
 

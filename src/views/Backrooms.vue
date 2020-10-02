@@ -247,7 +247,7 @@ export default {
   scroll-behavior: smooth;
 
   &-features-free, &-header, &-roadmap-early, &-roadmap-full{
-    height: 100vh;
+    height: max-content;
     width: 100vw;
     padding: 1em;
     justify-content: center;
@@ -255,6 +255,7 @@ export default {
   }
 
   &-header{
+    height: 100vh;
     justify-content: space-around;
     
     .title{

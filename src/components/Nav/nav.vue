@@ -23,7 +23,7 @@ nav{
      align-items: center;
      height: 100vh;
      overflow: hidden;
-     background: #000000;
+     background: #111;
      transition: .5s linear;
 
 
