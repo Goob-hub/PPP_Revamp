@@ -25,7 +25,6 @@ export default {
      display: flex;
      justify-content: center;
      align-items: center;
-     
      flex-direction: column;
 }
 
@@ -33,6 +32,9 @@ export default {
 .gallery{
      padding: 1em;
      margin: 1em 0 1em 0;
+     h1{
+          margin-bottom: .5em;
+     }
      &.fix{
           position: fixed;
           z-index: 4;

@@ -134,7 +134,7 @@ export default {
 
 
 .carousel-container-features{
-     margin-top: 3em;
+     margin-top: 2em;
      width: 100vw;
      height: max-content;
 
@@ -207,7 +207,7 @@ export default {
 .roadmap-container{
      width: 100%;
      max-width: 100vw;
-     margin-top: 3em;
+     margin-top: 2em;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
@@ -225,7 +225,7 @@ export default {
      padding: .75em;
      background: linear-gradient(45deg,#000000, #152331);
      position: relative;
-     transition: .5s ease-in-out;
+     transition: 1s ease-in-out;
      width: clamp(300px, 40vw, 400px);
      height: max-content;
      

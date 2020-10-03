@@ -265,6 +265,7 @@ export default {
 .backrooms{
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/backroomsglitch.gif');
   scroll-behavior: smooth;
+  justify-content: space-around;
 
   &-features-free, &-header, &-roadmap-early, &-roadmap-full{
     max-width: 100vw;
@@ -272,6 +273,7 @@ export default {
     padding: 1em;
     justify-content: center;
     position: relative;
+    margin: 1em 0 1em 0;
   }
 
   &-header{

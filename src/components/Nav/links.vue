@@ -161,7 +161,7 @@ ul{
 
      li{  
           list-style: none;
-          padding: .5em;
+          
           height: max-content;
           width: max-content;
           margin-top: 1em;
