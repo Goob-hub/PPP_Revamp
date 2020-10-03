@@ -18,25 +18,29 @@
 
       <div class="section">
         <article class="backrooms-features-free paralax">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">free edition features</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 0}"><p class="title-p">free edition features</p></h1>
           <FeaturesCarousel :features="FeaturesFree" :progressBar="false"/>
         </article>
       </div>
 
       <div class="section">
         <article class="backrooms-roadmap-early paralax">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Early Access Road Map</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 0}"><p class="title-p">Early Access Road Map</p></h1>
           <FeaturesCarousel :features="progressFree" :progressBar="true"/>
           
         </article>
       </div>
       <div class="section">
         <article class="backrooms-roadmap-full paralax">
-          <h1 class="Appear" v-scrollanimation="{delay: 500}"><p class="title-p">Full Edition Road Map</p></h1>
+          <h1 class="Appear" v-scrollanimation="{delay: 0}"><p class="title-p">Full Edition Road Map</p></h1>
           <FeaturesCarousel :features="progressFull" :progressBar="true"/>
           
         </article>
       </div>
+
+      
+        <pppGallery :images="galleryImages" />
+     
       
 
       <pppFooter />
@@ -48,10 +52,12 @@
 <script>
 import FeaturesCarousel from "@/components/Features.vue";
 import pppFooter from '@/components/Footer.vue'
+import pppGallery from '@/components/gallery.vue'
 export default {
   components:{
     FeaturesCarousel,
-    pppFooter
+    pppFooter,
+    pppGallery
   },
   data(){
       return{
@@ -212,6 +218,20 @@ export default {
               'Full German text',
               'Full spanish text'
             ]
+          },
+        ],
+        galleryImages: [
+          {
+            id: 1,
+            src: require('../components/images/BackroomsG1.jpg')
+          },
+          {
+            id: 2,
+            src: require('../components/images/BackroomsG2.jpg')
+          },
+          {
+            id: 3,
+            src: require('../components/images/BackroomsG3.jpg')
           },
         ]
       }

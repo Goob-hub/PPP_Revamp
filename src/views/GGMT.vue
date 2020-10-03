@@ -32,7 +32,7 @@
           <a href="https://www.youtube.com/embed/bE5wfkPBnJU" class="btn btn-design"><p>View Trailer</p></a>
         </article>
       </div>
-
+      <pppGallery :images="images"/>
       
       
       
@@ -44,11 +44,13 @@
 
 <script>
 import FeaturesCarousel from "@/components/Features.vue";
-import pppFooter from '@/components/Footer.vue'
+import pppFooter from '@/components/Footer.vue';
+import pppGallery from '@/components/gallery.vue';
 export default {
   components: {
     pppFooter,
-    FeaturesCarousel
+    FeaturesCarousel,
+    pppGallery
   },
   methods: {
     createParticle(){
@@ -122,6 +124,24 @@ export default {
         'triangle',
         'star',
         'circle'
+      ],
+      images: [
+        {
+          id: 1,
+          src: require('../components/images/ggmtG1.jpg')
+        },
+        {
+          id: 2,
+          src: require('../components/images/ggmtG2.jpg')
+        },
+        {
+          id: 3,
+          src: require('../components/images/ggmtG3.jpg')
+        },
+        {
+          id: 4,
+          src: require('../components/images/ggmtG4.jpg')
+        },
       ]
     }
   },
