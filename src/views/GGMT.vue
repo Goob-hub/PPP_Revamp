@@ -164,6 +164,7 @@ export default {
 .ggmt{
   min-height: 100vh;
   text-align: center;
+  
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/Backdrop5.png');
 
   .section{
@@ -193,7 +194,8 @@ export default {
   }
   
   &-header{
-    height: 100vh;
+    height: max-content;
+    margin: 2em 0 2em 0;
     width: 100vw;
     padding: 1em;
     flex-direction: column;

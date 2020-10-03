@@ -277,7 +277,8 @@ export default {
   }
 
   &-header{
-    height: 100vh;
+    height: max-content;
+    margin: 2em 0 2em 0;
     justify-content: center;
     
     .title{
