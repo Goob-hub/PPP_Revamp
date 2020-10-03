@@ -19,7 +19,7 @@ $bp4: 1280px;
      .backrooms{
           &-roadmap-early, &-features-free, &-roadmap-full{
                padding: .5em;
-               flex-direction: row-reverse;
+               
                width: 100vw;
 
                h1{
@@ -90,12 +90,12 @@ $bp4: 1280px;
                justify-content: center;
           }
 
-          .carousel-container-features, .slide-info, .progress-card{
+          // .carousel-container-features, .slide-info{
                
                     
 
-               max-height: 70vh;
-          }
+          //      max-height: 70vh;
+          // }
      }
 
 }
@@ -219,7 +219,7 @@ $bp4: 1280px;
                     font-size: .8em;
                }                    
 
-               max-height: 70vh;
+               
           }
      }
 }

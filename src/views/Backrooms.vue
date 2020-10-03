@@ -267,7 +267,7 @@ export default {
   scroll-behavior: smooth;
 
   &-features-free, &-header, &-roadmap-early, &-roadmap-full{
-    height: max-content;
+    max-width: 100vw;
     width: 100vw;
     padding: 1em;
     justify-content: center;
@@ -276,10 +276,10 @@ export default {
 
   &-header{
     height: 100vh;
-    justify-content: space-around;
+    justify-content: center;
     
     .title{
-      margin-top: 3em;
+      margin: 3em 0 2em 0;
       p{
         width: 80%;
         margin: .5em;
@@ -308,13 +308,13 @@ export default {
 
       .carousel-container-features, .slide-info{
         height: max-content;
-        max-height: 80vh;
+        
       }
     }
 
     
     .slide-info{
-      max-height: 80vh;
+   
       h1{
         margin: .5em 0 .5em 0;
       }

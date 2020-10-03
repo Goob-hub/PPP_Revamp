@@ -349,6 +349,16 @@ export default {
     justify-content: flex-end;
     align-items: flex-end;
   }
+
+  .gallery{
+    &-images{
+      &-container{
+        img{
+          box-shadow: 0px 0px 5px white;
+        }
+      }
+    }
+  }
   
 
 

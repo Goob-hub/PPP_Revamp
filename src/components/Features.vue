@@ -1,7 +1,7 @@
 <template>
      <div class="carousel-container-features" v-if="progressBar === false" >
-          {{showPagination()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" 
+          {{addEvents()}}
+          <carousel :per-page="1" :loop="true" :paginationEnabled="true" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" 
           :paginationActiveColor="'white'" :paginationColor="'grey'" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
                <slide v-for="feature in features" :key="feature.title">
                     <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
@@ -11,31 +11,28 @@
                </slide>
           </carousel>
      </div>
-     <div class="carousel-container-features" v-else >
-          {{showPagination()}}
+     <div class="roadmap-container" v-else >
+          {{addEvents()}}
           {{setCircleSize()}}
           {{getClass()}}
-          <carousel :per-page="1" :loop="true" :paginationEnabled="paginationDisplay" 
-          :paginationActiveColor="'white'" :paginationColor="'grey'" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
-               <slide v-for="data in features" :key="data.id"> 
-                    <div v-scrollanimation="{delay: 500}" class="progress-card">
-                         <h1 class="feature-title">{{data.title}}</h1>
-                         <div class="circle">
-                              <vue-ellipse-progress :progress="data.value"  
-                              :size="circleSize"
-                              :color="(data.value === 100) ? 'lime' : (data.value >= 75) ? '#bbe64e' : (data.value >= 50) ? 'cyan': (data.value >= 25) ? '#fcc305': '#e00b0b'" 
-                              :emptyColor="'#333'" :legend="true" :line="'round'" animation="rs 1000" 
-                              :dot="(data.value === 100) ? '10% lime' : (data.value >= 75) ? '10% #bbe64e' : (data.value >= 50) ? '10% cyan': (data.value >= 25) ? '10% #fcc305': '10% #e00b0b'">
-                                   <span slot="legend-value">%</span>
-                                   
-                              </vue-ellipse-progress> 
-                         </div>
-                         <div class="desc">
-                              <p v-for="text in data.text" :key="text">-{{text}}</p>
-                         </div>
-                    </div>
-               </slide>
-          </carousel>
+         
+          <div v-for="data in features" :key="data.id" v-scrollanimation="{delay: 500}" class="progress-card">
+               <h1 class="feature-title">{{data.title}}</h1>
+               <div class="circle">
+                    <vue-ellipse-progress :progress="data.value"  
+                    :size="circleSize"
+                    :color="(data.value === 100) ? 'lime' : (data.value >= 75) ? '#bbe64e' : (data.value >= 50) ? 'cyan': (data.value >= 25) ? '#fcc305': '#e00b0b'" 
+                    :emptyColor="'#333'" :legend="true" :line="'round'" animation="rs 1000" 
+                    :dot="(data.value === 100) ? '10% lime' : (data.value >= 75) ? '10% #bbe64e' : (data.value >= 50) ? '10% cyan': (data.value >= 25) ? '10% #fcc305': '10% #e00b0b'">
+                         <span slot="legend-value">%</span>
+                         
+                    </vue-ellipse-progress> 
+               </div>
+               <div class="desc">
+                    <p v-for="text in data.text" :key="text">-{{text}}</p>
+               </div>
+          </div>
+         
      </div>
 </template>
 
@@ -49,32 +46,31 @@ export default {
      data(){
           return{
                circleSize: 135,
-               paginationDisplay: true
+               paginationDisplay: true,
+               eventsAdded: false,
           }
      },
      methods:{
-          showPagination(){
+          addEvents(){
                setTimeout(() => {
-                    if (window.innerHeight < 800){
-                         this.paginationDisplay = false;
-                    } else {
-                         this.paginationDisplay = true;
+                    if(!this.eventsAdded){
+                         window.addEventListener('resize', () => {
+                              this.showPagination();
+                              this.getClass();
+                              this.setCircleSize();
+                         })
+                         this.eventsAdded = true;
                     }
-                    window.addEventListener('resize', () => {
-                         this.showPagination();
-                    })
                });
           },
           setCircleSize(){
                setTimeout(() => {
                     if (window.innerWidth < 823){
-                         this.circleSize = 125;
+                         this.circleSize = 100;
                     } else {
-                         this.circleSize = 150;
+                         this.circleSize = 125;
                     }
-                    window.addEventListener('resize', () => {
-                         this.setCircleSize();
-                    })
+                    
                });
           },
           getClass(){
@@ -86,9 +82,7 @@ export default {
                               circle.classList.add('progressCircle');
                          }, 100);
                     });
-                    window.addEventListener('resize', () =>{
-                         this.getClass();
-                    })
+                    
                });
           }
      }
@@ -140,13 +134,13 @@ export default {
 
 
 .carousel-container-features{
-     max-height: 70vh;
+     margin-top: 3em;
      width: 100vw;
      height: max-content;
 
      .slide-info{
           height: max-content;
-          max-height: 70vh;
+          
      }
 
      @media (max-width: 824px) and (max-height: 412px) {
@@ -166,8 +160,8 @@ export default {
 .slide-info{
      position: relative;
      transition: 1s ease-in-out;
-     height: 95%;
-     max-height: 70vh;
+     height: max-content;
+    
      width: clamp(300px, 90vw, 600px);
      margin: .5em;
      padding: .5em;
@@ -181,13 +175,13 @@ export default {
      
      &.before-enter{
           opacity: 0;
-          transform: rotate(45deg);
+          
           height: 60%;
      }
 
      &.enter{
           opacity: 1;
-          transform: rotate(0);
+          
           height: 95%;
      }
 
@@ -209,32 +203,54 @@ export default {
 
   
 }
+
+.roadmap-container{
+     width: 100%;
+     max-width: 100vw;
+     margin-top: 3em;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+}
 .progress-card{
+     
      overflow: hidden;
      justify-content: space-around;
+     flex-direction: column;
+     flex-wrap: nowrap;
      box-shadow: 0px 0px 5px white;
      margin: .5em;
      padding: .75em;
      background: linear-gradient(45deg,#000000, #152331);
      position: relative;
-     transition: 1s ease-in-out;
-     width: clamp(300px, 90vw, 600px);
-     max-height: 70vh;
+     transition: .5s ease-in-out;
+     width: clamp(300px, 40vw, 400px);
+     height: max-content;
+     
 
-    .progressCircle{
-         height: max-content;
-         position: relative;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-    }
+     h1{
+          margin-bottom: .5em;
+          text-align: center;
+         
+          height: max-content;
+
+     }
+     
+
+     .progressCircle{
+          display: flex;
+     }
 
      &.before-enter{
+          opacity: 0;
           height: 0%;
 
      }
 
      &.enter{
+          opacity: 1;
           height: 95%;
      }
 
@@ -250,7 +266,7 @@ export default {
           width: 50%;
      }
      .desc{
-        
+          margin-top: 1em;
           p{
                padding: .25em;
           }
