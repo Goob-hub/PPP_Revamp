@@ -2,7 +2,7 @@
      <div class="carousel-container-features" v-if="progressBar === false" >
           {{addEvents()}}
           <carousel :per-page="1" :loop="true" :paginationEnabled="true" :navigationEnabled="false" :mouseDrag="true" :autroplayHoverPause="true" :autoplay="true" 
-          :paginationActiveColor="'white'" :paginationColor="'grey'" :autoplayTimeout="3500" :perPageCustom="[[1500, 2]]"> 
+          :paginationActiveColor="'white'" :paginationColor="'grey'" :autoplayTimeout="3500" :perPageCustom="[[1500, 2], [2000, 3]]"> 
                <slide v-for="feature in features" :key="feature.title">
                     <div v-scrollanimation="{delay: 1000}" class="slide-info" :class="`slide-${feature.id}`">
                          <h1 >{{feature.title}}</h1>
@@ -140,7 +140,7 @@ export default {
 
      .slide-info{
           height: max-content;
-          
+          width: clamp(300px, 90vw, 600px);
      }
 
      @media (max-width: 824px) and (max-height: 412px) {

@@ -242,11 +242,14 @@ export default {
     padding: 2em;
     position: relative;
     overflow: visible;
+    flex-direction: column;
+    flex-wrap: nowrap;
     max-width: 100vw;
     height: max-content;
     min-height: 70vh;
     p:nth-child(2){
       margin: 1em 0 1em 0;
+      max-width: clamp(30vw, 100vw, 400px);
     }
     span{
       margin-bottom: 1em;
