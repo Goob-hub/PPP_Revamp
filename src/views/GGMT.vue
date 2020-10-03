@@ -250,7 +250,7 @@ export default {
     height: max-content;
     min-height: 70vh;
     p:nth-child(2){
-      margin: 1em 0 1em 0;
+      margin: clamp(1em, 20%, 3em) 0 clamp(1em, 20%, 3em) 0;
       max-width: clamp(30vw, 100vw, 400px);
     }
     span{

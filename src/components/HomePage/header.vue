@@ -42,6 +42,7 @@ export default {
      height: 100vh;
      max-height: 100vh;
      width: 100vw;
+     
      background: var(--gradientBG), center/cover no-repeat url("../images/Backdrop.png");
      
 

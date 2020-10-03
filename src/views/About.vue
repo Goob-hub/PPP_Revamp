@@ -182,7 +182,8 @@ export default {
   &-header{
     margin: 0 0em 5vh 0;
     width: 100%;
-    height: 90vh;
+    height: max-content;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,6 +196,11 @@ export default {
   }
 
   &-history, &-today{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
     padding: .5em;
     h1{
      

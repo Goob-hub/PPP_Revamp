@@ -169,10 +169,14 @@ ul{
           margin-top: 1em;
 
           .btn{
+               position: relative;
                display: flex;
                justify-content: center;
                align-items: center;
                .icon{
+                    left: -1.5em;
+                    transform: translateY(-50%);
+                    position: absolute;
                     transform: translateX(-1em);
                     transition: .5s linear;
                     margin-right: .5em;

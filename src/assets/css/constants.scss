@@ -258,7 +258,7 @@ Global Classes used throughout the website
            p{
                max-width: 80%;
                margin-top: 1em;
-               font-size: .8em;
+               
                font-style: italic;
                font-weight: bold;
            }
@@ -334,12 +334,10 @@ Global Classes used throughout the website
          
          
          article{
-          h1{
-               font-size: max(24px);
-          }
+           font-size: 1rem;
            p{
              margin-top: .5em;
-             font-size: max(20px);
+             
            }
          }
        

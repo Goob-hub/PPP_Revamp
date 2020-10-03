@@ -21,7 +21,7 @@
                <div class="overlay">
                </div>
                <div class="content">
-                    <p class="head">Experience with:</p>
+                    <h1 class="head">Experience with:</h1>
                     <article v-for="skill in Job.skills" :key="skill">
                     <p>{{skill}}</p>
                     </article>
@@ -124,6 +124,7 @@ export default {
           flex-direction: row;
           flex-wrap: wrap;
           .card{
+          
                &-1{
                     background: linear-gradient(45deg, #13171B, #7392a5);
                }

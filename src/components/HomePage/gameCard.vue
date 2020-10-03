@@ -10,9 +10,8 @@
                          <footer>
                               <router-link :to="info.link" class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Learn more">Learn more</span></router-link>
                               <a class="btn btn-design" :class="info.VFX.button"><span class="p-size" data-text="Steam page">Steam page</span></a>
-                              
+                              <a :class="info.VFX.button" class="btn btn-design back" @click="hideGames()"><span class="p-size" data-text="Back">Back</span></a>
                          </footer>
-                         <a :class="info.VFX.button" class="btn btn-design back" @click="hideGames()"><span class="p-size" data-text="Back">Back</span></a>
                          <p>swipe to view next game</p>
                     </main>
                     
@@ -96,7 +95,7 @@ export default {
           &-info{
                text-align: center;
                display: flex;
-               justify-content: space-around;
+               justify-content: center;
                align-items: center;
                flex-direction: column;
                padding: 1em;
@@ -123,11 +122,12 @@ export default {
                footer{
                     height: max-content;
                     width: max-content;
+                    max-width: 100%;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     flex-wrap: wrap;
-                    justify-content: space-between;
+                    justify-content: center;
                     
                     .btn{
                          text-decoration: none;
