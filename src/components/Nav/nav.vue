@@ -32,12 +32,6 @@ nav{
      }
     
 
-     &.games{
-          &::before{
-               transform: translateX(0%);
-          }
-     }
-
      
      position: fixed;
      top: 0;

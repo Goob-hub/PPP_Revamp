@@ -55,7 +55,7 @@ export default {
                setTimeout(() => {
                     if(!this.eventsAdded){
                          window.addEventListener('resize', () => {
-                              this.showPagination();
+                              
                               this.getClass();
                               this.setCircleSize();
                          })
@@ -144,7 +144,7 @@ export default {
      }
 
      @media (max-width: 824px) and (max-height: 412px) {
-          height: 100vh;
+          height: max-content;
           width: 60vw;
      }
      

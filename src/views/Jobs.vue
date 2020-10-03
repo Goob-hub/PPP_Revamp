@@ -90,6 +90,7 @@ export default {
           line-height: 1.5em;
           letter-spacing: 2px;
           margin-top: 1em;
+          max-width: clamp(30vw, 100vw, 400px);
      }
 
      h1{
@@ -100,8 +101,9 @@ export default {
           font-family: var(--ff1);
           margin:0 0 .5em 0;
      }
-     p, h1, h2{
+     h1, h2{
           max-width: 90%;
+          
           text-align: center;
      } 
 

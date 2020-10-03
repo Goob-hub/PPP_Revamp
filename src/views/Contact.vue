@@ -126,6 +126,7 @@ export default {
           p{
                line-height: 1.5em;
                letter-spacing: 2px;
+               max-width: clamp(30vw, 100vw, 400px);
           }
           h1, p{
                margin: .5em 0 .5em 0;

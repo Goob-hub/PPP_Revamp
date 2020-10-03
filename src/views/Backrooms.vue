@@ -297,10 +297,10 @@ export default {
   }
 
   &-features-free{
-    justify-content: flex-start;
+    justify-content: center;
     h1{
       width: clamp(260px, 80%, 500px);
-      margin: .5em 0 .5em 0;
+      margin: .5em 0 0 0;
       
       height: max-content;
       p{

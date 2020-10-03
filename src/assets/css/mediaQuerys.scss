@@ -234,7 +234,7 @@ $bp4: 1280px;
           display: flex;
           flex-direction: row;
           justify-content: flex-start;
-          max-height: 15vh;
+          height: 15vh;
           &:not(.open){
                pointer-events: painted;
           }
@@ -262,5 +262,13 @@ $bp4: 1280px;
 
           }
      }
+
+     .backrooms, .about, .ggmt, .Contact, .jobs, .Dev{
+          margin-top: 15vh;
+     }
+
+     
+
+     
 
 }

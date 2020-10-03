@@ -34,7 +34,6 @@ Global Classes used throughout the website
 */
 
 .hide{
-     display: none;
      opacity: 0;
      pointer-events: none;
 }
@@ -390,7 +389,7 @@ Global Classes used throughout the website
      position: relative;
      font-size: 2em;
      overflow: hidden;
-     margin: .25em 0 2em 0;
+    
      &::before{
           content: '';
           position: absolute;
@@ -405,7 +404,7 @@ Global Classes used throughout the website
 
      p{
           font-weight: 300;
-          margin-bottom: .5em;
+          margin-bottom: .25em;
           transform: translateY(-100%);
           color: darken(white, 20%);
      }

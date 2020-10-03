@@ -32,6 +32,7 @@
           <a href="https://www.youtube.com/embed/bE5wfkPBnJU" class="btn btn-design"><p>View Trailer</p></a>
         </article>
       </div>
+
       <pppGallery :images="images"/>
       
       
@@ -178,7 +179,7 @@ export default {
     text-shadow: 0px 0px 5px white;
   }
 
-  .btn{
+  .btn-design{
     height: 100%;
     width: max-content;
     height: max-content;
@@ -195,7 +196,8 @@ export default {
     height: 100vh;
     width: 100vw;
     padding: 1em;
-    
+    flex-direction: column;
+    flex-wrap: nowrap;
     animation: fade-in 1s linear;
     animation-fill-mode: forwards;
     .title{
@@ -346,16 +348,7 @@ export default {
   }
   
 
-  #footer, .fp-tableCell{
-    .ppp-footer{
-      height: 100vh;
-    }
-    height: 100vh;
-    display: flex;
-    flex-wrap: unset;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
+
 
   .gallery{
     &-images{

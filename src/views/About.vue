@@ -187,6 +187,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 
   &-history{
@@ -201,7 +202,7 @@ export default {
     }
     p{
       line-height: 1.75em;
-      
+      max-width: clamp(30vw, 100vw, 400px);
     }
 
     h1,p, .scroll, .team-title{

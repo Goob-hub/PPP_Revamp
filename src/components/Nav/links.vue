@@ -36,7 +36,7 @@
                </router-link>
                </li>
           </ul>
-          <ul class="Games">
+          <ul class="Games hide">
                <li @click="closeNav()">
                <router-link to="/GGMT" class="btn route">
                     <fa-icon class="icon" :icon="['fa', 'shapes']"/>
@@ -75,20 +75,17 @@ export default {
                (nav.classList.remove("open"), navBtn.classList.remove("openNav"))
           },
           showGames(){
-               let container = document.querySelector('.links-container');
-               let navBar = document.querySelector('.navBar');
-               navBar.classList.add('games');
-               // if(window.innerWidth >= 1024){
-               //      container.style.transform = 'translateX(-100%)'
-               // } else {
-               //      }
-                    container.style.transform = 'translateX(-50%)';
+               let games = document.querySelector('.Games');
+               let links = document.querySelector('.links');
+               links.classList.add('hide');
+               games.classList.remove('hide');
           },
           Back(){
-               let container = document.querySelector('.links-container');
-               let navBar = document.querySelector('.navBar');
-               navBar.classList.remove('games');
-               container.style.transform = 'translateX(0)';
+               
+               let games = document.querySelector('.Games');
+               let links = document.querySelector('.links');
+               links.classList.remove('hide');
+               games.classList.add('hide');
           },
 
 
@@ -108,17 +105,22 @@ export default {
      max-height: 100vh;
      height: 90vh;
      width: 90vw;
-     
-}
-
-
-.links, .Games{
      align-self: center;
      padding: 1em;
      margin: 5vh 5vw 5vh 5vw;
+     
 }
 
+.Games{
+     position: absolute;
+     top: 0;
+     left: 0;
+
+}
+
+
 .links-container{
+     position: relative;
      transition: .5s linear;
      display: flex;
      flex-direction: row;

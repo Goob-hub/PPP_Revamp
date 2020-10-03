@@ -33,18 +33,20 @@ export default {
   min-height: 100vh;
   max-width: 100vw;
   width: 100vw;
-  padding: 1.5em;
+  justify-content: space-between;
+
   background: var(--gradientBGD), center/cover no-repeat fixed url('../components/images/Backdrop2.jpg');
   text-align: center;
   &-header{
     h1{
       margin: 1em;
     }
-   
+    margin: 1em 0 1em 0;
   }
 
   &-article{
     padding: 1em;
+    margin: 0 0 2em 0;
     h1,p{
       margin: 0 0 1.5em 0;
     }
