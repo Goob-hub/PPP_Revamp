@@ -2,6 +2,14 @@ $bp1: 480px;
 $bp2: 768px;
 $bp3: 1024px;
 $bp4: 1280px;
+$root-font-size: 17px;
+
+@function px2vw($value-px, $layout-px){
+     @return ($value-px/$layout-px)*100vw;
+}
+@function px2rem($value-px){
+     @return ($value-px/$root-font-size)*1rem;
+}
 
 @media screen and (min-width: 320px) and (max-width: $bp1){
      .links, .Games{
@@ -137,6 +145,20 @@ $bp4: 1280px;
           // }
      }
 
+
+     .about{
+          .cards-container{
+               .content article{
+                    p{
+                         font-size: px2rem(11px);
+                    }
+
+                    h1{
+                         font-size: px2rem(22px);
+                    }
+               }
+          }
+     }
 }
 
 @media (min-width: 540px) and (max-height: 720px){
@@ -253,19 +275,55 @@ $bp4: 1280px;
 
           .carousel-container-features, .slide-info, .progress-card{
                
-               h1{
-                    font-size: 1.3em;
+               h1, .feature-title{
+                    font-size: px2rem(16px);
                }
      
-               p{
-                    font-size: .8em;
+               p, span{
+                    font-size: px2rem(10px);
                }                    
 
                
           }
      }
-}
 
+     .about, .Jobs{
+          .cards-container{
+               h1{
+                    font-size: px2rem(16px);
+               }
+               .content{
+                    article{
+
+                         p{
+                              font-size: px2rem(8px);
+                         }
+     
+                         h1, .head{
+                              font-size: px2rem(16px);
+                         }
+                    }
+               }
+          }
+     }
+
+     .Jobs{
+          .content article{
+               p{
+                    font-size: px2rem(7px);
+               }
+          }
+     }
+
+     .ggmt, .backrooms{
+          .gallery{
+               img{
+                    height: 300px;
+                    width: 400px;
+               }
+          }
+     }
+}
 
 @media (min-width: 1024px){
      .nav-btn{
@@ -305,7 +363,7 @@ $bp4: 1280px;
           }
      }
 
-     .backrooms, .about, .ggmt, .Contact, .jobs, .Dev{
+     .backrooms, .about, .ggmt, .Contact, .Jobs, .Dev{
           margin-top: 15vh;
      }
 

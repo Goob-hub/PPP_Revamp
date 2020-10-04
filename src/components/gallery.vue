@@ -75,7 +75,7 @@ export default {
                     display: block;
                     margin: 1em;
                     max-height: 100%;
-               
+                    box-shadow: 0px 0px 5px white;
                     max-width: 100%;
 
                }

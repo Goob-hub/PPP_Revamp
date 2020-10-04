@@ -90,7 +90,7 @@ export default {
           line-height: 1.5em;
           letter-spacing: 2px;
           margin-top: 1em;
-          max-width: clamp(30vw, 100vw, 400px);
+          max-width: clamp(30vw, 80vw, 700px);
      }
 
      h1{
@@ -150,7 +150,7 @@ export default {
      }
      
     header{
-         min-height: 100vh;
+         height: max-content;
     }
 
      

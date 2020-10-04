@@ -208,7 +208,7 @@ export default {
     }
     p{
       line-height: 1.75em;
-      max-width: clamp(30vw, 100vw, 400px);
+      max-width: clamp(30vw, 80vw, 700px);
     }
 
     h1,p, .scroll, .team-title{

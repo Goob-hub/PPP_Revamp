@@ -334,7 +334,7 @@ Global Classes used throughout the website
          
          
          article{
-           font-size: 1rem;
+           
            p{
              margin-top: .5em;
              
@@ -697,6 +697,23 @@ h2{
           font-size: px2rem(16px);
      }
 }
+
+
+@media screen and(width: 768px) and (height: 1024px){
+     .home{
+          .card-info{
+               .card-h1{
+                    font-size: px2rem(48px);
+               }
+               p, .p-size{
+                    font-size: px2rem(20px);
+               }
+          }
+     }
+
+     
+}
+
 
 
 
